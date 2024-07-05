@@ -1,0 +1,2 @@
+Run application: node --env-file=.env app.js
+Commands: node app.js --help
