@@ -1,0 +1,14 @@
+{
+  "name": "telegram-weather-bot",
+  "version": "1.0.0",
+  "description": "A Telegram bot for weather forecasts",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --env-file=.env app.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "node-telegram-bot-api": "^0.50.0",
+    "moment": "^2.29.1"
+  }
+}
