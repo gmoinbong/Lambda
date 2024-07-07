@@ -81,7 +81,6 @@ bot.onText(/\/start/, (msg) => {
                 [{ text: "Weather" }]
             ],
             resize_keyboard: true,
-            one_time_keyboard: true
         }
     });
 });
@@ -96,7 +95,6 @@ bot.onText(/Currency Exchange/, (msg) => {
                 [{ text: "Previous Menu" }]
             ],
             resize_keyboard: true,
-            one_time_keyboard: true
         }
     });
 });
@@ -124,7 +122,6 @@ bot.onText(/Weather/, (msg) => {
                 [{ text: "Previous Menu" }]
             ],
             resize_keyboard: true,
-            one_time_keyboard: true
         }
     });
 });
@@ -155,7 +152,6 @@ bot.onText(/Previous Menu/, (msg) => {
                 [{ text: "Weather" }]
             ],
             resize_keyboard: true,
-            one_time_keyboard: true
         }
     });
 });
