@@ -12,9 +12,6 @@ const SCOPES = ['https://www.googleapis.com/auth/drive.file'];
 const TOKEN_PATH = path.join(process.cwd(), 'token.json');
 const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
 
-/**
- * @return {Promise<OAuth2Client|null>}
- */
 
 async function loadSavedCredentialsIfExist() {
     try {
@@ -25,11 +22,6 @@ async function loadSavedCredentialsIfExist() {
         return null;
     }
 }
-
-/**
- * @param {OAuth2Client} client
- * @return {Promise<void>}
- */
 
 async function saveCredentials(client) {
     const content = await fs.readFile(CREDENTIALS_PATH);
@@ -59,11 +51,6 @@ async function authorize() {
     return client;
 }
 
-/**
- * @param {OAuth2Client} authClient 
- * @param {string} filePath 
- * @param {string} newFileName
- */
 
 async function uploadFile(authClient, filePath, newFileName) {
     const drive = google.drive({ version: "v3", auth: authClient });
@@ -89,10 +76,6 @@ const shortenUrl = (url) => new Promise((resolve, reject) =>
         res.on("end", () => resolve(data));
     }).on("error", error => reject(`Error creating short link: ${error.message}`))
 );
-
-/**
- * @return {Promise<string>}
- */
 
 const promptFilePath = async () => {
     const questions = [{
