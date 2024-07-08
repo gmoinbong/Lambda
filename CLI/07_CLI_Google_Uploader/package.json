@@ -1,0 +1,14 @@
+{
+    "name": "google-drag-and-drop-app",
+    "version": "1.0.0",
+    "description": "just drag and drop images",
+    "main": "fileuploader.js",
+    "scripts": {
+        "start": "node --env-file=.env fileuploader.js"
+    },
+    "dependencies": {
+        "@google-cloud/local-auth": "^3.0.1",
+        "googleapis": "^140.0.1",
+        "inquirer": "^8.2.6"
+    }
+}
