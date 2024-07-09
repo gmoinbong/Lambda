@@ -19,6 +19,7 @@ async function loadSavedCredentialsIfExist() {
         const credentials = JSON.parse(content);
         return google.auth.fromJSON(credentials);
     } catch (err) {
+
         return null;
     }
 }
