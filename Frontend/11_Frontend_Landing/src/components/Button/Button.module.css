@@ -1,0 +1,17 @@
+@import "../../variables.css";
+
+.button {
+    color: var(--button-text-2);
+    background-color: #fff;
+    border-radius: 16px;
+    outline: none;
+    border: none;
+    font-size: var(--header-button-size);
+    line-height: var(--header-button-height);
+    font-weight: var(--header-button-weight);
+    cursor: pointer;
+}
+
+.button:active, button:hover {
+    background-color: #E0E0E1 !important;
+}

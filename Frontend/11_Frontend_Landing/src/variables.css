@@ -1,0 +1,94 @@
+:root {
+  --text-color-1: #FF474D;
+  --text-color-2: #212121;
+  --text-color-3: #FFFFFF;
+
+
+  --primary-main: #5C5C5C;
+  --primary-white: #BDBDBD;
+
+  --secondary: #F3F4F5;
+
+  --background-elements: #F6F6F6;
+  --background-radial-1: radial-gradient(circle, #DADADA, #FAFAFA);
+  --background-radial-2: radial-gradient(circle, #FFFFFF, #FAFAFA);
+
+  --grey-15: rgba(54, 54, 54, 0.15);
+  --grey-20: rgba(54, 54, 54, 0.20);
+
+  --black-60: rgba(54, 54, 54, 0.60);
+  --black-50: rgba(54, 54, 54, 0.50);
+
+  --button-primary: #FF474D;
+  --button-secondary: #FFFFFF;
+  --button-text-2: #212121;
+
+  --shadow-color: #212121;
+
+  --font-family-primary: 'Gilroy', sans-serif;
+  --font-family-secondary: 'Inter', sans-serif;
+
+  --title-1-size: 48px;
+  --title-1-height: 59px;
+  --title-1-weight: 600;
+
+  --title-2-size: 44px;
+  --title-2-height: 54px;
+  --title-2-weight: 600;
+
+  --title-3-size: 36px;
+  --title-3-height: 44px;
+  --title-3-weight: 600;
+
+  --title-4-size: 32px;
+  --title-4-height: 39px;
+  --title-4-weight: 600;
+
+  --title-5-size: 28px;
+  --title-5-height: 34px;
+  --title-5-weight: 600;
+
+  --subtitle-1-size: 24px;
+  --subtitle-1-height: 29px;
+  --subtitle-1-weight: 600;
+
+  --subtitle-2-size: 20px;
+  --subtitle-2-height: 29px;
+  --subtitle-2-weight: 600;
+
+  --description-size: 14px;
+  --description-height: 24px;
+  --description-weight: 500;
+
+  --button-main-size: 16px;
+  --button-main-height: 20px;
+  --button-main-weight: 700;
+
+  --header-tab-size: 16px;
+  --header-tab-height: 19px;
+  --header-tab-weight: 500;
+
+  --header-button-size: 14px;
+  --header-button-height: 17px;
+  --header-button-weight: 700;
+
+  --body-1-size: 18px;
+  --body-1-height: 14px;
+  --body-1-weight: 400;
+
+  --body-2-size: 16px;
+  --body-2-height: 23px;
+  --body-2-weight: 400;
+
+  --placeholder-size: 14px;
+  --placeholder-height: 17px;
+  --placeholder-weight: 400;
+
+  --tab-size: 14px;
+  --tab-height: 17px;
+  --tab-weight: 400;
+
+  --error-size: 12px;
+  --error-height: 15px;
+  --error-weight: 400;
+}
