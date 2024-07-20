@@ -27,7 +27,7 @@ export const HomeContentBlock: FC<Props> = () => {
             <div className={styles.grayDiamonds}></div>
             <img className={styles.grayDiamond} src={greyDiamond} alt='grey diamond background' />
             <img className={styles.stars} src={stars} alt='stars' />
-                <img className={styles.rectangleGroup} src={rectangleGroup} alt="rectangle group" />
+            <img className={styles.rectangleGroup} src={rectangleGroup} alt="rectangle group" />
             <div className={styles.rectangleGroupTop}>
                 <img className={styles.rectangleGroupImgTop} src={rectangleGroup} alt="rectangle group" />
             </div>

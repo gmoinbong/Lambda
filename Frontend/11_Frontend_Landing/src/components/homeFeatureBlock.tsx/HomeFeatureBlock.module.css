@@ -1,0 +1,109 @@
+.featureBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    min-width: 2000px;
+    bottom: 200px;
+}
+
+.textContent {
+    max-width: 600px;
+    z-index: 1;
+    margin-left: 50px;
+}
+
+.textContent h2 {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color-2);
+}
+
+.textContent h2 span {
+    color: red;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.featureButton {
+    background-color: #F7F7F7;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.featureButton:hover {
+    background-color: #E0E0E0;
+}
+
+.featureButton.selected {
+    border: 1px solid black;
+    background-color: #F7F7F7;
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.featureList li {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Для вертикального выравнивания ромбика и текста */
+}
+
+.diamond {
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    display: inline-block;
+    margin-right: 8px;
+    background: radial-gradient(circle at center, #FF474D 0%, #FF8286 100%);
+}
+
+.moreFeaturesButton {
+    background-color: #FF474D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.moreFeaturesButton:hover {
+    background-color: #FB242B;
+}
+
+.imageContainer {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featureImage {
+    width: 840px;
+    height: 790px;
+}

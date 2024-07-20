@@ -1,0 +1,155 @@
+.testimonialBlock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 1000px;
+    margin-left: 60px;
+}
+
+.testimonialBlock h2 {
+    font-family: Gilroy;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53.9px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.svgBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 1000px;
+}
+
+.textContainer {
+    max-width: 800px;
+    text-align: center;
+    color: #212121;
+}
+
+.title {
+    font-family: Gilroy, sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+    width: 1000px;
+}
+
+.testimonialCard {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 370px;
+    width: 1000px;
+    text-align: left;
+}
+
+.testimonialCard p {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.textWrapper {
+    width: 800px;
+    background: #F1F1F1;
+
+}
+
+.text {
+    width: 700px;
+    height: 120px;
+}
+
+.author {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.authorContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.author p {
+    background: none;
+    padding: 0;
+}
+
+.authorName {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.authorTitle {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.testimonialImage {
+    width: 400px;
+    height: 392px;
+    position: absolute;
+    top: 52%;
+    right: 180px;
+    transform: translate(50%, -50%);
+}
+
+.dots {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    width: 1000px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: #ccc;
+}
+
+.arrowContainer {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    box-sizing: border-box;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.arrow.right {
+    transform: translateX(50%);
+}
+
+.quotes {
+    position: relative;
+    bottom: 340px;
+    left: 285px;
+}
