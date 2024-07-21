@@ -55,6 +55,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-wrap: balance;
 }
 
 .textBlock h2 {
@@ -73,15 +74,39 @@
 
 .playButton {
     background-color: #FF474D;
-    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 18px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.playIcon {
+    padding: 10px;
 }
 
 .playButton:hover {
     background-color: #FB242B;
+}
+
+.bgDetail {
+    position: relative;
+    top: 82px;
+    left: 280px;
+    width: 300px;
+    height: 250px;
+}
+
+.bgDetail2 {
+    position: relative;
+    top: -50px;
+    left: 940px;
+    width: 300px;
+    height: 250px;
 }

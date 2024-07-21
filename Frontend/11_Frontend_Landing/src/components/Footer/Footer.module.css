@@ -1,7 +1,6 @@
 .footer {
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -17,10 +16,16 @@
     flex-wrap: wrap;
 }
 
+.barrier {
+    width: 1px;
+    height: 32px;
+    padding: 0 20px;
+    color: #C4C4C4;
+}
+
 .logoWrapper {
     display: flex;
     align-items: center;
-    gap: 40px; /* Add some space between the logo and the navigation */
 }
 
 .logo {
@@ -28,7 +33,7 @@
     align-items: center;
 }
 
-.logo img {
+.logoImg {
     width: 100px;
 }
 
@@ -77,12 +82,31 @@
 }
 
 .footerNav {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
 }
 
 .footerNav a {
     color: #777;
     text-decoration: none;
+}
+
+.socialWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    WIDTH: 1200PX;
+    padding-left: 20px;
+}
+
+.barrierBot {
+    width: 1px;
+    height: 14px;
+    padding: 0 10px;
+    color: #C4C4C4;
 }

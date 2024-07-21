@@ -1,48 +1,12 @@
 import React, { FC, useState } from 'react';
 import styles from './HomeTestimonialBlock.module.css';
-import testimonialImage1 from '../../assets/slider-1.svg';
-import testimonialImage2 from '../../assets/slider-2.svg';
-import testimonialImage3 from '../../assets/slider-3.svg';
-import testimonialImage4 from '../../assets/slider-4.svg';
 import reviewComment from '../../assets/review-comment.svg';
 import arrowLeft from '../../assets/arrow-left.svg';
 import arrowRight from '../../assets/arrow-right.svg';
 import doubleQuotes from '../../assets/double-quotes.svg';
-
-
-interface Testimonial {
-    text: string;
-    author: string;
-    title: string;
-    image: string;
-}
-
-const testimonials: Testimonial[] = [
-    {
-        text: "Tinvio has been a foundational partner and solution. We now have faster and more efficient communication with our clients, which makes order processing and deliveries smoother than ever before.",
-        author: "Hafidz & Indah",
-        title: "Owners, Sejadah Grocery",
-        image: testimonialImage1,
-    },
-    {
-        text: "With Tinvio, it's easier for my customers to make payments across various methods. Every payment is also collected in one business account where funds can be withdrawn instantly at any time.",
-        author: "John Doe",
-        title: "Owner, ABC Business",
-        image: testimonialImage2,
-    },
-    {
-        text: "Tinvio helps our business run smoother. We can manage our customer's orders, receivables, and most importantly, trace and reconcile their payments without checking banking apps or statements.",
-        author: "Jane Smith",
-        title: "Manager, XYZ Services",
-        image: testimonialImage3,
-    },
-    {
-        text: "Tinvio definitely helps to reduce the time and errors in order management between customers and suppliers. It’s super easy to use and available on mobile and web, and the team are friendly and always helpful.",
-        author: "Emily Brown",
-        title: "Director, 123 Supplies",
-        image: testimonialImage4,
-    },
-];
+import { testimonials } from './data';
+import greyDiamond from '../../assets/background/greyDiamond.png'
+import greyBg from '../../assets/background/rectangleGroup.png'
 
 export const HomeTestimonialBlock: FC = () => {
     const [current, setCurrent] = useState(0);
@@ -95,6 +59,10 @@ export const HomeTestimonialBlock: FC = () => {
                 </div>
                 <img src={doubleQuotes} alt="double quotes" className={styles.quotes} />
             </div>
+            <img src={greyDiamond} className={styles.greyDiamond1} alt="grey Diamond" />
+            <img src={greyDiamond} className={styles.greyDiamond2} alt="grey Diamond" />
+            <img src={greyBg} className={styles.greyBg1} alt="grey details" />
+            <img src={greyBg} className={styles.greyBg3} alt="grey details" />
         </div >
     );
 };
