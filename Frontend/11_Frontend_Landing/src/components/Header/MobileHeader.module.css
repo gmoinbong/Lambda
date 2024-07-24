@@ -1,0 +1,82 @@
+@import "../../variables.css";
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    background: white;
+    position: relative;
+    z-index: 1000;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.headerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headerLogo {
+    width: 120px;
+    height: 100%;
+}
+
+.burgerMenu {
+    cursor: pointer;
+    z-index: 1001;
+    padding-right: 30px;
+}
+
+.burgerMenu img {
+    width: 24px;
+    height: 24px;
+}
+
+.navMenu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.navMenuOpen {
+    display: flex;
+}
+
+.navItem {
+    margin-bottom: 20px;
+    font-size: var(--header-tab-size);
+    line-height: var(--header-tab-height);
+    font-weight: var(--header-tab-weight);
+    color: var(--text-color-2);
+    text-decoration: none;
+}
+
+.ctaButton :active {
+    background-color: #FF474D !important;
+}
+
+.ctaButton {
+    position: absolute;
+    top: 85%;
+    width: 188px;
+    height: 48px;
+    background-color: #FF474D !important;
+}

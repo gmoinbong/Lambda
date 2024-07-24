@@ -9,14 +9,17 @@ import { FeaturedOn } from '../../components/featuredOn/FeaturedOn'
 import { HappyBz } from '../../components/happyBz/HappyBz'
 import { ContactForm } from '../../components/contactForm/ContactForm'
 import Footer from '../../components/Footer/Footer'
+import { MobileHeader } from '../../components/Header/MobileHeader'
+import { useScreenDetector } from '../../hooks/useScreenDetector'
 
-interface Props {
-}
+interface Props {}
 
 export const Home: FC<Props> = ({ }) => {
+    const { isMobile } = useScreenDetector();
+
     return (
         <div className={styles.home}>
-            <Header />
+            {isMobile ? <MobileHeader /> : <Header />}
             <HomeContentBlock />
             <HomeCheckoutBlock />
             <HomeFeatureBlock />

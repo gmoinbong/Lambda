@@ -21,18 +21,18 @@ export const HomeContentBlock: FC<Props> = () => {
             <div className={styles.imageContainer}>
                 <img className={styles.backgroundImageMobile} src={backgroundImage} alt="application example" />
                 <img className={styles.backgroundImageDesktop} src={backgroundImage1} alt="application example" />
-            </div>
-            <div className={styles.redDiamond}></div>
-            <div className={styles.overlayDiamond}></div>
-            <div className={styles.grayDiamonds}></div>
-            <img className={styles.grayDiamond} src={greyDiamond} alt='grey diamond background' />
-            <img className={styles.stars} src={stars} alt='stars' />
-            <img className={styles.rectangleGroup} src={rectangleGroup} alt="rectangle group" />
-            <div className={styles.rectangleGroupTop}>
-                <img className={styles.rectangleGroupImgTop} src={rectangleGroup} alt="rectangle group" />
-            </div>
-            <div className={styles.rectangleGroupBottom}>
-                <img className={styles.rectangleGroupImgBot} src={rectangleGroup} alt="rectangle group" />
+                <div className={styles.redDiamond}></div>
+                <div className={styles.overlayDiamond}></div>
+                <div className={styles.grayDiamonds}></div>
+                <img className={styles.grayDiamond} src={greyDiamond} alt='grey diamond background' />
+                <img className={styles.stars} src={stars} alt='stars' />
+                <img className={styles.rectangleGroup} src={rectangleGroup} alt="rectangle group" />
+                <div className={styles.rectangleGroupTop}>
+                    <img className={styles.rectangleGroupImgTop} src={rectangleGroup} alt="rectangle group" />
+                </div>
+                <div className={styles.rectangleGroupBottom}>
+                    <img className={styles.rectangleGroupImgBot} src={rectangleGroup} alt="rectangle group" />
+                </div>
             </div>
         </div>
     );

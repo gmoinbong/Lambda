@@ -35,7 +35,10 @@
   display: flex;
   gap: 50px;
   padding-right: 50px;
+  z-index: 3;
 }
+
+
 
 .navItem {
   color: var(--text-color-2);
@@ -104,6 +107,23 @@
   height: 16px;
 }
 
-.ctaButton{
-margin-right: 50px;
+.ctaButton {
+  margin-right: 50px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: none;
+  }
+
+  .navMenuMobile {
+    display: flex;
+    gap: 50px;
+    padding-right: 50px;
+    position: absolute;
+    top: 30%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
 }
