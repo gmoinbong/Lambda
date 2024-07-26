@@ -1,11 +1,14 @@
 .block {
     display: flex;
     width: 100%;
-    gap: 10px;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .leftimg {
-    width: 40%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,33 +21,22 @@
 
 .grid {
     display: grid;
-    width: 60%;
+    width: 70%;
     gap: 10px;
     grid-template-areas:
         "upper upper"
         "down1 down2";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    padding-left: 20px;
+    grid-template-rows: auto 0.95fr;
+    padding-left: 10px;
 }
 
 .gridItem {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    position: relative;
     box-sizing: border-box;
-}
-
-.gridItem img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .upper {
@@ -53,53 +45,119 @@
     align-items: center;
     justify-content: center;
     background-color: #2C2C2C;
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    grid-column: span 2;
+    height: 300px;
     box-sizing: border-box;
+}
+
+.upperImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .inputContainer {
     display: flex;
     align-items: center;
     background-color: #FFFFFF;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .inputContainer input {
     border: none;
     outline: none;
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 3px;
     flex-grow: 1;
+    margin-left: 5px;
 }
 
-.inputContainer button {
-    background-color: #FFFFFF;
+.sendButton {
+    background-color: transparent;
     border: none;
-    margin-left: 10px;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.sentIcon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.textContainer {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.down1,
+.down2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    height: 300px;
+    width: 100%;
 }
 
 .down1 {
     grid-area: down1;
+    border-radius: 0 0 0 8px;
 }
 
 .down2 {
     grid-area: down2;
+    border-radius: 0 0 8px 0;
 }
-.inputContainer input{
-z-index: 3;
-}
-@media (max-width: 1900px) {
-    .down1 {
-        max-width: 300px;
-    }
 
-    .down2 {
-        max-width: 450px;
+.down1,
+.down2 {
+    overflow: hidden;
+}
+
+.down1,
+.down2 {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    color: #000000;
+}
+
+@media (min-width: 1300px) {
+    .upper {
+        height: 200px;
+    }
+}
+
+@media(max-width: 1240px) {
+    .upper {
+        height: 150px;
     }
 }
 
@@ -107,11 +165,42 @@ z-index: 3;
     .block {
         flex-direction: column;
     }
+
+    .grid {
+        grid-template-areas:
+            "upper"
+            "down1 down2";
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .leftimg {
+
+        width: 100%;
+    }
 }
 
 @media (max-width: 375px) {
+    .block {
+        padding: 0;
+    }
+
     .grid {
         display: flex;
         flex-direction: column;
+        padding: 0;
+    }
+
+    .gridItem {
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .leftimg {
+        width: 100%;
+    }
+
+    .grid {
+        width: 100%;
     }
 }

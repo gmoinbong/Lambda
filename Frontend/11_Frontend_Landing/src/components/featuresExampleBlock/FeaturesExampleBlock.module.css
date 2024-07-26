@@ -5,8 +5,13 @@
     --bg-color: #333;
 }
 
+.wrapper {
+    height: 80%;
+}
+
 .featuresWrapper {
     box-sizing: border-box;
+
 }
 
 .title {
@@ -25,22 +30,21 @@
 .features {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
     color: var(--text-color);
     margin-right: 50px;
     max-width: 1688px;
     max-height: 484px;
-
+    margin-right: 50px;
 }
 
 .bgImage {
-    width: 100%;
     height: 100%;
     z-index: -1;
     background-color: #313131;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+    width: 1700px;
 }
 
 .textOverlay {
@@ -104,10 +108,16 @@
 
 .bgStars {
     position: absolute;
-    right: -160px;
+    right: -126px;
     width: 550px;
     height: 750px;
+    top: -150px;
 
+}
+
+.bgStarsTablet {
+    position: relative;
+    top: -85px;
 }
 
 @media(min-width: 1300px) {
@@ -115,9 +125,20 @@
         margin-bottom: 100px;
     }
 
+
 }
 
-@media (max-width: 1200px) {
+@media (max-width:1440px) {
+    .wrapper {
+        height: 70%;
+    }
+}
+
+@media (max-width: 1240px) {
+    .wrapper {
+        height: 60%;
+    }
+
     .features {
         flex-direction: column;
         text-align: center;
@@ -144,6 +165,9 @@
         text-align: left;
     }
 
+    .bgImage {
+        width: auto;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -162,10 +186,18 @@
 }
 
 @media (max-width: 768px) {
+    .wrapper {
+        height: 85%;
+    }
 
     .textOverlay {
         max-width: 100%;
-        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+
+    .title {
+        margin: 0;
     }
 
     .featuresList {
@@ -211,9 +243,6 @@
 
     }
 
-    .title {
-        margin-bottom: 120px;
-    }
 
 }
 
@@ -222,6 +251,8 @@
         grid-column-gap: 15px;
         grid-row-gap: 15px;
     }
+
+
 }
 
 @media (max-width: 480px) {
@@ -236,16 +267,25 @@
     .featureItem p {
         font-size: 3.5vw;
     }
+
+    .wrapper {
+        height: 120%;
+
+    }
 }
 
 @media(max-width: 375px) {
+    .wrapper {
+        height: 150%;
+
+    }
+
     .title {
         font-family: Gilroy;
         font-size: 32px;
         font-weight: 600;
         line-height: 39.2px;
         text-align: left;
-        margin-bottom: 140px;
     }
 
     .textOverlay {

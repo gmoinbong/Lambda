@@ -42,7 +42,7 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                     )}
                 </div>
             </div>
-            {isMobile && <img src={featureImageMobile2} alt="feature" className={styles.featureImageMobile} />}
+            {isMobile && <div style={{height:100}}> <img src={featureImageMobile2} alt="feature" className={styles.featureImageMobile} /> </div>}
         </>
     );
 };

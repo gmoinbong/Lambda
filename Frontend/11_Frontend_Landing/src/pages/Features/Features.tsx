@@ -8,6 +8,11 @@ import { FeaturesBlock } from '../../components/featuresBlock/FeaturesBlock';
 import { FeaturesExampleBlock } from '../../components/featuresExampleBlock/FeaturesExampleBlock';
 import { FeatureExampleBottomBlock } from '../../components/featureExampleBottomBlock/FeatureExampleBottomBlock';
 import { FeatureOrderBlock } from '../../components/featureOrderBlock/FeatureOrderBlock';
+import { FeaturesGetStarted } from '../../components/featuresStarted/FeaturesStarted';
+import { FeatureSaveBlock } from '../../components/featureSaveBlock/FeatureSaveBlock';
+import { FeaturesCollectionBlock } from '../../components/featuresCollectionBlock/FeaturesCollectionBlock';
+import { FeaturesSmarterBlock } from '../../components/featuresSmarterBlock/FeaturesSmarterBlock';
+import { FeautureBusinessBlock } from '../../components/feautureBusinessBlock/FeautureBusinessBlock';
 
 interface Props { }
 
@@ -20,7 +25,12 @@ export const Features: FC<Props> = ({ }) => {
             <FeaturesBlock />
             <FeaturesExampleBlock />
             <FeatureExampleBottomBlock />
-            {/* <FeatureOrderBlock /> */}
+            <FeatureOrderBlock />
+            <FeaturesGetStarted />
+            <FeatureSaveBlock />
+            <FeaturesCollectionBlock />
+            <FeaturesSmarterBlock />
+            <FeautureBusinessBlock />
             <Footer />
         </div>
     );

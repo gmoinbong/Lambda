@@ -1,0 +1,22 @@
+import React, { FC } from 'react';
+import styles from './FeautureBusinessBlock.module.css';
+import image from '../../assets/features/img_business.svg';
+import starsUp from '../../assets/features/stars_up.svg';
+import starsDown from '../../assets/features/stars_down.svg';
+
+interface Props {}
+
+export const FeautureBusinessBlock: FC<Props> = ({ }) => {
+    return (
+        <div className={styles.container}>
+            <div className={styles.imageContainer}>
+                <img src={image} alt="business example" className={styles.image} />
+            </div>
+            <div className={styles.textContainer}>
+                <img src={starsUp} alt="stars" className={styles.starsUp} />
+                <h2>It's your business. Run it like a rockstar</h2>
+                <img src={starsDown} alt="stars" className={styles.starsDown} />
+            </div>
+        </div>
+    );
+}
