@@ -12,6 +12,11 @@
     cursor: pointer;
 }
 
-.button:active, button:hover {
+.button:active,
+button:hover {
     background-color: #E0E0E1 !important;
+}
+
+.icon {
+    margin-right: 8px;
 }

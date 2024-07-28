@@ -1,0 +1,214 @@
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 0 200px;
+    margin-top: 50px;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.titleWrapper h1 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    font-family: Gilroy;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #212121;
+}
+
+.titleWrapper span {
+    padding-right: 5px;
+}
+
+.titleWrapper p {
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+    text-align: center;
+}
+
+.stars {
+    width: 3.75rem !important;
+    padding-bottom: 3.125rem;
+    height: auto;
+    position: relative;
+    right: -20px;
+    top: 10px;
+}
+
+.Button {
+    width: 188px;
+    height: 48px;
+    border-radius: 16px;
+    border: 1px solid #D2D2D2;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.81px;
+    text-align: center;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.imageContainer img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.leftImages,
+.rightImages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.bg {
+    height: auto;
+    object-fit: contain;
+}
+
+.buttonContainer {
+    position: relative;
+    background: url('../../assets/company/bg_powered.svg') no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 120px;
+    text-align: center;
+    color: white;
+    background-color: #363636;
+    box-sizing: border-box;
+}
+
+.buttonContainer p {
+    font-family: Gilroy;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.4px;
+    text-align: left;
+    text-wrap: balance;
+    width: 400px;
+}
+
+.buttonContainer button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: rgb(85, 83, 83);
+    cursor: pointer;
+}
+
+@media (min-width: 375px) {
+    .imageContainer {
+        flex-direction: row;
+    }
+
+    .leftImages,
+    .rightImages {
+        width: 45%;
+    }
+
+    .bg {
+        height: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .buttonContainer {
+        height: 100px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .buttonContainer {
+        height: 100px;
+    }
+
+    .container {
+        padding: 0 100px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .buttonContainer {
+        height: 80px;
+    }
+
+    .buttonContainer p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .buttonContainer {
+        height: 150px;
+    }
+
+    .buttonContainer p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 375px) {
+    .leftImages {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .stars {
+        right: -35px;
+        top: -10px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .leftImages,
+    .rightImages {
+        width: 50%;
+    }
+}

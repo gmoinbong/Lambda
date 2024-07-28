@@ -1,0 +1,193 @@
+.title {
+    font-family: Gilroy;
+    font-size: 48px;
+    line-height: 56.25px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.upperBlockWrapper {
+    display: flex;
+}
+
+.upperBlockContent {
+    display: flex;
+    flex-direction: column;
+    color: #5C5C5C;
+    max-width: 948px;
+    max-height: 391px;
+    width: 100%;
+    background-color: #F6F6F6;
+    justify-content: center;
+}
+
+.upperBlockContent h2 {
+    color: #212121;
+    font-family: Gilroy;
+    font-size: 36px;
+    line-height: 42.19px;
+    text-align: left;
+}
+
+.list {
+    max-width: 500px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.textBlock {
+    padding-left: 200px;
+}
+
+.listItem {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding-top: 10px;
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer;
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+    left: -12px;
+    top: 13px;
+}
+
+.upperImage {
+    max-width: 714px;
+    max-height: 391px;
+    height: 100%;
+    background-color: #FB242B;
+    border-radius: 24px;
+    margin-left: 20px;
+}
+
+.downBlockWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 90%;
+    padding-left: 200px;
+}
+
+.downImage {
+    width: 32%;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.downImage2 {
+    width: 26%;
+}
+
+.downImage3 {
+    width: 35%;
+}
+
+.imageMobileGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.upperImageGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.downImageGroup {
+    display: flex;
+}
+
+@media(max-width: 1440px) {
+    .textBlock {
+        padding-left: 100px;
+    }
+
+    .downBlockWrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .upperImage {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .textBlock {
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media(max-width:768px) {
+    .upperBlockWrapper {
+        flex-direction: column;
+    }
+
+    .downBlockWrapper {
+        flex-direction: column;
+        padding: 0;
+
+    }
+
+    .downImage1 {
+        width: 60% !important;
+        padding-left: 20px;
+    }
+
+    .downImage2 {
+        width: 50%;
+    }
+
+    .downImage3 {
+        width: 140% !important;
+        padding-left: 15px;
+    }
+
+    .upperImage {
+        margin: 0;
+        width: 50%;
+        height: 100%;
+    }
+
+    .downImage {
+        width: 100%;
+    }
+
+    .downImageGroup {
+        width: 45%;
+        position: relative;
+        top: -40px;
+    }
+}
+
+@media(max-width:375px) {
+    .upperImage {
+        margin-right: 43px;
+        margin-top: 20px;
+        width: 400px;
+    }
+
+    .downImage3 {
+        position: relative;
+        top: -65px;
+    }
+
+    .list {
+        width: 70%;
+    }
+}

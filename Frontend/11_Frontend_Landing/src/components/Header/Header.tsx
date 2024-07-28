@@ -6,10 +6,11 @@ import { NavigationMenu } from './NavigationMenu/NavigationMenu'
 import { Button } from '../Button/Button'
 
 interface Props {
-
+    buttonBackground?: string;
+    color?: string;
 }
 
-export const Header: FC<Props> = ({ }) => {
+export const Header: FC<Props> = ({ buttonBackground, color }) => {
     return (
         <header className={styles.header}>
             <div className={styles.headerLeft} >
@@ -17,7 +18,7 @@ export const Header: FC<Props> = ({ }) => {
                 <LanguageSelector />
             </div>
             <NavigationMenu />
-            <Button className={styles.ctaButton} text='Get Started' color='#FFFF' height='40px' width='129px' />
+            <Button className={styles.ctaButton} text='Get Started' bgColor={buttonBackground} color={color} height='40px' width='129px' />
         </header>
     )
 }

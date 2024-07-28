@@ -1,0 +1,118 @@
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+#support {
+    background: url('../../assets/company/bg_contact.svg') no-repeat center center;
+    background-color: #F6F6F6;
+}
+
+#business {
+    background: url('../../assets/company/bg_contact_2.svg') no-repeat center center;
+    background-color: #363636;
+    color: white;
+}
+
+#media {
+    background: url('../../assets/company/bg_contact_3.svg') no-repeat center center;
+    background-color: #F6F6F6;
+}
+
+.section h2 {
+    font-family: Gilroy;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.4px;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    margin-bottom: 20px;
+}
+
+.Button {
+    width: 188px;
+    height: 48px;
+    border-radius: 16px;
+    border: 1px solid #D2D2D2;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.81px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.h1 {
+    font-family: Gilroy;
+    font-size: 36px;
+    line-height: 42.19px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 60px 20px;
+    }
+
+    .section {
+        padding: 60px 40px;
+        width: 30%;
+    }
+}
+
+@media (max-width: 375px) {
+    .section {
+        padding: 20px 10px;
+    }
+
+    .section h2 {
+        font-size: 20px;
+    }
+
+    .section p {
+        font-size: 14px;
+    }
+
+    .Button {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width:768px) {
+    .section {
+        max-width: 100%;
+        width: 100%;
+    }
+}

@@ -13,6 +13,8 @@ import { FeatureSaveBlock } from '../../components/featureSaveBlock/FeatureSaveB
 import { FeaturesCollectionBlock } from '../../components/featuresCollectionBlock/FeaturesCollectionBlock';
 import { FeaturesSmarterBlock } from '../../components/featuresSmarterBlock/FeaturesSmarterBlock';
 import { FeautureBusinessBlock } from '../../components/feautureBusinessBlock/FeautureBusinessBlock';
+import FeaturesSupercharge from '../../components/featuresSupercharge/FeaturesSupercharge';
+import FeaturesFaq from '../../components/featuresFaq/FeaturesFaq';
 
 interface Props { }
 
@@ -21,7 +23,7 @@ export const Features: FC<Props> = ({ }) => {
 
     return (
         <div className={styles.features}>
-            {isTablet ? <MobileHeader /> : <Header />}
+            {isTablet ? <MobileHeader /> : <Header color='#FFFFf' buttonBackground='#FF474D' />}
             <FeaturesBlock />
             <FeaturesExampleBlock />
             <FeatureExampleBottomBlock />
@@ -31,6 +33,8 @@ export const Features: FC<Props> = ({ }) => {
             <FeaturesCollectionBlock />
             <FeaturesSmarterBlock />
             <FeautureBusinessBlock />
+            <FeaturesSupercharge />
+            <FeaturesFaq />
             <Footer />
         </div>
     );

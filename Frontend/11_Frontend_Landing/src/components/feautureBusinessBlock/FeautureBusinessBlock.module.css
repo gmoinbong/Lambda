@@ -4,6 +4,7 @@
     justify-content: space-between;
     padding: 20px;
     position: relative;
+    justify-content: center;
 }
 
 .imageContainer {
@@ -52,8 +53,15 @@
 }
 
 @media(max-width: 1024px) {
+
+    .image {
+        width: 60%;
+    }
+}
+
+@media(max-width:768px) {
     .container {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse
     }
 
     .image {

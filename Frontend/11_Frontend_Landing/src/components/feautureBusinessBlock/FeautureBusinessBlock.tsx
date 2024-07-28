@@ -9,9 +9,7 @@ interface Props {}
 export const FeautureBusinessBlock: FC<Props> = ({ }) => {
     return (
         <div className={styles.container}>
-            <div className={styles.imageContainer}>
                 <img src={image} alt="business example" className={styles.image} />
-            </div>
             <div className={styles.textContainer}>
                 <img src={starsUp} alt="stars" className={styles.starsUp} />
                 <h2>It's your business. Run it like a rockstar</h2>

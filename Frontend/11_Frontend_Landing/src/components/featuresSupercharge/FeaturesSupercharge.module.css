@@ -1,0 +1,121 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+    margin-left: -100px;
+}
+
+.bg {
+    width: 100%;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    z-index: 0;
+    height: 333px;
+    background-color: rgba(255, 255, 255, 0.6);
+
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin-left: 100px;
+}
+
+.content h3 {
+    font-family: Gilroy, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.content h2 {
+    font-family: Gilroy;
+    font-size: 36px;
+    line-height: 42.19px;
+    text-align: center;
+    width: 400px;
+
+}
+
+.button {
+    background-color: #FE474D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 16px;
+    width: 188px;
+    height: 48px;
+}
+
+@media (max-width: 1300px) {
+    .button {
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .button {
+        margin-right: 80px;
+    }
+
+    .container {
+        margin-left: -50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .content h2 {
+        font-size: 24px;
+        width: auto;
+        line-height: 1.2;
+    }
+
+    .button {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .bg {
+        width: 189%;
+        position: absolute;
+        top: 0;
+        left: -146px;
+        z-index: 0;
+    }
+}

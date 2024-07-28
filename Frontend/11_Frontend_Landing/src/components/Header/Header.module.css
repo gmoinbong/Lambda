@@ -109,6 +109,7 @@
 
 .ctaButton {
   margin-right: 50px;
+  z-index: 5;
 }
 
 @media (max-width: 768px) {
@@ -127,3 +128,15 @@
     padding: 0;
   }
 }
+
+@media(max-width:1600px) {
+.header{
+width: auto;
+}
+}
+
+  @media(max-width:1280px) {
+    .header {
+      padding-left: 100px;
+    }
+  }
