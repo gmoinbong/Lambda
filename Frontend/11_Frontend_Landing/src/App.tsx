@@ -4,8 +4,9 @@ import { Home } from './pages/Home/Home'
 import { Route, Routes } from 'react-router-dom'
 import { Features } from './pages/Features/Features'
 import { Company } from './pages/Company/Company'
-import { MobileHeader } from './components/Header/MobileHeader'
-import { Header } from './components/Header/Header'
+
+import { Privacy } from './pages/Privacy/Privacy'
+import { Terms } from './pages/Terms/Terms'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/features' element={<Features />} />
         <Route path='/company' element={<Company />} />
+        <Route path='/privacy' element={<Privacy />} />
+        <Route path='/terms' element={<Terms />} />
       </Routes >
     </div >
   )

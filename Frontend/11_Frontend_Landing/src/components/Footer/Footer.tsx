@@ -39,9 +39,9 @@ const Footer: FC = () => {
                 <p>© Tinvio™ 2020. All Rights Reserved</p>
                 <img className={styles.barrierBot} src={barrier} alt="" />
                 <nav className={styles.footerNav}>
-                    <a href="#">Privacy Policy</a>
+                    <a href="/privacy">Privacy Policy</a>
                     <img className={styles.barrierBot} src={barrier} alt="" />
-                    <a href="#">Terms of Service</a>
+                    <a href="/terms">Terms of Service</a>
                 </nav>
             </div>
         </footer>

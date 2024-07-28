@@ -1,0 +1,87 @@
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.info {
+    font-family: Gilroy;
+    font-size: 36px;
+    line-height: 42.19px;
+    color: #212121;
+}
+
+h1 {
+    font-family: Gilroy;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #212121;
+    margin-bottom: 20px;
+}
+
+.tabContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    font-family: Gilroy;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #212121;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.tab+.tab {
+    margin-left: 20px;
+}
+
+.tab.active {
+    border-bottom: 2px solid #212121;
+}
+
+.content {
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+    color: #212121;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.content p {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: left;
+}
+
+.list {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.content h3 {
+    font-family: Gilroy;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
