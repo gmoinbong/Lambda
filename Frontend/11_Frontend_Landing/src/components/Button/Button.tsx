@@ -11,18 +11,20 @@ interface Props {
     type?: "button" | "submit" | "reset";
     children?: ReactNode;
     icon?: string;
+    onClick?: () => void;
+
 }
 
-export const Button: FC<Props> = ({ text, color, bgColor, width, height, className, type = "button", children, icon }) => {
+export const Button: FC<Props> = ({ text, color, bgColor, width, height, className, type = "button", children, icon, onClick }) => {
     const buttonStyle = {
+        color: color,
         backgroundColor: bgColor,
         width: width,
         height: height,
-        color: color
     };
 
     return (
-        <button type={type} className={styles.button + " " + className} style={buttonStyle}>
+        <button type={type} className={styles.button + " " + className} style={buttonStyle} onClick={onClick}>
             {icon && <img src={icon} alt="icon" className={styles.icon} />}
             {children}
             {text}

@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+// FeaturesBlock.js
+import React, { FC, useState } from 'react';
 import styles from "./FeaturesBlock.module.css";
 import featureImage2 from '../../assets/features/bg1.svg';
 import featureImage from '../../assets/features/bg.svg';
@@ -8,11 +9,21 @@ import featureImageMobile from '../../assets/features/feature_img_mobile.svg';
 import featureImageMobile2 from '../../assets/features/feature_img_mobile2.svg';
 import featureImageMobile3 from '../../assets/features/feature_img_mobile3.svg';
 import Button from '../Button/Button';
+import Modal from './modal/Modal';
 
 interface Props { }
 
 export const FeaturesBlock: FC<Props> = ({ }) => {
     const { isMobile } = useScreenDetector();
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const handleModalOpen = () => {
+        setModalVisible(true);
+    };
+
+    const handleModalClose = () => {
+        setModalVisible(false);
+    };
 
     return (
         <>
@@ -26,7 +37,7 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                     <p>From orders to real-time cash in your bank.
                         <br />
                         Run your business like a rockstar.</p>
-                    <Button className={styles.ctaButton} text='Try it for Free' />
+                    <Button className={styles.ctaButton} text='Try it for Free' onClick={handleModalOpen} />
                 </div>
                 <div className={styles.imageContainer}>
                     {isMobile ? (
@@ -42,7 +53,8 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                     )}
                 </div>
             </div>
-            {isMobile && <div style={{height:100}}> <img src={featureImageMobile2} alt="feature" className={styles.featureImageMobile} /> </div>}
+            {isMobile && <div style={{ height: 100 }}> <img src={featureImageMobile2} alt="feature" className={styles.featureImageMobile} /> </div>}
+            <Modal isVisible={isModalVisible} onClose={handleModalClose} />
         </>
     );
 };

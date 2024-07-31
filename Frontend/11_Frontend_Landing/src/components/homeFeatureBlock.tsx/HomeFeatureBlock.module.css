@@ -3,19 +3,19 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 60px 20px;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
     z-index: 3;
-    min-width: 2000px;
-    bottom: 200px;
+    top: -200px;
+
 }
 
 .textContent {
     max-width: 600px;
     z-index: 1;
     margin-left: 50px;
+    text-align: left;
 }
 
 .textContent h2 {
@@ -113,4 +113,94 @@
     width: 450px;
     height: 450px;
     left: 70px;
+}
+
+@media (max-width: 1200px) {
+    .featureBlock {
+        align-items: center;
+        text-align: center;
+    }
+
+    .textContent {
+        margin-left: 10px;
+        margin-bottom: 40px;
+    }
+
+    .featureImage {
+        height: auto;
+        width: 677px;
+        margin-left: 200px;
+    }
+
+    .greyBg {
+        width: 350px;
+        height: 350px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featureBlock {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        top: -200px;
+    }
+
+    .textContent {
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .featureImage {
+        height: auto;
+        margin: 0
+    }
+
+    .greyBg {
+        width: 300px;
+        height: 300px;
+        left: 10px;
+    }
+
+    .textContent h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .featureList li {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .moreFeaturesButton {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .featureBlock {
+        padding: 40px 20px;
+    }
+
+    .greyBg {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .textContent h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .featureList li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .moreFeaturesButton {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
 }

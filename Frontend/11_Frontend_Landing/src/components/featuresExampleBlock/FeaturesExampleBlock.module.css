@@ -108,10 +108,11 @@
 
 .bgStars {
     position: absolute;
-    right: -126px;
-    width: 550px;
-    height: 750px;
-    top: -150px;
+    right: -140px;
+    width: 537px;
+    height: 636px;
+    top: -85px;
+    z-index: -10;
 
 }
 
@@ -167,6 +168,10 @@
 
     .bgImage {
         width: auto;
+    }
+
+    .inputContainer {
+        top: 35%;
     }
 }
 
@@ -268,16 +273,15 @@
         font-size: 3.5vw;
     }
 
-    .wrapper {
-        height: 120%;
-
-    }
 }
 
 @media(max-width: 375px) {
     .wrapper {
-        height: 150%;
+        height: 85%;
+    }
 
+    .bgStars {
+        display: none;
     }
 
     .title {

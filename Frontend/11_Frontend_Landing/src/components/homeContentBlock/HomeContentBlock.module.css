@@ -1,26 +1,35 @@
 .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    min-width: 1200px;
+    justify-content: flex-end;
+    padding: 0 20px;
 }
 
 .textContent {
-    position: absolute;
-    top: 210px;
-    left: 304px;
-    max-width: 480px;
+    max-width: 600px;
     width: 100%;
-    height: 330px;
     z-index: 1;
+    text-align: left;
+}
+
+.textTitle {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.textTitle img {
+    width: 60px;
+    margin-right: 10px;
 }
 
 .textContent h1 {
-    font-size: var(--title-1-size);
-    line-height: var(--title-1-height);
-    font-weight: var(--title-1-weight);
-    color: var(--text-color-2);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
 }
 
 .textContent h1 span {
@@ -28,13 +37,11 @@
 }
 
 .textContent p {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 1.125rem;
+    line-height: 1.5;
     font-weight: 400;
-    width: 415px;
-    color: var(--primary-main);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    color: #555;
+    margin: 20px 0;
 }
 
 .ctaButton {
@@ -43,125 +50,258 @@
     padding: 10px 20px;
     border: none;
     border-radius: 18px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     z-index: 2;
+    margin-bottom: 20px;
 }
 
 .ctaButton:hover {
     background-color: #FB242B !important;
 }
 
-.freeText {
-    font-size: 16px;
-    padding-left: 30px;
+.imageContainer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: left 0.5s ease-in-out;
+    left: 100px;
 }
 
-.imageContainer {
-    position: sticky;
-    top: 0;
-    right: 0;
+.redDiamond,
+.overlayDiamond {
+    background-color: #FB242B;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    border-radius: 140px;
+}
+
+.redDiamond {
+    z-index: -1;
+    transform: rotate(360deg);
+    width: 900px;
+    height: 900px;
+}
+
+.overlayDiamond {
+    background-color: rgba(251, 36, 43, 0.6);
+    width: 1000px;
+    height: 1000px;
+    z-index: -2;
+}
+
+.redDiamond img,
+.overlayDiamond img {
+    max-width: 100%;
+    max-height: 100%;
+    transform: rotate(-45deg);
+}
+
+.rectangle {
+    bottom: 245px;
+    position: absolute;
+    left: 550px;
+}
+
+.rectangle2 {
+    width: 30%;
+    position: absolute;
+    left: -20px;
+    bottom: 220px;
+}
+
+.rectangle,
+.rectangle2 {
+    z-index: 0;
+}
+
+.backgroundImageDesktop {
+    position: absolute;
+    bottom: 23%;
+    right: -1%;
+    width: 106%;
+    height: 85%;
+}
+
+.imageWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     height: 100%;
 }
 
 .backgroundImageMobile {
-    position: relative;
-    left: 900px;
-    top: 60px;
-    width: 270px;
-    height: 448px;
-    z-index: 4;
-}
-
-
-.backgroundImageDesktop {
-    position: relative;
-    top: -26px;
-    left: 810px;
-    width: 690px;
-    height: 620px;
-    z-index: 4;
-}
-
-.redDiamond {
     position: absolute;
-    width: 850px;
-    height: 873px;
-    left: 1080px;
-    top: -67px;
-    background-color: #FB242B;
-    border-radius: 140px;
-    transform: rotate(45deg);
-    opacity: 1;
-    z-index: -1;
+    top: 58%;
+    left: 7%;
+    width: 42%;
+    height: auto;
 }
 
-.overlayDiamond {
-    position: absolute;
-    width: 849px;
-    height: 980px;
-    left: 1040px;
-    top: -150px;
-    background-color: rgba(251, 36, 43, 0.6);
-    border-radius: 180px;
-    transform: rotate(45deg);
-    opacity: 1;
-    z-index: -1;
+@media (max-width: 1600px) {
+    .imageContainer {
+        left: 300px;
+    }
+
+    .textContent {
+        position: relative;
+        left: 50px;
+    }
+
+    .content {
+        gap: 0;
+    }
 }
 
-.grayDiamonds {
-    position: absolute;
-    width: 340px;
-    height: 255px;
-    top: -310px;
-    left: 610px;
-    background: radial-gradient(circle, #DADADA 15%, #FAFAFA 15%);
-    border-radius: 45px;
-    transform: rotate(45deg);
-    opacity: 1;
-    z-index: -1;
+@media (max-width: 1300px) {
+    .imageContainer {
+        left: 400px;
+    }
+
+    .textContent {
+        position: relative;
+        left: 200px;
+    }
+
+    .textContent h1 {
+        width: 350px;
+    }
 }
 
-.rectangleGroupImgTop {
-    position: absolute;
-    left: 1040px;
-    top: 170px;
-    opacity: 1;
-    z-index: -1;
-    width: 200px;
-    height: 150px;
+@media (max-width: 1250px) {
+    .imageContainer {
+        left: 550px;
+    }
+
+    .textContent {
+        position: relative;
+        left: 300px;
+    }
 }
 
-.rectangleGroupImgBot {
-    position: absolute;
-    left: 1375px;
-    top: 500px;
-    width: 300px;
-    height: 250px;
+@media (max-width: 1100px) {
+    .imageContainer {
+        left: 600px;
+    }
+
+    .textContent {
+        position: relative;
+        left: 400px;
+    }
 }
 
-.grayDiamond {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    top: 300px;
-    left: 215px;
+@media (max-width: 1000px) {
+    .imageContainer {
+        left: 650px;
+    }
+
+    .textContent {
+        position: relative;
+        left: 450px;
+    }
 }
 
-.stars {
-    position: absolute;
-    width: 85px;
-    height: 80px;
-    transform: rotate(359deg);
-    top: 180px;
-    left: 250px;
+@media (max-width: 900px) {
+    .imageContainer {
+        left: 700px;
+    }
+
+    .textContent {
+        position: relative;
+        left: 500px;
+    }
 }
 
-.rectangleGroup {
-    position: absolute;
-    width: 86px;
-    height: 80px;
-    transform: rotate(359deg);
-    top: 550px;
-    left: 320px;
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 200px;
+    }
+
+    .textContent {
+        margin-right: 0;
+        text-align: center;
+        padding: 0 20px;
+        left: 0;
+    }
+
+    .imageContainer {
+        margin-left: 0;
+        padding-left: 0;
+        left: -60%;
+    }
+
+    .redDiamond {
+        width: 130vw;
+        height: 100vw;
+    }
+
+    .overlayDiamond {
+        width: 140vw;
+        height: 110vw;
+    }
+
+    .backgroundImageDesktop {
+        position: absolute;
+        bottom: 79%;
+        right: -10%;
+        width: 80%;
+        height: 75%;
+    }
+
+    .backgroundImageMobile {
+        position: absolute;
+        top: 9%;
+        left: 36%;
+        width: 35%;
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .backgroundImageDesktop {
+        bottom: 74%;
+        right: -2%;
+        width: 70%;
+        height: 70%;
+    }
+
+    .backgroundImageMobile {
+        top: 12%;
+        left: 35%;
+        width: 35%;
+        height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .content {
+        gap: 0px;
+    }
+
+    .imageContainer {
+        justify-content: flex-start;
+    }
+
+    .backgroundImageDesktop {
+        bottom: 73%;
+        right: -80px;
+        width: 80%;
+        height: 80%;
+    }
+
+    .backgroundImageMobile {
+        top: 5%;
+        left: 34%;
+        width: 45%;
+        height: auto;
+    }
 }

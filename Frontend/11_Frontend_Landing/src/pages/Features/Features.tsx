@@ -23,7 +23,7 @@ export const Features: FC<Props> = ({ }) => {
 
     return (
         <div className={styles.features}>
-            {isTablet ? <MobileHeader /> : <Header color='#FFFFf' buttonBackground='#FF474D' />}
+            {isTablet ? <MobileHeader /> : <Header color='#FFFF' buttonBackground='#FF474D' />}
             <FeaturesBlock />
             <FeaturesExampleBlock />
             <FeatureExampleBottomBlock />

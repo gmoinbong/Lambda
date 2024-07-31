@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import styles from './HomeFeatureBlock.module.css';
 import featureImage from '../../assets/background/homeFeature.png';
-import greyBg from '../../assets/background/greyDiamond.png'
+import greyBg from '../../assets/background/greyDiamond.png';
 
 interface Props { }
 
@@ -15,7 +15,7 @@ export const HomeFeatureBlock: FC<Props> = () => {
     return (
         <div className={styles.featureBlock}>
             <div className={styles.textContent}>
-                <h2>Smarter supply chain <br />  transactions. <span>More buddy!</span></h2>
+                <h2>Smarter supply chain <br /> transactions. <span>More buddy!</span></h2>
                 <div className={styles.buttonGroup}>
                     <button
                         className={`${styles.featureButton} ${selectedTab === 'Chats' ? styles.selected : ''}`}

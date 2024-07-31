@@ -1,18 +1,67 @@
+/* FeaturedOn.module.css */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 30px -40px;
+    background-color: #F6F6F6;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    height: auto;
+    position: relative;
+    margin-right: 100px;
 }
 
-.image {
+.title {
+    font-family: Gilroy;
+    font-size: 28px;
+    line-height: 32.81px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.line {
+    height: 1px;
+    border-top: 1px gainsboro solid;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.text {
     max-width: 100%;
     height: auto;
 }
 
 .confetti {
     position: absolute;
-    right: -15px;
-    bottom: 2950px;
+    top: 90%;
+    transform: translateY(-50%);
+    right: -100px;
+}
+
+@media(max-width:1024px) {
+    .container {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 375px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .confetti {
+        right: -30px;
+    }
 }

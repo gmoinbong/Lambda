@@ -14,6 +14,7 @@
     flex-direction: column;
 }
 
+
 .titleWrapper h1 {
     display: flex;
     flex-direction: row-reverse;
@@ -57,6 +58,7 @@
     font-weight: 700;
     line-height: 19.81px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .imageContainer {
@@ -174,6 +176,10 @@
     .container {
         padding: 20px;
     }
+
+    .titleWrapper {
+        padding-bottom: 50px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -191,6 +197,10 @@
         line-height: 25px;
         width: 300px;
     }
+
+    .titleWrapper {
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -207,6 +217,7 @@
 }
 
 @media (min-width: 1000px) {
+
     .leftImages,
     .rightImages {
         width: 50%;

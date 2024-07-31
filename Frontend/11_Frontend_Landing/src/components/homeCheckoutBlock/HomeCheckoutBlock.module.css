@@ -1,46 +1,24 @@
 .checkoutBlock {
     position: relative;
     width: 100%;
-    height: 900px;
-    padding: 60px 0;
-    min-width: 2400px;
     overflow: hidden;
     box-sizing: border-box;
-    bottom: 100px;
-}
+    background: url('../../assets/background/home_bg.svg') no-repeat center center;
+    background-size: cover;
+    top: -250px;
 
-.svgContainer {
-    position: absolute;
-    top: -25px;
-    left: -80px;
-    width: 100%;
-    height: 700px;
-    z-index: -1;
-    padding-right: 320px;
 }
-
 
 .content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
-    padding: 60px 20px;
-    position: relative;
-    left: 250px;
-    top: 160px;
-}
-
-.imageContainer {
-    position: relative;
-    width: 50%;
+    padding: 250px 20px;
+    margin: 0 auto;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 120px;
-    height: 500px;
-
+    position: relative;
+    top: 50px;
 }
 
 .contentImage {
@@ -51,11 +29,9 @@
 .textBlock {
     max-width: 500px;
     margin-left: 40px;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-wrap: balance;
 }
 
 .textBlock h2 {
@@ -73,18 +49,17 @@
 }
 
 .playButton {
-    background-color: #FF474D;
     padding: 10px 20px;
     border: none;
     border-radius: 18px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    color: black;
 }
 
 .playIcon {
@@ -96,7 +71,7 @@
 }
 
 .bgDetail {
-    position: relative;
+    position: absolute;
     top: 82px;
     left: 280px;
     width: 300px;
@@ -104,9 +79,57 @@
 }
 
 .bgDetail2 {
-    position: relative;
+    position: absolute;
     top: -50px;
     left: 940px;
     width: 300px;
     height: 250px;
+}
+
+@media (max-width: 1200px) {
+
+
+    .contentImage {
+        position: relative;
+        width: 60%;
+
+    }
+
+    .textBlock {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .textBlock {
+        align-items: center
+    }
+
+    .playButton {
+        width: 50%;
+    }
+
+    .bgDetail,
+    .bgDetail2 {
+        display: none;
+    }
+
+    .checkoutBlock {
+        padding: 40px 0;
+    }
+
+    .contentImage {
+        width: 125%;
+        padding-top: 20px;
+    }
+
 }

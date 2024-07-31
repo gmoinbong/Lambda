@@ -12,14 +12,14 @@ import Footer from '../../components/Footer/Footer'
 import { MobileHeader } from '../../components/Header/MobileHeader'
 import { useScreenDetector } from '../../hooks/useScreenDetector'
 
-interface Props {}
+interface Props { }
 
 export const Home: FC<Props> = ({ }) => {
-    const { isMobile } = useScreenDetector();
+    const { isTablet } = useScreenDetector();
 
     return (
         <div className={styles.home}>
-            {isMobile ? <MobileHeader /> : <Header />}
+            {isTablet ? <MobileHeader /> : <Header />}
             <HomeContentBlock />
             <HomeCheckoutBlock />
             <HomeFeatureBlock />

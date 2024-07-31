@@ -93,6 +93,7 @@
 
     .container {
         padding: 0 50px;
+        height: 50vh;
     }
 }
 
@@ -122,6 +123,8 @@
         flex-direction: column;
         justify-content: space-around;
         padding: 10px;
+        height: 70vh;
+
     }
 
     .textContainer {

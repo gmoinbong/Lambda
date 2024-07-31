@@ -145,3 +145,15 @@
     top: 200px;
     right: 10px;
 }
+
+@media(max-width: 768px) {
+    .content {
+        flex-direction: column-reverse;
+    top: -70px;
+
+    }
+
+    .contactFormContainer {
+        height: 1400px;
+    }
+}

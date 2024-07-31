@@ -20,7 +20,7 @@ export const Company: FC<Props> = ({ }) => {
     return (
 
         <div className={styles.company}>
-            {isTablet ? <MobileHeader /> : <Header buttonBackground="#FF474D" />}
+            {isTablet ? <MobileHeader /> : <Header color='#ffff' buttonBackground="#FF474D" />}
             <CompanyBlock />
             <CompanyDoneBlock />
             <CompanyInfo />

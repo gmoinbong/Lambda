@@ -31,7 +31,7 @@ export const FeatureExampleBottomBlock: FC<Props> = () => {
                 <div>
                     <img className={`${styles.gridItem} ${styles.down1}`} src={dollarIcon} alt="Create invoices" />
                 </div>
-                <div>
+                <div style={{width:"140%"}}>
                     <img className={`${styles.gridItem} ${styles.down2}`} src={bg3} alt="Share payment links" />
                 </div>
             </div>

@@ -17,10 +17,10 @@ const Footer: FC = () => {
                         <img className={styles.barrier} src={barrier} alt="" />
                     </div>
                     <nav className={styles.nav}>
-                        <a href="#">Home</a>
-                        <a href="#">Features</a>
-                        <a href="#">Company</a>
-                        <a href="#">Login</a>
+                        <a href="/">Home</a>
+                        <a href="/features">Features</a>
+                        <a href="/company">Company</a>
+                        <a href="/login">Login</a>
                     </nav>
                 </div>
                 <div className={styles.socialWrapper}>
