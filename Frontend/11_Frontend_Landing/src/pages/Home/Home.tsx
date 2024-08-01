@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import  { FC } from 'react'
 import styles from "./Home.module.css"
 import { Header } from '../../components/Header/Header'
 import { HomeContentBlock } from '../../components/homeContentBlock/HomeContentBlock'

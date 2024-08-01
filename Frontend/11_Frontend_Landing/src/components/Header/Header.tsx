@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import  { FC } from 'react'
 import HeaderLogo from './HeaderLogo'
 import LanguageSelector from './languageSelector/LanguageSelector'
 import styles from './Header.module.css'

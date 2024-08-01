@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './CompanyDoneBlock.module.css';
 import imageUp from '../../../public/assets/company/img_done_block.svg';
 import imageUpMobile from '../../../public/assets/company/img_up_mobile.svg';

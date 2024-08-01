@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './CompanyRole.module.css';
 import img0 from '../../../public//assets/company/img_role.svg';
 import img1 from '../../../public/assets/company/img_role_1.svg';

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './FeaturedOn.module.css';
 import text from '../../../public/assets/text/text.svg';
 import text1 from '../../../public/assets/text/text_1.svg';

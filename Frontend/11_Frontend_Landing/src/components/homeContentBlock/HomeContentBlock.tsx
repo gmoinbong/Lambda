@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from "./HomeContentBlock.module.css";
 import Button from '../Button/Button';
 import rectangleGroup from '../../../public/assets/background/rectangleGroup.png';

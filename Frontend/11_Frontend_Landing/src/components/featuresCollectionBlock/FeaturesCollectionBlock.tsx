@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import{ FC } from 'react';
 import styles from './FeaturesCollectionBlock.module.css';
 import image from '../../../public/assets/features/bg_collections.svg';
 import imageMobile from '../../../public/assets/features/bg_collections_mobile.svg';

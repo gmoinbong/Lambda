@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from "./CompanyBlock.module.css";
 import featureImage from '../../../public/assets/company/img_mobile.svg';
 import stars from '../../../public/assets/company/stars.svg';

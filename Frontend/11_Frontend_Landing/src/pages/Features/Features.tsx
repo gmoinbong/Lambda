@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './Features.module.css';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 import { Header } from '../../components/Header/Header';

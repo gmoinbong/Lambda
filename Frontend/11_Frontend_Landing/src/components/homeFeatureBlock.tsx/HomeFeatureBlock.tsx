@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import styles from './HomeFeatureBlock.module.css';
 import featureImage from '../../../public/assets/background/homeFeature.png';
 import greyBg from '../../../public/assets/background/greyDiamond.png';

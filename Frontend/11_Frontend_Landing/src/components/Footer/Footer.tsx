@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './Footer.module.css';
 import logo from '../../../public/assets/tinvio-logo.svg';
 import linkedin from '../../../public/assets/social/linkedin.svg';

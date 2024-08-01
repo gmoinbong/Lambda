@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './HappyBz.module.css';
 import happyBz from '../../../public/assets/happybz.png';
 import happyBzMobile from '../../../public/assets/happy_bz_mobile.svg';

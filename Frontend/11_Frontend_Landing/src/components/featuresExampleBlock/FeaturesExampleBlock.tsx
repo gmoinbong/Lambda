@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import{ FC } from 'react';
 import styles from './FeaturesExampleBlock.module.css';
 import bg from '../../../public/assets/features/bg2.svg';
 import bgTablet from '../../../public/assets/features/bg_tablet.svg';

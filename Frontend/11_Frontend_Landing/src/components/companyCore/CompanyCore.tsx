@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './CompanyCore.module.css';
 import penIcon from '../../../public/assets/company/icon_pen.svg';
 import chatIcon from '../../../public/assets/company/icon_chat.svg';

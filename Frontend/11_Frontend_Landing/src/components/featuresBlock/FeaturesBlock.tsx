@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import  { FC, useState } from 'react';
 import styles from "./FeaturesBlock.module.css";
 import featureImage2 from '../../../public/assets/features/bg1.svg';
 import featureImage from '../../../public/assets/features/bg.svg';

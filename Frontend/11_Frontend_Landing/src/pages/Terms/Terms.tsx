@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { FC } from 'react';
 import styles from './Terms.module.css';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 import { MobileHeader } from '../../components/Header/MobileHeader';

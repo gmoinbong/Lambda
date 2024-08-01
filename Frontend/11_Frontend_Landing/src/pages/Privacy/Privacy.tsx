@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './Privacy.module.css';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 import { MobileHeader } from '../../components/Header/MobileHeader';

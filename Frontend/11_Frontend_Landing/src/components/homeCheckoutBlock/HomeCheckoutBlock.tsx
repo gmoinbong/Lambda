@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './HomeCheckoutBlock.module.css';
 import homeContentImage from '../../../public/assets/background/homeContent.png';
 import Button from '../Button/Button';

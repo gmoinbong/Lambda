@@ -1,11 +1,9 @@
-import React, { FC, useState } from 'react';
+import  { FC, useState } from 'react';
 import styles from './HomeTestimonialBlock.module.css';
 import arrowLeft from '../../../public/assets/arrow-left.svg';
 import arrowRight from '../../../public/assets/arrow-right.svg';
 import doubleQuotes from '../../../public/assets/double-quotes.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
-import greyBg from '../../../public/assets/background/rectangleGroup.png';
-import greyDiamond from '../../../public/assets/background/greyDiamond.png';
 import { testimonials } from './data';
 
 export const HomeTestimonialBlock: FC = () => {

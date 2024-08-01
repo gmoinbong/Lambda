@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './ContactForm.module.css';
 import Button from '../Button/Button';
 import mapImage from '../../../public/assets/maps.png';
 import confetti from '../../../public/assets/confetti-group2.svg'
-import greyBg from '../../../public/assets/background/rectangleGroup.png'
 
 interface Props { }
 

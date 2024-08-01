@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import HeaderLogo from './HeaderLogo';
 import LanguageSelector from './languageSelector/LanguageSelector';
 import styles from './MobileHeader.module.css';

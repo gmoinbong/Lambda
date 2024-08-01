@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import styles from './FeautureBusinessBlock.module.css';
 import image from '../../../public/assets/features/img_business.svg';
 import starsUp from '../../../public/assets/features/stars_up.svg';

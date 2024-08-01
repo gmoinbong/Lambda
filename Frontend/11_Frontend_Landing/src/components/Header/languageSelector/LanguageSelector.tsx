@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import  { FC, useState } from 'react';
 import styles from '../Header.module.css';
 import flag1 from "../../../../public/assets/flags/flag1.png";
 import flag2 from "../../../../public/assets/flags/flag2.png";

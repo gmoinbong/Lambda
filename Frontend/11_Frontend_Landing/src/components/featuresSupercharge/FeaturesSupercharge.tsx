@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './FeaturesSupercharge.module.css';
 import bg from '../../../public/assets/features/supercharge_bg.svg';
 import bgTablet from '../../../public/assets/features/supercharge_bg_tablet.svg';

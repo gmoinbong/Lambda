@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './FeatureOrderBlock.module.css';
 import rectangleGroup from '../../../public/assets/features/rectangle_group.svg';
 import greyRectangleGroup from '../../../public/assets/background/rectangleGroup.png';

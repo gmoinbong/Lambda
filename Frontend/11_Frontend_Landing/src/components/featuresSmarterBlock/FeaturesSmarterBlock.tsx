@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './FeaturesSmarterBlock.module.css';
 import image from '../../../public/assets/features/img_smarter.svg';
 
