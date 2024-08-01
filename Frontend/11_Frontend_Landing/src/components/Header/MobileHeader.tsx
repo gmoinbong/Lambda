@@ -4,8 +4,8 @@ import LanguageSelector from './languageSelector/LanguageSelector';
 import styles from './MobileHeader.module.css';
 import { NavigationMenu } from './NavigationMenu/NavigationMenu';
 import { Button } from '../Button/Button';
-import burger from '../../assets/burger.svg';
-import closeIcon from '../../assets/close.svg';
+import burger from '../../../public/assets/burger.svg';
+import closeIcon from '../../../public/assets/close.svg';
 
 interface Props { }
 

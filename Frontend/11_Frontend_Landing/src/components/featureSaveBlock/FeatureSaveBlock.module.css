@@ -57,6 +57,10 @@
     margin-left: 50px;
 }
 
+.stars{
+position: relative;
+}
+
 @media(max-width: 1200px) {
     .image {
         width: 100%;

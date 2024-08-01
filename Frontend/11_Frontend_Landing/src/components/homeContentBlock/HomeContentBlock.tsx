@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from "./HomeContentBlock.module.css";
 import Button from '../Button/Button';
-import rectangleGroup from '../../assets/background/rectangleGroup.png';
-import backgroundImage from '../../assets/background/background-image.png';
-import backgroundImage1 from '../../assets/background/background-image1.png';
-import stars from '../../assets/background/stars.png'
-import greyDiamond from '../../assets/background/greyDiamond.png'
+import rectangleGroup from '../../../public/assets/background/rectangleGroup.png';
+import backgroundImage from '../../../public/assets/background/background-image.png';
+import backgroundImage1 from '../../../public/assets/background/background-image1.png';
+import stars from '../../../public/assets/background/stars.png'
+import greyDiamond from '../../../public/assets/background/greyDiamond.png'
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }
@@ -37,12 +37,14 @@ export const HomeContentBlock: FC<Props> = () => {
                 </div>
                 <p>Manage all your supply chain transactions <br /> in one dashboard. Get paid faster, reconcile quicker, grow bigger.</p>
                 <Button height='56px' color='#FFFF' text="Get Started Now" className={styles.ctaButton} />
+                <img src={greyDiamond} alt="grey diamond" className={styles.greyDiamondBottom} />
                 <p className={styles.freeText}>It's free to try! <span role="img" aria-label="smile">😊</span></p>
             </div>
             {isTablet ? renderDesktopImages()
                 :
                 renderDesktopImages()
             }
+            {/* <img src={greyDiamond} alt="grey diamond" className={styles.greyDiamondTop} /> */}
         </div>
     );
 };

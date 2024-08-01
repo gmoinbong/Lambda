@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './FeatureExampleBottomBlock.module.css';
-import bg from '../../assets/features/bg_3.svg';
-import bg1 from '../../assets/features/bg3.svg';
-import bg3 from '../../assets/features/bg5.svg';
-import dollarIcon from '../../assets/features/dollar_icon.svg';
-import addFile from '../../assets/features/add_file.svg';
-import fileIcon from '../../assets/features/pin_file_icon.svg';
+import bg from '../../../public/assets/features/bg_3.svg';
+import bg1 from '../../../public/assets/features/bg3.svg';
+import bg3 from '../../../public/assets/features/bg5.svg';
+import dollarIcon from '../../../public/assets/features/dollar_icon.svg';
+import addFile from '../../../public/assets/features/add_file.svg';
+import fileIcon from '../../../public/assets/features/pin_file_icon.svg';
 
 interface Props { }
 
@@ -31,7 +31,7 @@ export const FeatureExampleBottomBlock: FC<Props> = () => {
                 <div>
                     <img className={`${styles.gridItem} ${styles.down1}`} src={dollarIcon} alt="Create invoices" />
                 </div>
-                <div style={{width:"140%"}}>
+                <div style={{ width: "140%" }}>
                     <img className={`${styles.gridItem} ${styles.down2}`} src={bg3} alt="Share payment links" />
                 </div>
             </div>

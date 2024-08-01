@@ -70,18 +70,20 @@
     background-color: #FB242B;
 }
 
+
 .bgDetail {
     position: absolute;
-    top: 82px;
-    left: 280px;
+    top: 80%;
+    left: -10%;
     width: 300px;
     height: 250px;
 }
 
+
 .bgDetail2 {
     position: absolute;
-    top: -50px;
-    left: 940px;
+    top: 45%;
+    left: 90%;
     width: 300px;
     height: 250px;
 }
@@ -117,10 +119,20 @@
     .playButton {
         width: 50%;
     }
+    .bgDetail {
+        position: absolute;
+        top: 51%;
+        left: -45%;
+        width: 300px;
+        height: 250px;
+    }
 
-    .bgDetail,
     .bgDetail2 {
-        display: none;
+        position: absolute;
+        top: 60%;
+        left: 90%;
+        width: 300px;
+        height: 250px;
     }
 
     .checkoutBlock {

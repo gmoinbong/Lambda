@@ -53,6 +53,7 @@
     cursor: pointer;
     font-size: 16px;
     margin-left: 20px;
+    z-index: 10;
 }
 
 .stars {
@@ -110,5 +111,9 @@
         top: 0px;
         left: -146px;
         z-index: 0;
+    }
+
+    .stars {
+        display: none;
     }
 }

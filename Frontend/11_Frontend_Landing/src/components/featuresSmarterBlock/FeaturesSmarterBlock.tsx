@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './FeaturesSmarterBlock.module.css';
-import image from '../../assets/features/img_smarter.svg';
+import image from '../../../public/assets/features/img_smarter.svg';
 
 interface Props { }
 

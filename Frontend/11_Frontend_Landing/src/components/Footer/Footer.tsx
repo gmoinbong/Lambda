@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './Footer.module.css';
-import logo from '../../assets/tinvio-logo.svg';
-import linkedin from '../../assets/social/linkedin.svg';
-import instagram from '../../assets/social/instagram.svg';
-import googlePlay from '../../assets/social/google-play.svg';
-import appStore from '../../assets/social/app.store.svg';
-import barrier from '../../assets/barrier.svg'
+import logo from '../../../public/assets/tinvio-logo.svg';
+import linkedin from '../../../public/assets/social/linkedin.svg';
+import instagram from '../../../public/assets/social/instagram.svg';
+import googlePlay from '../../../public/assets/social/google-play.svg';
+import appStore from '../../../public/assets/social/app.store.svg';
+import barrier from '../../../public/assets/barrier.svg'
 
 const Footer: FC = () => {
     return (

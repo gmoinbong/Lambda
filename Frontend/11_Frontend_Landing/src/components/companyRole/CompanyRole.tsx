@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styles from './CompanyRole.module.css';
-import img0 from '../../assets/company/img_role.svg';
-import img1 from '../../assets/company/img_role_1.svg';
-import img2 from '../../assets/company/img_role_2.svg';
-import img3 from '../../assets/company/img_role_3.svg';
-import stars from '../../assets/stars-features.svg';
+import img0 from '../../../public//assets/company/img_role.svg';
+import img1 from '../../../public/assets/company/img_role_1.svg';
+import img2 from '../../../public/assets/company/img_role_2.svg';
+import img3 from '../../../public/assets/company/img_role_3.svg';
+import stars from '../../../public/assets/stars-features.svg';
 import Button from '../Button/Button';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 

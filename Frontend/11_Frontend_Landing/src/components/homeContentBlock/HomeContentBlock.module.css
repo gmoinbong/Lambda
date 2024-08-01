@@ -22,6 +22,9 @@
 .textTitle img {
     width: 60px;
     margin-right: 10px;
+    position: relative;
+    top: 26px;
+    left: -25px;
 }
 
 .textContent h1 {
@@ -68,6 +71,7 @@
     align-items: center;
     transition: left 0.5s ease-in-out;
     left: 100px;
+    z-index: -1;
 }
 
 .redDiamond,
@@ -145,9 +149,42 @@
     height: auto;
 }
 
+.greyDiamondBottom,
+.greyDiamondTop {
+    position: absolute;
+    color: #DADADA;
+    width: 350px;
+    height: 350px;
+    border-radius: 40px;
+}
+
+.greyDiamondBottom {
+    left: 100px;
+    z-index: -2;
+    top: 150px;
+}
+
+.greyDiamondTop {
+    top: -300px;
+    left: 30%;
+}
+
+@media (min-width: 1600px) {
+    .greyDiamondBottom {
+        top: 500px;
+    }
+}
+
+@media (max-width: 1750px) {
+    .greyDiamondBottom {
+        left: -100px;
+    }
+}
+
 @media (max-width: 1600px) {
     .imageContainer {
         left: 300px;
+        top: 20px;
     }
 
     .textContent {
@@ -158,6 +195,11 @@
     .content {
         gap: 0;
     }
+
+    .greyDiamondBottom {
+        left: -100px;
+    }
+
 }
 
 @media (max-width: 1300px) {
@@ -172,6 +214,10 @@
 
     .textContent h1 {
         width: 350px;
+    }
+
+    .greyDiamondTop {
+        left: calc(25%-40px);
     }
 }
 
@@ -215,7 +261,7 @@
 
     .textContent {
         position: relative;
-        left: 500px;
+        left: 620px;
     }
 }
 
@@ -264,6 +310,12 @@
         width: 35%;
         height: auto;
     }
+
+    .greyDiamondTop {
+        top: -275px;
+        left: 70%;
+        z-index: 12;
+    }
 }
 
 @media (max-width: 500px) {
@@ -303,5 +355,9 @@
         left: 34%;
         width: 45%;
         height: auto;
+    }
+
+    .greyDiamondBottom {
+        top: -100px;
     }
 }

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styles from './FeaturesExampleBlock.module.css';
-import bg from '../../assets/features/bg2.svg';
-import bgTablet from '../../assets/features/bg_tablet.svg';
-import bgMobile from '../../assets/features/bg_mobile.svg';
-import bgStars from '../../assets/features/bg_stars.svg';
-import bgStarsTablet from '../../assets/features/bg_stars_tablet.svg';
+import bg from '../../../public/assets/features/bg2.svg';
+import bgTablet from '../../../public/assets/features/bg_tablet.svg';
+import bgMobile from '../../../public/assets/features/bg_mobile.svg';
+import bgStars from '../../../public/assets/features/bg_stars.svg';
+import bgStarsTablet from '../../../public/assets/features/bg_stars_tablet.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }

@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './FeaturesSupercharge.module.css';
-import bg from '../../assets/features/supercharge_bg.svg';
-import bgTablet from '../../assets/features/supercharge_bg_tablet.svg';
+import bg from '../../../public/assets/features/supercharge_bg.svg';
+import bgTablet from '../../../public/assets/features/supercharge_bg_tablet.svg';
 import Button from '../Button/Button';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
-interface Props {}
+interface Props { }
 
 const FeaturesSupercharge: FC<Props> = () => {
     const { isTablet } = useScreenDetector();

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styles from './FeaturesCollectionBlock.module.css';
-import image from '../../assets/features/bg_collections.svg';
-import imageMobile from '../../assets/features/bg_collections_mobile.svg';
+import image from '../../../public/assets/features/bg_collections.svg';
+import imageMobile from '../../../public/assets/features/bg_collections_mobile.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }

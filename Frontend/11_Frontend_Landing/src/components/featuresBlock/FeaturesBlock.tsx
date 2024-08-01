@@ -1,13 +1,14 @@
-// FeaturesBlock.js
 import React, { FC, useState } from 'react';
 import styles from "./FeaturesBlock.module.css";
-import featureImage2 from '../../assets/features/bg1.svg';
-import featureImage from '../../assets/features/bg.svg';
-import stars from '../../assets/stars-features.svg';
+import featureImage2 from '../../../public/assets/features/bg1.svg';
+import featureImage from '../../../public/assets/features/bg.svg';
+import stars from '../../../public/assets/stars-features.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
-import featureImageMobile from '../../assets/features/feature_img_mobile.svg';
-import featureImageMobile2 from '../../assets/features/feature_img_mobile2.svg';
-import featureImageMobile3 from '../../assets/features/feature_img_mobile3.svg';
+import featureImageMobile from '../../../public/assets/features/feature_img_mobile.svg';
+import featureImageMobile2 from '../../../public/assets/features/feature_img_mobile2.svg';
+import featureImageMobile3 from '../../../public/assets/features/feature_img_mobile3.svg';
+import greyDiamond from '../../../public/assets/background/greyDiamond.png'
+import rectangleGroup from '../../../public/assets/background/rectangleGroup.png';
 import Button from '../Button/Button';
 import Modal from './modal/Modal';
 
@@ -40,6 +41,8 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                     <Button className={styles.ctaButton} text='Try it for Free' onClick={handleModalOpen} />
                 </div>
                 <div className={styles.imageContainer}>
+                    <img src={greyDiamond} alt="grey diamond" className={styles.greyDiamond} />
+                    <img className={styles.rectangle} src={rectangleGroup} alt="rectangle" />
                     {isMobile ? (
                         <>
                             <img src={featureImageMobile} alt="feature" className={styles.featureImage} />

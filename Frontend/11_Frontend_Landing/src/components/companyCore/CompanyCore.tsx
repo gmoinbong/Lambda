@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import styles from './CompanyCore.module.css';
-import penIcon from '../../assets/company/icon_pen.svg';
-import chatIcon from '../../assets/company/icon_chat.svg';
-import rocketIcon from '../../assets/company/icon_rocket.svg';
+import penIcon from '../../../public/assets/company/icon_pen.svg';
+import chatIcon from '../../../public/assets/company/icon_chat.svg';
+import rocketIcon from '../../../public/assets/company/icon_rocket.svg';
 
 interface Props { }
 

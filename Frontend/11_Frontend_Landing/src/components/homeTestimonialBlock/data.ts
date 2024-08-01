@@ -1,11 +1,11 @@
-import testimonialImage1 from '../../assets/slider-1.svg';
-import testimonialImage2 from '../../assets/slider-2.svg';
-import testimonialImage3 from '../../assets/slider-3.svg';
-import testimonialImage4 from '../../assets/slider-4.svg';
-import imgReview from '../../assets/image_review.svg'
-import imgReview1 from '../../assets/image_review_1.svg'
-import imgReview2 from '../../assets/image_review_2.svg'
-import imgReview3 from '../../assets/image_review_3.svg'
+import testimonialImage1 from '../../../public/assets/slider-1.svg';
+import testimonialImage2 from '../../../public/assets/slider-2.svg';
+import testimonialImage3 from '../../../public/assets/slider-3.svg';
+import testimonialImage4 from '../../../public/assets/slider-4.svg';
+import imgReview from '../../../public/assets/image_review.svg'
+import imgReview1 from '../../../public/assets/image_review_1.svg'
+import imgReview2 from '../../../public/assets/image_review_2.svg'
+import imgReview3 from '../../../public/assets/image_review_3.svg'
 
 interface Testimonial {
     text: string;

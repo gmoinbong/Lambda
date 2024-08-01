@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import styles from './ContactForm.module.css';
-import mapImage from '../../assets/maps.png';
 import Button from '../Button/Button';
-import confetti from '../../assets/confetti-group2.svg'
+import mapImage from '../../../public/assets/maps.png';
+import confetti from '../../../public/assets/confetti-group2.svg'
+import greyBg from '../../../public/assets/background/rectangleGroup.png'
 
 interface Props { }
 
@@ -40,8 +41,8 @@ export const ContactForm: FC<Props> = () => {
                         </div>
                     </form>
                 </div>
+                <img src={confetti} className={styles.confetti} alt="confetti" />
             </div>
-            <img src={confetti} className={styles.confetti} alt="confetti" />
         </div>
     );
 };

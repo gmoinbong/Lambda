@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import styles from "./CompanyBlock.module.css";
-import featureImage from '../../assets/company/img_mobile.svg';
-import stars from '../../assets/company/stars.svg';
+import featureImage from '../../../public/assets/company/img_mobile.svg';
+import stars from '../../../public/assets/company/stars.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
-import chatIcon from '../../assets/company/chat_icon.svg'
+import chatIcon from '../../../public/assets/company/chat_icon.svg'
 import Button from '../Button/Button';
 
 interface Props { }
@@ -18,13 +18,13 @@ export const CompanyBlock: FC<Props> = ({ }) => {
                     <div className={styles.titleWrapper}>
                         <h1> Tinvio!
                             <span>
-                                Hi, we’re 
+                                Hi, we’re
                             </span>
                             <img src={stars} alt="stars" className={styles.stars} />
                         </h1>
                     </div>
                     <p>
-                         We’re reimagining how merchants and suppliers transact.
+                        We’re reimagining how merchants and suppliers transact.
                     </p>
                 </div>
                 <div className={styles.wrapper}>

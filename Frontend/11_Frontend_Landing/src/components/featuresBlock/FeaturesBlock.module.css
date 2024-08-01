@@ -74,6 +74,14 @@
     top: -30px;
 }
 
+.greyDiamond {
+    position: absolute;
+    z-index: -2;
+    right: 80%;
+    width: 569.32px;
+    height: 569.32px;
+}
+
 .content {
     max-width: 45vw;
     text-align: center;
@@ -148,6 +156,14 @@
     padding: 0 300px;
 }
 
+.rectangle {
+    position: absolute;
+    z-index: -1;
+    left: 77%;
+    width: 383.22px;
+    height: 290px;
+    top: -13%;
+}
 
 @media (max-width: 1800px) {
     .stars {

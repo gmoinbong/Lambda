@@ -12,7 +12,7 @@
     z-index: 2;
     box-sizing: border-box;
     flex-direction: column;
-    height: 1200px;
+    height: 900px;
 }
 
 .testimonialCard {
@@ -24,12 +24,11 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
     box-sizing: border-box;
     position: relative;
-    align-items: flex-start;
-
+    z-index: 2;
 }
 
 .textWrapper {
@@ -40,7 +39,7 @@
     border-radius: 8px;
     margin-bottom: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 .text {
@@ -49,6 +48,7 @@
     font-size: 1rem;
     line-height: 1.5;
     position: relative;
+    z-index: 3;
 }
 
 .quotes {
@@ -56,6 +56,7 @@
     width: 24px;
     left: 30px;
     top: 15px;
+    z-index: 3;
 }
 
 .author {
@@ -64,7 +65,7 @@
     align-items: flex-start;
     padding: 1rem 0;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 .authorContainer {
@@ -76,6 +77,7 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     padding-left: 10px;
+    z-index: 3;
 }
 
 .title {
@@ -85,13 +87,15 @@
     margin-bottom: 20px;
     color: white;
     text-align: center;
-    width: 1000px;
+    width: 100%;
+    z-index: 3;
 }
 
 .authorTitle {
     font-size: 0.875rem;
     color: #ccc;
     margin-bottom: 1rem;
+    z-index: 3;
 }
 
 .authorWrapper {
@@ -99,6 +103,7 @@
     padding-top: 25px;
     padding-left: 10px;
     flex-direction: column;
+    z-index: 3;
 }
 
 .testimonialImage {
@@ -117,6 +122,7 @@
     display: flex;
     gap: 0.5rem;
     margin-top: 1rem;
+    z-index: 3;
 }
 
 .dot {
@@ -126,6 +132,7 @@
     border-radius: 2px;
     display: inline-block;
     cursor: pointer;
+    z-index: 3;
 }
 
 .dot:hover {
@@ -138,26 +145,61 @@
     width: 100%;
     max-width: 100px;
     margin-top: 1rem;
+    z-index: 3;
 }
 
 .reviewWrapper {
     display: flex;
     align-items: center;
+    z-index: 3;
 }
 
 .arrow {
     cursor: pointer;
+    z-index: 3;
 }
 
 
-@media(max-width:1024px) {
+.greyBg1 {
+    position: absolute;
+    right: 25%;
+    top: -940px;
+    z-index: 3;
+    width: 200px;
+}
+
+.greyBg2 {
+    position: absolute;
+    right: -25%;
+    top: -180%;
+    z-index: 10;
+
+}
+
+.greyDiamond1,
+.greyDiamond2 {
+    position: absolute;
+    background-color: thistle;
+    z-index: 1;
+}
+
+.greyDiamond1 {
+    left: 66%;
+    bottom: 33%;
+}
+
+.greyDiamond2 {
+    top: 10%;
+    right: 20%;
+}
+
+@media (max-width: 1024px) {
     .testimonialImage {
         right: 0rem;
     }
 }
 
-@media(max-width:768px) {
-
+@media (max-width: 768px) {
     .testimonialCard {
         align-items: center;
     }
@@ -179,7 +221,6 @@
     .author {
         flex-direction: row;
         justify-content: space-between;
-
     }
 
     .arrow {
@@ -199,9 +240,13 @@
         top: 25px;
     }
 
+    .testimonialBlock {
+        height: 1200px;
+    }
+
 }
 
-@media(max-width:375px) {
+@media (max-width: 375px) {
     .reviewWrapper {
         width: 50px;
     }

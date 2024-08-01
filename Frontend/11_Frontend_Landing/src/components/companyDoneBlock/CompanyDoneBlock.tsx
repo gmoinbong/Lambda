@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './CompanyDoneBlock.module.css';
-import imageUp from '../../assets/company/img_done_block.svg';
-import imageUpMobile from '../../assets/company/img_up_mobile.svg';
-import imageUpTablet from '../../assets/company/img_up_mobile.svg';
-import imageDown from '../../assets/company/img_done_1.svg';
-import imageDown1 from '../../assets/company/img_done_2.svg';
-import imageDown2 from '../../assets/company/img_done_3.svg';
+import imageUp from '../../../public/assets/company/img_done_block.svg';
+import imageUpMobile from '../../../public/assets/company/img_up_mobile.svg';
+import imageUpTablet from '../../../public/assets/company/img_up_mobile.svg';
+import imageDown from '../../../public/assets/company/img_done_1.svg';
+import imageDown1 from '../../../public/assets/company/img_done_2.svg';
+import imageDown2 from '../../../public/assets/company/img_done_3.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }

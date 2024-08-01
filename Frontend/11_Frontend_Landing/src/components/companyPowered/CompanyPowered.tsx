@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 import styles from './CompanyPowered.module.css';
-import img0 from '../../assets/company/img_powered.svg';
-import img1 from '../../assets/company/img_powered_1.svg';
-import img2 from '../../assets/company/img_powered_2.svg';
-import img3 from '../../assets/company/img_powered_3.svg';
-import stars from '../../assets/stars-features.svg';
+import img0 from '../../../public/assets/company/img_powered.svg';
+import img1 from '../../../public/assets/company/img_powered_1.svg';
+import img2 from '../../../public/assets/company/img_powered_2.svg';
+import img3 from '../../../public/assets/company/img_powered_3.svg';
+import stars from '../../../public/assets/stars-features.svg';
 import Button from '../Button/Button';
 
-interface Props {}
+interface Props { }
 
-export const CompanyPowered: FC<Props> = ({}) => {
+export const CompanyPowered: FC<Props> = ({ }) => {
     return (
         <div className={styles.container}>
             <div className={styles.titleWrapper}>

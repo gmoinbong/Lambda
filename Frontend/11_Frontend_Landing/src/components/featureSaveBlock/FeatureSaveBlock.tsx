@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import styles from './FeatureSaveBlock.module.css';
-import imageBg from '../../assets/features/bg_save.svg';
-import imageBgMobile from '../../assets/features/bg_save_mobile.svg'
+import imageBg from '../../../public/assets/features/bg_save.svg';
+import imageBgMobile from '../../../public/assets/features/bg_save_mobile.svg'
 import { useScreenDetector } from '../../hooks/useScreenDetector';
+import bgStars from '../../../public/assets/features/stars_get_started.svg'
+
 interface Props { }
 
 export const FeatureSaveBlock: FC<Props> = () => {
