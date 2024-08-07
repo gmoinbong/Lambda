@@ -1,0 +1,16 @@
+{
+  "name": "instagram-giveaway-proccessor",
+  "version": "1.0.0",
+  "description": "A script to process and analyze files in a directory",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "file-processor": "file:",
+    "instagram-giveaway-proccessor": "file:"
+  }
+}

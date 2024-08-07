@@ -1,7 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
-
-const folderPath = '/2kk_words_400x400';
+const folderPath = './2kk_words_400x400';
 const dataSplitter = (filesData) => {
     return filesData.split(/\s+/).filter(Boolean)
 }
