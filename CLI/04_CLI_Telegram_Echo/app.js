@@ -19,5 +19,5 @@ bot.on('message', (msg) => {
             catch(() => console.log("error sent img"))
     }
     console.log(userLog);
-    message !== "photo" && bot.sendMessage(chatId, `You sent a message, ${message} `);
+    message !== "photo" && bot.sendMessage(chatId, `You sent a message: ${message} `);
 });
