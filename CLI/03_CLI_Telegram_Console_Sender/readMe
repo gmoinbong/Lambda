@@ -1,2 +1,5 @@
+Install: npm i
 Run application: node --env-file=.env app.js
-Commands: node app.js --help
+Commands: node --env-file=.env app.js <command>
+Help: node app.js --help
+
