@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "@google-cloud/local-auth": "^3.0.1",
+        "google-drag-and-drop-app": "file:",
         "googleapis": "^140.0.1",
         "inquirer": "^8.2.6"
     }

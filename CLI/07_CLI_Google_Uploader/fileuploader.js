@@ -52,18 +52,21 @@ async function authorize() {
     return client;
 }
 
-
+const folderId = "14nWTqukSNsKPE2ymOvHbJDrYc-UDVFK0"
 async function uploadFile(authClient, filePath, newFileName) {
     const drive = google.drive({ version: "v3", auth: authClient });
+
+    const fileMetaData = {
+        name: newFileName || path.basename(filePath),
+        parents: [folderId]
+    }
 
     const file = await drive.files.create({
         media: {
             body: createReadStream(filePath)
         },
         fields: "id, webViewLink",
-        requestBody: {
-            name: newFileName || path.basename(filePath)
-        },
+        requestBody: fileMetaData,
     });
     const webViewLink = file.data.webViewLink;
 
