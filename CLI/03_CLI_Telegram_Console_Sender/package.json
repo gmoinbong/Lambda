@@ -1,0 +1,17 @@
+{
+  "name": "telegram-bot-commander",
+  "version": "1.0.0",
+  "description": "A simple command-line tool to send messages and photos to a Telegram bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^9.2.0",
+    "node-telegram-bot-api": "^0.56.0",
+    "telegram-bot-commander": "file:"
+  }
+}
