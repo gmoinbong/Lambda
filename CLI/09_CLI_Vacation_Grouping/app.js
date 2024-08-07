@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 
-const pathFile = "/vacation-initial.json"
-const outPutFile = "/vacation-handled.json";
+const pathFile = "./vacation-initial.json"
+const outPutFile = "./vacation-handled.json";
 
 const processJSON = async () => {
     try {
