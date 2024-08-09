@@ -65,14 +65,13 @@ const searchNameQuestion = {
 }
 
 const searchUser = (name, users) => {
-    const user = users.find(user => user.name.toLowerCase() === name.toLowerCase());
-    return user;
+    const foundUsers = users.filter(user => user.name.toLowerCase() === name.toLowerCase());
+    return foundUsers;
 }
 
 const questionsPrompt = async () => {
     let answers = [];
     while (true) {
-        console.log("answers", answers);
         const nameAnswer = await inquirer.prompt([questions[0]]);
         if (nameAnswer.name === "") {
             const confirmExit = await inquirer.prompt(confirmExitQuestion);
@@ -80,16 +79,17 @@ const questionsPrompt = async () => {
                 const searchUserConfirm = await inquirer.prompt(searchUserQuestion);
                 if (searchUserConfirm.confirmSearch) {
                     const searchNameAnswer = await inquirer.prompt(searchNameQuestion);
-                    const user = searchUser(searchNameAnswer.searchName, answers);
-                    if (user) {
-                        console.log(`User found ${JSON.stringify(user, null, 2)}`);
+                    const foundUsers = searchUser(searchNameAnswer.searchName, answers);
+                    if (foundUsers.length > 0) {
+                        console.log(`Found users: ${JSON.stringify(foundUsers, null, 2)}`);
                     } else {
                         console.log("User not found");
                     }
-                } else {
-                    console.log("App exiting");
-                    break;
                 }
+                console.log("All entered users:");
+                console.log(JSON.stringify(answers, null, 2));
+                console.log("App exiting");
+                break;
             } else {
                 continue;
             }
@@ -97,7 +97,6 @@ const questionsPrompt = async () => {
             const otherAnswers = await inquirer.prompt(questions.slice(1));
             const currentAnswers = { ...nameAnswer, ...otherAnswers };
             answers.push(currentAnswers);
-            console.log(JSON.stringify(answers, null, "  "));
         }
     }
 }
