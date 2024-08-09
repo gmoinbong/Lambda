@@ -1,0 +1,12 @@
+{
+    "name": "interactive-sort",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "inquirer": "^8.2.6",
+        "interactive-sort": "file:"
+    }
+}
