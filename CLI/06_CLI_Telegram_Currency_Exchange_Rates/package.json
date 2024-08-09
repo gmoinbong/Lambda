@@ -4,11 +4,12 @@
     "description": "A Telegram bot for currency exchange and weather forecasts",
     "main": "app.js",
     "scripts": {
-        "start": "node --env-file=.env app.js"
+        "start": "node app.js"
     },
     "dependencies": {
+        "moment": "^2.29.1",
         "node-fetch": "^2.6.1",
         "node-telegram-bot-api": "^0.50.0",
-        "moment": "^2.29.1"
+        "telegram-weather-bot": "file:"
     }
 }
