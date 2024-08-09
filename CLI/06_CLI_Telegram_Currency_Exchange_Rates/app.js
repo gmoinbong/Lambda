@@ -1,8 +1,8 @@
 const TelegramBot = require("node-telegram-bot-api");
 const moment = require("moment");
 
-const TG_TOKEN = process.env.TG_TOKEN;
-const API_KEY = process.env.API_KEY;
+const TG_TOKEN = "7373535808:AAHEYwAh2hu7yy3-odMpwO3Aq9xPTswmNM8"
+const API_KEY = "6aeafd140474fff84a89594be45f8497"
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
 const getExchangeRate = async () => {
