@@ -1,7 +1,8 @@
 const TelegramBot = require("node-telegram-bot-api");
 const moment = require("moment");
-const TG_TOKEN = process.env.TG_TOKEN;
-const API_KEY = process.env.API_KEY;
+const TG_TOKEN = "7233780229:AAF6Tiu1JQfGE5q2HfKBk27Mr8e4q_Pzlzc"
+const API_KEY = "186bd86d8ce1b477fbb716010c6199a2"
+
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
 const getWeather = async (q) => {
