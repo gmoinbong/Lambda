@@ -134,6 +134,9 @@ const promptShortLink = async (webViewLink) => {
     if (answer.shortLink === true) {
         const shortLink = await shortenUrl(webViewLink)
         console.log(`Shortened Link: ${shortLink}`);
+    } else {
+        console.log(`Original Link: ${webViewLink}`);
+
     }
 
 }
