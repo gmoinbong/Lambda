@@ -41,9 +41,7 @@ async function countUniqueUserNames() {
         });
     });
 
-
     const uniqueUserNames = Object.keys(globalUserNamesCount).filter(userName => globalUserNamesCount[userName] === 1);
-    console.log(`Count unique user names: ${uniqueUserNames.length}`);
 }
 
 async function countUserNamesInAtLeast10Files() {
@@ -59,9 +57,26 @@ async function countUserNamesInAtLeast10Files() {
         });
     });
 
-
     const userNamesInAtLeast10Files = Object.keys(fileCount).filter(userName => fileCount[userName].size >= 10);
     console.log(`Number of unique user names existing in at least 10 files: ${userNamesInAtLeast10Files.length}`);
+}
+
+async function countUserNamesInAllFiles() {
+    const userPresence = {};
+    const allFiles = await fs.readdir(folderPath);
+
+    await processFiles(folderPath, (fileContent, fileName) => {
+        const userNames = new Set(dataSplitter(fileContent));
+        userNames.forEach(userName => {
+            if (!userPresence[userName]) {
+                userPresence[userName] = new Set();
+            }
+            userPresence[userName].add(fileName);
+        });
+    });
+
+    const userNamesInAllFiles = Object.keys(userPresence).filter(userName => userPresence[userName].size === allFiles.length);
+    console.log(`Number of unique user names existing in all files: ${userNamesInAllFiles.length}`);
 }
 
 const main = async () => {
@@ -72,9 +87,10 @@ const main = async () => {
         allContentFromFiles += fileContent + " ";
     });
 
-    uniqueUserNamesCountForOneTime(allContentFromFiles); 
-    await countUniqueUserNames(); 
-    await countUserNamesInAtLeast10Files(); 
+    uniqueUserNamesCountForOneTime(allContentFromFiles);
+    await countUniqueUserNames();
+    await countUserNamesInAtLeast10Files();
+    await countUserNamesInAllFiles();
 
     const end = performance.now();
     const time = (end - start) / 1000;
