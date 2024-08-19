@@ -1,11 +1,30 @@
 const TelegramBot = require("node-telegram-bot-api");
+const http = require('http');
 const moment = require("moment");
-const TG_TOKEN = "7233780229:AAF6Tiu1JQfGE5q2HfKBk27Mr8e4q_Pzlzc"
-const API_KEY = "186bd86d8ce1b477fbb716010c6199a2"
+
+const TG_TOKEN = "7233780229:AAF6Tiu1JQfGE5q2HfKBk27Mr8e4q_Pzlzc";
+const API_KEY = "186bd86d8ce1b477fbb716010c6199a2";
 
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
+let requestTimes = [];
+
+const canMakeRequest = () => {
+    const now = Date.now();
+    requestTimes = requestTimes.filter(time => now - time < 60000);
+
+    if (requestTimes.length < 5) {
+        requestTimes.push(now);
+        return true;
+    }
+
+    return false;
+};
+
 const getWeather = async (q) => {
+    if (!canMakeRequest()) {
+        throw new Error("Request limit exceeded. Try again later.");
+    }
     try {
         const url = `https://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=${API_KEY}&units=metric`;
         const response = await fetch(url);
@@ -55,12 +74,22 @@ bot.on("callback_query", async (callbackQuery) => {
     bot.sendMessage(message.chat.id, "Please enter the city name:");
     bot.once("message", async (msg) => {
         const city = msg.text;
-        const weatherData = await getWeather(city);
-        if (weatherData) {
+        try {
+            const weatherData = await getWeather(city);
             const responseMessage = formatWeatherData(weatherData, interval);
             bot.sendMessage(message.chat.id, responseMessage);
-        } else {
-            bot.sendMessage(message.chat.id, "Sorry, there was an error fetching the weather data.");
+        } catch (error) {
+            bot.sendMessage(message.chat.id, error.message);
         }
     });
+});
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running\n');
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
