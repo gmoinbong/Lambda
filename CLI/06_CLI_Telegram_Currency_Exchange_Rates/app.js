@@ -1,70 +1,77 @@
 const TelegramBot = require("node-telegram-bot-api");
+const http = require('http');
 const moment = require("moment");
 
-const TG_TOKEN = "7373535808:AAHEYwAh2hu7yy3-odMpwO3Aq9xPTswmNM8"
-const API_KEY = "6aeafd140474fff84a89594be45f8497"
+const TG_TOKEN = "7373535808:AAHEYwAh2hu7yy3-odMpwO3Aq9xPTswmNM8";
+const API_KEY = "6aeafd140474fff84a89594be45f8497";
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
-const getExchangeRate = async () => {
-    try {
-        const url = "https://api.monobank.ua/bank/currency";
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Http error! status: ${response.status}`);
-        }
-        const currencyData = await response.json();
-        return currencyData;
-    } catch (error) {
-        console.error("Error fetching currency exchange:", error);
+let requestTimes = [];
+
+const canMakeRequest = () => {
+    const now = Date.now();
+    requestTimes = requestTimes.filter(time => now - time < 60000);
+
+    if (requestTimes.length < 5) {
+        requestTimes.push(now);
+        return true;
     }
+
+    return false;
 };
 
-const formatExchangeRate = (currencyExchangeData, currencyCode) => {
-    const currency = currencyCode === 840 ? "USD" : "EUR";
-    const filteredData = currencyExchangeData.find(
-        (el) => el.currencyCodeA === currencyCode && el.currencyCodeB === 980
-    );
+const getExchangeRate = async () => {
+    if (!canMakeRequest()) {
+        throw new Error("Request limit exceeded. Try again later.");
+    }
+    const url = "https://api.monobank.ua/bank/currency";
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Http error! status: ${response.status}`);
+    }
+    return await response.json();
+};
 
-    if (!filteredData) {
+const formatExchangeRate = (data, code) => {
+    const currency = code === 840 ? "USD" : "EUR";
+    const result = data.find(el => el.currencyCodeA === code && el.currencyCodeB === 980);
+
+    if (!result) {
         return `No data available for ${currency} to UAH`;
     }
 
-    const formattedMessage = `${currency} to UAH 
-Buy: ${filteredData.rateBuy}
-Sell: ${filteredData.rateSell}`;
-    return formattedMessage;
+    return `${currency} to UAH\nBuy: ${result.rateBuy}\nSell: ${result.rateSell}`;
 };
 
-const getWeather = async (q) => {
-    try {
-        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=${API_KEY}&units=metric`;
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Http error! status: ${response.status}`);
-        }
-        const weatherData = await response.json();
-        return weatherData;
-    } catch (error) {
-        console.error("Error fetching weather data:", error);
+const getWeather = async (city) => {
+    if (!canMakeRequest()) {
+        throw new Error("Request limit exceeded. Try again later.");
     }
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Http error! status: ${response.status}`);
+    }
+    return await response.json();
 };
 
-const formatWeatherData = (weatherData, hoursInterval) => {
-    let formattedMessage = `Weather in ${weatherData.city.name}:\n\n`;
+const formatWeatherData = (data, interval) => {
+    let message = `Weather in ${data.city.name}:\n\n`;
     let currentDay = "";
 
-    weatherData.list.forEach((element) => {
-        const date = element.dt_txt.split(' ')[0];
-        const hour = moment(element.dt_txt).hour();
-        if (hour % hoursInterval === 0) {
+    data.list.forEach(item => {
+        const [date, time] = item.dt_txt.split(' ');
+        const hour = moment(item.dt_txt).hour();
+        if (hour % interval === 0) {
             if (currentDay !== date) {
                 currentDay = date;
-                formattedMessage += `\n${moment(date).format('dddd, MMMM D')}: \n`;
+                message += `\n${moment(date).format('dddd, MMMM D')}:\n`;
             }
-            formattedMessage += `${moment(element.dt_txt).format('HH:mm')}, ${Math.round(element.main.temp)}°C, feels like: ${Math.round(element.main.feels_like)}°C, ${element.weather[0].description}\n`;
+            message += `${moment(time, 'HH:mm').format('HH:mm')}, ${Math.round(item.main.temp)}°C, feels like: ${Math.round(item.main.feels_like)}°C, ${item.weather[0].description}\n`;
         }
     });
-    return formattedMessage.trim();
+
+    return message.trim();
 };
 
 bot.setMyCommands([
@@ -103,12 +110,12 @@ bot.onText(/USD|EUR/, async (msg) => {
     const chatId = msg.chat.id;
     const currencyCode = msg.text === "USD" ? 840 : 978;
 
-    const currencyExchangeData = await getExchangeRate();
-    if (currencyExchangeData) {
-        const responseMessage = formatExchangeRate(currencyExchangeData, currencyCode);
-        bot.sendMessage(chatId, responseMessage);
-    } else {
-        bot.sendMessage(chatId, "Sorry, there was an error fetching the currency exchange.");
+    try {
+        const data = await getExchangeRate();
+        const message = formatExchangeRate(data, currencyCode);
+        bot.sendMessage(chatId, message);
+    } catch (error) {
+        bot.sendMessage(chatId, error.message);
     }
 });
 
@@ -133,12 +140,12 @@ bot.onText(/3 hours|6 hours/, (msg) => {
 
     bot.once("message", async (msg) => {
         const city = msg.text;
-        const weatherData = await getWeather(city);
-        if (weatherData) {
-            const responseMessage = formatWeatherData(weatherData, interval);
-            bot.sendMessage(chatId, responseMessage);
-        } else {
-            bot.sendMessage(chatId, "Sorry, there was an error fetching the weather data.");
+        try {
+            const data = await getWeather(city);
+            const message = formatWeatherData(data, interval);
+            bot.sendMessage(chatId, message);
+        } catch (error) {
+            bot.sendMessage(chatId, error.message);
         }
     });
 });
@@ -154,4 +161,15 @@ bot.onText(/Previous Menu/, (msg) => {
             resize_keyboard: true,
         }
     });
+});
+
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running\n');
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
