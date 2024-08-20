@@ -8,6 +8,7 @@ const API_KEY = "186bd86d8ce1b477fbb716010c6199a2";
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
 let requestTimes = [];
+let userCities = {}; 
 
 const canMakeRequest = () => {
     const now = Date.now();
@@ -56,32 +57,76 @@ const formatWeatherData = (weatherData, hoursInterval) => {
     return formattedMessage.trim();
 };
 
-bot.onText(/\weather/, (msg) => {
+bot.onText(/\/weather/, (msg) => {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "Choose time delay:", {
-        reply_markup: {
-            inline_keyboard: [
-                [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
-            ]
-        }
-    });
+    const userCity = userCities[chatId];
+
+    if (userCity) {
+        bot.sendMessage(chatId, `Your current city is ${userCity}. Do you want to keep it or change it?`, {
+            reply_markup: {
+                inline_keyboard: [
+                    [{ text: "Keep current city", callback_data: "keep_city" }],
+                    [{ text: "Change city", callback_data: "change_city" }]
+                ]
+            }
+        });
+    } else {
+        bot.sendMessage(chatId, "Please enter your city name:");
+        bot.once("message", async (msg) => {
+            const city = msg.text;
+            userCities[chatId] = city; 
+            bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
+                reply_markup: {
+                    inline_keyboard: [
+                        [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                    ]
+                }
+            });
+        });
+    }
 });
 
 bot.on("callback_query", async (callbackQuery) => {
     const message = callbackQuery.message;
-    const interval = parseInt(callbackQuery.data);
+    const chatId = message.chat.id;
 
-    bot.sendMessage(message.chat.id, "Please enter the city name:");
-    bot.once("message", async (msg) => {
-        const city = msg.text;
-        try {
-            const weatherData = await getWeather(city);
-            const responseMessage = formatWeatherData(weatherData, interval);
-            bot.sendMessage(message.chat.id, responseMessage);
-        } catch (error) {
-            bot.sendMessage(message.chat.id, error.message);
+    if (callbackQuery.data === "change_city") {
+        bot.sendMessage(chatId, "Please enter your new city name:");
+        bot.once("message", async (msg) => {
+            const city = msg.text;
+            userCities[chatId] = city; 
+            bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
+                reply_markup: {
+                    inline_keyboard: [
+                        [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                    ]
+                }
+            });
+        });
+    } else if (callbackQuery.data === "keep_city") {
+        bot.sendMessage(chatId, "Choose time delay:", {
+            reply_markup: {
+                inline_keyboard: [
+                    [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                ]
+            }
+        });
+    } else {
+        const interval = parseInt(callbackQuery.data);
+        const city = userCities[chatId];
+
+        if (city) {
+            try {
+                const weatherData = await getWeather(city);
+                const responseMessage = formatWeatherData(weatherData, interval);
+                bot.sendMessage(chatId, responseMessage);
+            } catch (error) {
+                bot.sendMessage(chatId, error.message);
+            }
+        } else {
+            bot.sendMessage(chatId, "City is not set. Please enter your city name.");
         }
-    });
+    }
 });
 
 const server = http.createServer((req, res) => {
