@@ -3,10 +3,13 @@ const http = require('http');
 const moment = require("moment");
 
 const TG_TOKEN = "7373535808:AAHEYwAh2hu7yy3-odMpwO3Aq9xPTswmNM8";
-const API_KEY = "6aeafd140474fff84a89594be45f8497";
+const WEATHER_API_KEY = "6aeafd140474fff84a89594be45f8497";
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
 let requestTimes = [];
+let lastWeatherData = {};
+let lastExchangeData = {};
+let userCities = {}; 
 
 const canMakeRequest = () => {
     const now = Date.now();
@@ -22,14 +25,16 @@ const canMakeRequest = () => {
 
 const getExchangeRate = async () => {
     if (!canMakeRequest()) {
-        throw new Error("Request limit exceeded. Try again later.");
+        return lastExchangeData;
     }
     const url = "https://api.monobank.ua/bank/currency";
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Http error! status: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    lastExchangeData = data; 
+    return data;
 };
 
 const formatExchangeRate = (data, code) => {
@@ -43,19 +48,26 @@ const formatExchangeRate = (data, code) => {
     return `${currency} to UAH\nBuy: ${result.rateBuy}\nSell: ${result.rateSell}`;
 };
 
+// Получение погоды
 const getWeather = async (city) => {
     if (!canMakeRequest()) {
-        throw new Error("Request limit exceeded. Try again later.");
+        return lastWeatherData[city];
     }
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_API_KEY}&units=metric`;
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`Http error! status: ${response.status}`);
+        throw new Error(`Error weather fetch data: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    lastWeatherData[city] = data; 
+    return data;
 };
 
 const formatWeatherData = (data, interval) => {
+    if (!data || !data.city || !data.list) {
+        return "No weather data available.";
+    }
+
     let message = `Weather in ${data.city.name}:\n\n`;
     let currentDay = "";
 
@@ -121,35 +133,75 @@ bot.onText(/USD|EUR/, async (msg) => {
 
 bot.onText(/Weather/, (msg) => {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "Choose time delay:", {
-        reply_markup: {
-            keyboard: [
-                [{ text: "3 hours" }],
-                [{ text: "6 hours" }],
-                [{ text: "Previous Menu" }]
-            ],
-            resize_keyboard: true,
-        }
-    });
+    const userCity = userCities[chatId];
+
+    if (userCity) {
+        bot.sendMessage(chatId, `Your current city is ${userCity}. Do you want to keep it or change it?`, {
+            reply_markup: {
+                inline_keyboard: [
+                    [{ text: "Keep current city", callback_data: "keep_city" }],
+                    [{ text: "Change city", callback_data: "change_city" }]
+                ]
+            }
+        });
+    } else {
+        bot.sendMessage(chatId, "Please enter your city name:");
+        bot.once("message", async (msg) => {
+            const city = msg.text;
+            userCities[chatId] = city; 
+            bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
+                reply_markup: {
+                    inline_keyboard: [
+                        [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                    ]
+                }
+            });
+        });
+    }
 });
 
-bot.onText(/3 hours|6 hours/, (msg) => {
-    const chatId = msg.chat.id;
-    const interval = msg.text === "3 hours" ? 3 : 6;
-    bot.sendMessage(chatId, "Please enter the city name:");
+bot.on("callback_query", async (callbackQuery) => {
+    const message = callbackQuery.message;
+    const chatId = message.chat.id;
 
-    bot.once("message", async (msg) => {
-        const city = msg.text;
-        try {
-            const data = await getWeather(city);
-            const message = formatWeatherData(data, interval);
-            bot.sendMessage(chatId, message);
-        } catch (error) {
-            bot.sendMessage(chatId, error.message);
+    if (callbackQuery.data === "change_city") {
+        bot.sendMessage(chatId, "Please enter your new city name:");
+        bot.once("message", async (msg) => {
+            const city = msg.text;
+            userCities[chatId] = city; 
+            bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
+                reply_markup: {
+                    inline_keyboard: [
+                        [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                    ]
+                }
+            });
+        });
+    } else if (callbackQuery.data === "keep_city") {
+        bot.sendMessage(chatId, "Choose time delay:", {
+            reply_markup: {
+                inline_keyboard: [
+                    [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                ]
+            }
+        });
+    } else {
+        const interval = parseInt(callbackQuery.data);
+        const city = userCities[chatId];
+
+        if (city) {
+            try {
+                const weatherData = await getWeather(city);
+                const responseMessage = formatWeatherData(weatherData, interval);
+                bot.sendMessage(chatId, responseMessage);
+            } catch (error) {
+                bot.sendMessage(chatId, error.message);
+            }
+        } else {
+            bot.sendMessage(chatId, "City is not set. Please enter your city name.");
         }
-    });
+    }
 });
-
 bot.onText(/Previous Menu/, (msg) => {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, "Choose an option", {
@@ -162,7 +214,6 @@ bot.onText(/Previous Menu/, (msg) => {
         }
     });
 });
-
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
