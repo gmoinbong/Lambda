@@ -8,7 +8,7 @@ const API_KEY = "186bd86d8ce1b477fbb716010c6199a2";
 const bot = new TelegramBot(TG_TOKEN, { polling: true });
 
 let requestTimes = [];
-let userCities = {}; 
+let userCities = {};
 
 const canMakeRequest = () => {
     const now = Date.now();
@@ -74,7 +74,7 @@ bot.onText(/\/weather/, (msg) => {
         bot.sendMessage(chatId, "Please enter your city name:");
         bot.once("message", async (msg) => {
             const city = msg.text;
-            userCities[chatId] = city; 
+            userCities[chatId] = city;
             bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
                 reply_markup: {
                     inline_keyboard: [
@@ -94,7 +94,7 @@ bot.on("callback_query", async (callbackQuery) => {
         bot.sendMessage(chatId, "Please enter your new city name:");
         bot.once("message", async (msg) => {
             const city = msg.text;
-            userCities[chatId] = city; 
+            userCities[chatId] = city;
             bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
                 reply_markup: {
                     inline_keyboard: [
@@ -111,7 +111,18 @@ bot.on("callback_query", async (callbackQuery) => {
                 ]
             }
         });
-    } else {
+    } else if (callbackQuery.data === "main_menu") {
+        bot.sendMessage(chatId, "Choose an option", {
+            reply_markup: {
+                keyboard: [
+                    [{ text: "Weather" }]
+                ],
+                resize_keyboard: true,
+            }
+        });
+    }
+
+    else {
         const interval = parseInt(callbackQuery.data);
         const city = userCities[chatId];
 
@@ -119,7 +130,14 @@ bot.on("callback_query", async (callbackQuery) => {
             try {
                 const weatherData = await getWeather(city);
                 const responseMessage = formatWeatherData(weatherData, interval);
-                bot.sendMessage(chatId, responseMessage);
+                await bot.sendMessage(chatId, responseMessage);
+                bot.sendMessage(chatId, "Choose time delay:", {
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                        ]
+                    }
+                });
             } catch (error) {
                 bot.sendMessage(chatId, error.message);
             }
