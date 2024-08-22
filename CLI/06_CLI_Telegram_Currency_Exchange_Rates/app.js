@@ -9,7 +9,7 @@ const bot = new TelegramBot(TG_TOKEN, { polling: true });
 let requestTimes = [];
 let lastWeatherData = {};
 let lastExchangeData = {};
-let userCities = {}; 
+let userCities = {};
 
 const canMakeRequest = () => {
     const now = Date.now();
@@ -24,17 +24,22 @@ const canMakeRequest = () => {
 };
 
 const getExchangeRate = async () => {
-    if (!canMakeRequest()) {
+    try {
+        if (!canMakeRequest()) {
+            return lastExchangeData;
+        }
+        const url = "https://api.monobank.ua/bank/currency";
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            lastExchangeData = data;
+            return data;
+        } else {
+            return lastExchangeData;
+        }
+    } catch (error) {
         return lastExchangeData;
     }
-    const url = "https://api.monobank.ua/bank/currency";
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`Http error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    lastExchangeData = data; 
-    return data;
 };
 
 const formatExchangeRate = (data, code) => {
@@ -48,19 +53,23 @@ const formatExchangeRate = (data, code) => {
     return `${currency} to UAH\nBuy: ${result.rateBuy}\nSell: ${result.rateSell}`;
 };
 
-// Получение погоды
 const getWeather = async (city) => {
-    if (!canMakeRequest()) {
+    try {
+        if (!canMakeRequest()) {
+            return lastWeatherData[city];
+        }
+        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_API_KEY}&units=metric`;
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            lastWeatherData[city] = data;
+            return data;
+        } else {
+            return lastWeatherData[city];
+        }
+    } catch (error) {
         return lastWeatherData[city];
     }
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WEATHER_API_KEY}&units=metric`;
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`Error weather fetch data: ${response.status}`);
-    }
-    const data = await response.json();
-    lastWeatherData[city] = data; 
-    return data;
 };
 
 const formatWeatherData = (data, interval) => {
@@ -127,7 +136,7 @@ bot.onText(/USD|EUR/, async (msg) => {
         const message = formatExchangeRate(data, currencyCode);
         bot.sendMessage(chatId, message);
     } catch (error) {
-        bot.sendMessage(chatId, error.message);
+        bot.sendMessage(chatId, "Sorry, there was an error fetching the exchange rate.");
     }
 });
 
@@ -148,7 +157,7 @@ bot.onText(/Weather/, (msg) => {
         bot.sendMessage(chatId, "Please enter your city name:");
         bot.once("message", async (msg) => {
             const city = msg.text;
-            userCities[chatId] = city; 
+            userCities[chatId] = city;
             bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
                 reply_markup: {
                     inline_keyboard: [
@@ -168,7 +177,7 @@ bot.on("callback_query", async (callbackQuery) => {
         bot.sendMessage(chatId, "Please enter your new city name:");
         bot.once("message", async (msg) => {
             const city = msg.text;
-            userCities[chatId] = city; 
+            userCities[chatId] = city;
             bot.sendMessage(chatId, `City ${city} saved. Choose time delay:`, {
                 reply_markup: {
                     inline_keyboard: [
@@ -193,7 +202,14 @@ bot.on("callback_query", async (callbackQuery) => {
             try {
                 const weatherData = await getWeather(city);
                 const responseMessage = formatWeatherData(weatherData, interval);
-                bot.sendMessage(chatId, responseMessage);
+                await bot.sendMessage(chatId, responseMessage);
+                bot.sendMessage(chatId, "Choose time delay:", {
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "3 hours", callback_data: "3" }, { text: "6 hours", callback_data: "6" }]
+                        ]
+                    }
+                });
             } catch (error) {
                 bot.sendMessage(chatId, error.message);
             }
@@ -202,6 +218,7 @@ bot.on("callback_query", async (callbackQuery) => {
         }
     }
 });
+
 bot.onText(/Previous Menu/, (msg) => {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, "Choose an option", {
