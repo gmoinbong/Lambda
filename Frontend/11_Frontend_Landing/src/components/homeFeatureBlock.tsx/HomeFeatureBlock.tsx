@@ -1,7 +1,5 @@
 import { FC, useState } from 'react';
 import styles from './HomeFeatureBlock.module.css';
-import featureImage from '../../../public/assets/background/homeFeature.png';
-import greyBg from '../../../public/assets/background/greyDiamond.png';
 
 interface Props { }
 
@@ -50,9 +48,9 @@ export const HomeFeatureBlock: FC<Props> = () => {
                 <button className={styles.moreFeaturesButton}>More Features</button>
             </div>
             <div className={styles.imageContainer}>
-                <img className={styles.featureImage} src={featureImage} alt="Feature example" />
+                <img className={styles.featureImage} src={'/assets/background/homeFeature.png'} alt="Feature example" />
             </div>
-            <img src={greyBg} className={styles.greyBg} alt="grey diamond" />
+            <img src={'/assets/background/greyDiamond.png'} className={styles.greyBg} alt="grey diamond" />
         </div>
     );
 };

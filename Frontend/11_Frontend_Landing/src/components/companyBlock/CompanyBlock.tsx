@@ -1,9 +1,6 @@
 import { FC } from 'react';
 import styles from "./CompanyBlock.module.css";
-import featureImage from '../../../public/assets/company/img_mobile.svg';
-import stars from '../../../public/assets/company/stars.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
-import chatIcon from '../../../public/assets/company/chat_icon.svg'
 import Button from '../Button/Button';
 
 interface Props { }
@@ -20,7 +17,7 @@ export const CompanyBlock: FC<Props> = ({ }) => {
                             <span>
                                 Hi, we’re
                             </span>
-                            <img src={stars} alt="stars" className={styles.stars} />
+                            <img src={'/assets/company/stars.svg'} alt="stars" className={styles.stars} />
                         </h1>
                     </div>
                     <p>
@@ -35,10 +32,10 @@ export const CompanyBlock: FC<Props> = ({ }) => {
                         <p>
                             Why do we do it? It’s painfully frustrating for businesses to transact. Our generation are minting NFTs on blockchains everyday and about to colonize Mars, but in our supply chains, businesses are still exchanging cold hard cash, writing checks, and keying manual bank transfers. We’re going to reimagine the status quo, we’re going to digitize the zillions of these offline receivables and payables. One transaction at a time.
                         </p>
-                        <Button icon={chatIcon} className={styles.ctaButton}>Contact Us</Button>
+                        <Button icon={ '/assets/company/chat_icon.svg'} className={styles.ctaButton}>Contact Us</Button>
                     </div>
                     <div className={styles.imageContainer}>
-                        <img src={featureImage} alt="company" className={isMobile ? styles.companyImageMobile : styles.companyImage} />
+                        <img src={'/assets/company/img_mobile.svg'} alt="company" className={isMobile ? styles.companyImageMobile : styles.companyImage} />
                     </div>
                 </div>
             </div>

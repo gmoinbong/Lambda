@@ -1,14 +1,12 @@
 import { FC } from 'react';
 import styles from './FeatureOrderBlock.module.css';
-import rectangleGroup from '../../../public/assets/features/rectangle_group.svg';
-import greyRectangleGroup from '../../../public/assets/background/rectangleGroup.png';
 
 interface Props { }
 
 export const FeatureOrderBlock: FC<Props> = () => {
     return (
         <>
-            <img className={styles.greyRectangleGroup} src={greyRectangleGroup} alt="Rectangle Group" />
+            <img className={styles.greyRectangleGroup} src={'/assets/background/rectangleGroup.png'} alt="Rectangle Group" />
             <div className={styles.container}>
                 <div className={styles.textContainer}>
                     <h1>Breeze through orders without the stress</h1>
@@ -20,7 +18,7 @@ export const FeatureOrderBlock: FC<Props> = () => {
                 <div className={styles.diamondContainer}>
                     <div className={styles.backgroundDiamond}></div>
                     <div className={styles.diamond}>
-                        <img className={styles.rectangleGroup} src={rectangleGroup} alt="Rectangle Group" />
+                        <img className={styles.rectangleGroup} src={'/assets/features/rectangle_group.svg'} alt="Rectangle Group" />
                     </div>
                 </div>
             </div>

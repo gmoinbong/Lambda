@@ -1,10 +1,5 @@
-import{ FC } from 'react';
+import { FC } from 'react';
 import styles from './FeaturesExampleBlock.module.css';
-import bg from '../../../public/assets/features/bg2.svg';
-import bgTablet from '../../../public/assets/features/bg_tablet.svg';
-import bgMobile from '../../../public/assets/features/bg_mobile.svg';
-import bgStars from '../../../public/assets/features/bg_stars.svg';
-import bgStarsTablet from '../../../public/assets/features/bg_stars_tablet.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }
@@ -17,11 +12,11 @@ export const FeaturesExampleBlock: FC<Props> = () => {
             <h2 className={styles.title}>Supercharge your business with Tinvio</h2>
             <div className={styles.features}>
                 {isMobile ? (
-                    <img src={bgMobile} alt="bg" className={styles.bgImage} />
+                    <img src={'/assets/features/bg_mobile.svg'} alt="bg" className={styles.bgImage} />
                 ) : isTablet ? (
-                    <img src={bgTablet} alt="bg" className={styles.bgImage} />
+                    <img src={'/assets/features/bg_tablet.svg'} alt="bg" className={styles.bgImage} />
                 ) : (
-                    <img src={bg} alt="bg" className={styles.bgImage} />
+                    <img src={'/assets/features/bg2.svg'} alt="bg" className={styles.bgImage} />
                 )}
                 <div className={styles.textOverlay}>
                     <ul className={styles.featuresList}>
@@ -49,9 +44,9 @@ export const FeaturesExampleBlock: FC<Props> = () => {
                     </ul>
                 </div>
                 {isMobile ? null : isDesktop ? (
-                    <img src={bgStarsTablet} alt="stars background" className={styles.bgStarsTablet} />
+                    <img src={'/assets/features/bg_stars_tablet.svg'} alt="stars background" className={styles.bgStarsTablet} />
                 ) : (
-                    <img src={bgStars} alt="stars background" className={styles.bgStars} />
+                    <img src={'/assets/features/bg_stars.svg'} alt="stars background" className={styles.bgStars} />
                 )}
             </div>
         </div>

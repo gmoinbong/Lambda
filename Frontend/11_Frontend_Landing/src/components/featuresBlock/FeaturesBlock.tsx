@@ -1,14 +1,7 @@
-import  { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import styles from "./FeaturesBlock.module.css";
-import featureImage2 from '../../../public/assets/features/bg1.svg';
-import featureImage from '../../../public/assets/features/bg.svg';
-import stars from '../../../public/assets/stars-features.svg';
+import stars from '/assets/stars-features.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
-import featureImageMobile from '../../../public/assets/features/feature_img_mobile.svg';
-import featureImageMobile2 from '../../../public/assets/features/feature_img_mobile2.svg';
-import featureImageMobile3 from '../../../public/assets/features/feature_img_mobile3.svg';
-import greyDiamond from '../../../public/assets/background/greyDiamond.png'
-import rectangleGroup from '../../../public/assets/background/rectangleGroup.png';
 import Button from '../Button/Button';
 import Modal from './modal/Modal';
 
@@ -41,22 +34,22 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                     <Button className={styles.ctaButton} text='Try it for Free' onClick={handleModalOpen} />
                 </div>
                 <div className={styles.imageContainer}>
-                    <img src={greyDiamond} alt="grey diamond" className={styles.greyDiamond} />
-                    <img className={styles.rectangle} src={rectangleGroup} alt="rectangle" />
+                    <img src={'/assets/background/greyDiamond.png'} alt="grey diamond" className={styles.greyDiamond} />
+                    <img className={styles.rectangle} src={'/assets/background/rectangleGroup.png'} alt="rectangle" />
                     {isMobile ? (
                         <>
-                            <img src={featureImageMobile} alt="feature" className={styles.featureImage} />
-                            <img src={featureImageMobile3} alt="feature" className={styles.featureImageMobile2} />
+                            <img src={'/assets/features/feature_img_mobile.svg'} alt="feature" className={styles.featureImage} />
+                            <img src={'/assets/features/feature_img_mobile3.svg'} alt="feature" className={styles.featureImageMobile2} />
                         </>
                     ) : (
                         <>
-                            <img src={featureImage} alt="feature" className={styles.featureImage} />
-                            <img src={featureImage2} alt="background" className={styles.featureImage2} />
+                            <img src={'/assets/features/bg.svg'} alt="feature" className={styles.featureImage} />
+                            <img src={'/assets/features/bg1.svg'} alt="background" className={styles.featureImage2} />
                         </>
                     )}
                 </div>
             </div>
-            {isMobile && <div style={{ height: 100 }}> <img src={featureImageMobile2} alt="feature" className={styles.featureImageMobile} /> </div>}
+            {isMobile && <div style={{ height: 100 }}> <img src={'/assets/features/feature_img_mobile2.svg'} alt="feature" className={styles.featureImageMobile} /> </div>}
             <Modal isVisible={isModalVisible} onClose={handleModalClose} />
         </>
     );

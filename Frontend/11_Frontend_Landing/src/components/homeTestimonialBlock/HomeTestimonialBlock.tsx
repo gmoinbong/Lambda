@@ -1,8 +1,5 @@
-import  { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import styles from './HomeTestimonialBlock.module.css';
-import arrowLeft from '../../../public/assets/arrow-left.svg';
-import arrowRight from '../../../public/assets/arrow-right.svg';
-import doubleQuotes from '../../../public/assets/double-quotes.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 import { testimonials } from './data';
 
@@ -27,7 +24,7 @@ export const HomeTestimonialBlock: FC = () => {
                     <div className={styles.textWrapper}>
                         <p className={styles.text}>
                             {testimonials[current].text}
-                            <img src={doubleQuotes} alt="double quotes" className={styles.quotes + " " + styles.quotesAdaptive} />
+                            <img src={'/assets/double-quotes.svg'} alt="double quotes" className={styles.quotes + " " + styles.quotesAdaptive} />
                         </p>
                     </div>
                     {isTablet ? null : <img src={testimonials[current].image} alt="Testimonial" className={styles.testimonialImage} />}
@@ -41,11 +38,11 @@ export const HomeTestimonialBlock: FC = () => {
                                 </div>
                             </div>
                             <div className={styles.arrowContainer}>
-                                <img src={arrowLeft} alt="Previous" className={styles.arrow} onClick={handlePrev} />
-                                <img src={arrowRight} alt="Next" className={styles.arrow} onClick={handleNext} />
+                                <img src={'/assets/arrow-left.svg'} alt="Previous" className={styles.arrow} onClick={handlePrev} />
+                                <img src={'/assets/arrow-right.svg'} alt="Next" className={styles.arrow} onClick={handleNext} />
                             </div>
                         </div>
-                        {isTablet ? <img src={doubleQuotes} alt="double quotes" className={styles.quotes} /> : null}
+                        {isTablet ? <img src={'/assets/double-quotes.svg'} alt="double quotes" className={styles.quotes} /> : null}
                     </div>
                 </div>
                 <div className={styles.dots}>

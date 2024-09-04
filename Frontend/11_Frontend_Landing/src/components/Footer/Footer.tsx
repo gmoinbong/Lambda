@@ -1,11 +1,5 @@
-import  { FC } from 'react';
+import { FC } from 'react';
 import styles from './Footer.module.css';
-import logo from '../../../public/assets/tinvio-logo.svg';
-import linkedin from '../../../public/assets/social/linkedin.svg';
-import instagram from '../../../public/assets/social/instagram.svg';
-import googlePlay from '../../../public/assets/social/google-play.svg';
-import appStore from '../../../public/assets/social/app.store.svg';
-import barrier from '../../../public/assets/barrier.svg'
 
 const Footer: FC = () => {
     return (
@@ -13,8 +7,8 @@ const Footer: FC = () => {
             <div className={styles.footerContent}>
                 <div className={styles.logoWrapper}>
                     <div className={styles.logo}>
-                        <img className={styles.logoImg} src={logo} alt="Tinvio Logo" />
-                        <img className={styles.barrier} src={barrier} alt="" />
+                        <img className={styles.logoImg} src={'/assets/tinvio-logo.svg'} alt="Tinvio Logo" />
+                        <img className={styles.barrier} src={'/assets/barrier.svg'} alt="" />
                     </div>
                     <nav className={styles.nav}>
                         <a href="/">Home</a>
@@ -25,22 +19,22 @@ const Footer: FC = () => {
                 </div>
                 <div className={styles.socialWrapper}>
                     <div className={styles.socialMedia}>
-                        <a href="#"><img src={linkedin} alt="LinkedIn" /></a>
-                        <a href="#"><img src={instagram} alt="Instagram" /></a>
+                        <a href="#"><img src={'/assets/social/linkedin.svg'} alt="LinkedIn" /></a>
+                        <a href="#"><img src={'/assets/social/instagram.svg'} alt="Instagram" /></a>
                     </div>
-                    <img className={styles.barrier} src={barrier} alt="" />
+                    <img className={styles.barrier} src={'/assets/barrier.svg'} alt="" />
                     <div className={styles.appLinks}>
-                        <a href="#"><img src={googlePlay} alt="Google Play" /></a>
-                        <a href="#"><img src={appStore} alt="App Store" /></a>
+                        <a href="#"><img src={'/assets/social/google-play.svg'} alt="Google Play" /></a>
+                        <a href="#"><img src={'/assets/social/app.store.svg'} alt="App Store" /></a>
                     </div>
                 </div>
             </div>
             <div className={styles.footerBottom}>
                 <p>© Tinvio™ 2020. All Rights Reserved</p>
-                <img className={styles.barrierBot} src={barrier} alt="" />
+                <img className={styles.barrierBot} src={'/assets/barrier.svg'} alt="" />
                 <nav className={styles.footerNav}>
                     <a href="/privacy">Privacy Policy</a>
-                    <img className={styles.barrierBot} src={barrier} alt="" />
+                    <img className={styles.barrierBot} src={'/assets/barrier.svg'} alt="" />
                     <a href="/terms">Terms of Service</a>
                 </nav>
             </div>

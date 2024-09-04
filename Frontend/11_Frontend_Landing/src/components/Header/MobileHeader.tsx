@@ -4,8 +4,6 @@ import LanguageSelector from './languageSelector/LanguageSelector';
 import styles from './MobileHeader.module.css';
 import { NavigationMenu } from './NavigationMenu/NavigationMenu';
 import { Button } from '../Button/Button';
-import burger from '../../../public/assets/burger.svg';
-import closeIcon from '../../../public/assets/close.svg';
 
 interface Props { }
 
@@ -32,7 +30,7 @@ export const MobileHeader: FC<Props> = () => {
                     <LanguageSelector />
                 </div>
                 <div className={styles.burgerMenu} onClick={toggleMenu}>
-                    <img src={isMenuOpen ? closeIcon : burger} alt="Menu" />
+                    <img src={isMenuOpen ? '/assets/close.svg' : '/assets/burger.svg'} alt="Menu" />
                 </div>
             </div>
             <nav className={`${styles.navMenu} ${isMenuOpen ? styles.navMenuOpen : ''}`}>

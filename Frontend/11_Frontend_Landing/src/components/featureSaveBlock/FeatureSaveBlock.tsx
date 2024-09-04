@@ -1,7 +1,5 @@
 import { FC } from 'react';
 import styles from './FeatureSaveBlock.module.css';
-import imageBg from '../../../public/assets/features/bg_save.svg';
-import imageBgMobile from '../../../public/assets/features/bg_save_mobile.svg'
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }
@@ -18,8 +16,8 @@ export const FeatureSaveBlock: FC<Props> = () => {
                 </p>
             </div>
             <div className={styles.imageWrapper}>
-                {isMobile ? <img src={imageBgMobile} alt="Send invoices, save the trees" className={styles.image} />
-                    : <img src={imageBg} alt="Send invoices, save the trees" className={styles.image} />}
+                {isMobile ? <img src={'/assets/features/bg_save_mobile.svg'} alt="Send invoices, save the trees" className={styles.image} />
+                    : <img src={'/assets/features/bg_save.svg'} alt="Send invoices, save the trees" className={styles.image} />}
             </div>
         </div>
     );

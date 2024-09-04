@@ -1,7 +1,5 @@
 import { FC } from 'react';
 import styles from './FeaturesStarted.module.css';
-import bg from '../../../public/assets/features/feature_bg.svg';
-import bgTablet from '../../../public/assets/features/bg_get_started_tablet.svg'
 import Button from '../Button/Button';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
@@ -12,7 +10,7 @@ export const FeaturesGetStarted: FC<Props> = () => {
 
     return (<>
         <div className={styles.container}>
-            {isTablet ? <img className={styles.bg} src={bg} alt="background" /> : <img className={styles.bg} src={bgTablet} alt="background" />}
+            {isTablet ? <img className={styles.bg} src={'/assets/features/feature_bg.svg'} alt="background" /> : <img className={styles.bg} src={'/assets/features/bg_get_started_tablet.svg'} alt="background" />}
 
             <div className={styles.content}>
                 <h2>Sounds easy? Supply chain transactions don’t have to be complicated</h2>

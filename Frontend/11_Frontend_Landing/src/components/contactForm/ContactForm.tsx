@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import styles from './ContactForm.module.css';
 import Button from '../Button/Button';
-import mapImage from '../../../public/assets/maps.png';
-import confetti from '../../../public/assets/confetti-group2.svg'
 
 interface Props { }
 
@@ -17,7 +15,7 @@ export const ContactForm: FC<Props> = () => {
             <div className={styles.content}>
                 <div className={styles.left}>
                     <h2 className={styles.title}>Fill up the form and we'll get <br /> in touch within a few hours</h2>
-                    <img src={mapImage} alt="Map" className={styles.mapImage} />
+                    <img src={'/assets/maps.png'} alt="Map" className={styles.mapImage} />
                 </div>
                 <div className={styles.right}>
                     <h3 className={styles.title}>Hi, we’re <span className={styles.highlight}>Tinvio</span>! And you?</h3>
@@ -40,7 +38,7 @@ export const ContactForm: FC<Props> = () => {
                         </div>
                     </form>
                 </div>
-                <img src={confetti} className={styles.confetti} alt="confetti" />
+                <img src={'/assets/confetti-group2.svg'} className={styles.confetti} alt="confetti" />
             </div>
         </div>
     );

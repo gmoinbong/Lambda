@@ -1,11 +1,5 @@
 import { FC } from 'react';
 import styles from './CompanyDoneBlock.module.css';
-import imageUp from '../../../public/assets/company/img_done_block.svg';
-import imageUpMobile from '../../../public/assets/company/img_up_mobile.svg';
-import imageUpTablet from '../../../public/assets/company/img_up_mobile.svg';
-import imageDown from '../../../public/assets/company/img_done_1.svg';
-import imageDown1 from '../../../public/assets/company/img_done_2.svg';
-import imageDown2 from '../../../public/assets/company/img_done_3.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }
@@ -17,22 +11,22 @@ export const CompanyDoneBlock: FC<Props> = () => {
         if (isMobile) {
             return (
                 <>
-                    <img src={imageUpMobile} alt="image" className={styles.upperImage} />
-                    <img src={imageDown1} alt="image" className={`${styles.downImage} ${styles.downImage2}`} />
-                    <img src={imageDown} alt="image" className={styles.downImage} />
-                    <img src={imageDown2} alt="image" className={`${styles.downImage} ${styles.downImage3}`} />
+                    <img src={'/assets/company/img_up_mobile.svg'} alt="image" className={styles.upperImage} />
+                    <img src={'/assets/company/img_done_2.svg'} alt="image" className={`${styles.downImage} ${styles.downImage2}`} />
+                    <img src={'/assets/company/img_done_1.svg'} alt="image" className={styles.downImage} />
+                    <img src={'/assets/company/img_done_3.svg'} alt="image" className={`${styles.downImage} ${styles.downImage3}`} />
                 </>
             );
         }
         return (
             <div className={styles.imageMobileGroup}>
                 <div className={styles.upperImageGroup}>
-                    <img src={imageUpTablet} alt="image" className={styles.upperImage} />
-                    <img src={imageDown} alt="image" className={`${styles.downImage} ${styles.downImage1}`} />
+                    <img src={'/assets/company/img_up_mobile.svg'} alt="image" className={styles.upperImage} />
+                    <img src={'/assets/company/img_done_1.svg'} alt="image" className={`${styles.downImage} ${styles.downImage1}`} />
                 </div>
                 <div className={styles.downImageGroup}>
-                    <img src={imageDown1} alt="image" className={`${styles.downImage} ${styles.downImage2}`} />
-                    <img src={imageDown2} alt="image" className={`${styles.downImage} ${styles.downImage3}`} />
+                    <img src={'/assets/company/img_done_2.svg'} alt="image" className={`${styles.downImage} ${styles.downImage2}`} />
+                    <img src={'/assets/company/img_done_3.svg'} alt="image" className={`${styles.downImage} ${styles.downImage3}`} />
                 </div>
             </div>
         );
@@ -62,14 +56,14 @@ export const CompanyDoneBlock: FC<Props> = () => {
                     </div>
                 </div>
                 <div className={styles.ImageWrapper}>
-                    {isTablet ? renderImages() : <img src={imageUp} alt="image" className={styles.upperImage} />}
+                    {isTablet ? renderImages() : <img src={'/assets/company/img_done_block.svg'} alt="image" className={styles.upperImage} />}
                 </div>
             </div>
             {!isTablet && (
                 <div className={styles.downBlockWrapper}>
-                    <img src={imageDown} alt="image" className={styles.downImage} />
-                    <img src={imageDown1} alt="image" className={`${styles.downImage} ${styles.downImage2}`} />
-                    <img src={imageDown2} alt="image" className={`${styles.downImage} ${styles.downImage3}`} />
+                    <img src={'/assets/company/img_done_1.svg'} alt="image" className={styles.downImage} />
+                    <img src={'/assets/company/img_done_2.svg'} alt="image" className={`${styles.downImage} ${styles.downImage2}`} />
+                    <img src={'/assets/company/img_done_3.svg'} alt="image" className={`${styles.downImage} ${styles.downImage3}`} />
                 </div>
             )}
         </div>
