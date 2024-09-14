@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import styles from './FeaturesFaq.module.css';
 import { faqItems } from './data';
 
-
-
 const FeaturesFaq: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [activeIndices, setActiveIndices] = useState<number[]>([]);
 
     const handleToggle = (index: number) => {
-        setActiveIndex(activeIndex === index ? null : index);
+        setActiveIndices(prevIndices =>
+            prevIndices.includes(index)
+                ? prevIndices.filter(i => i !== index)
+                : [...prevIndices, index]
+        );
     };
 
     return (
@@ -17,13 +19,13 @@ const FeaturesFaq: React.FC = () => {
             {faqItems.map((item, index) => (
                 <div
                     key={index}
-                    className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}
+                    className={`${styles.faqItem} ${activeIndices.includes(index) ? styles.active : ''}`}
                     onClick={() => handleToggle(index)}
                 >
                     <h3>
                         {item.question}
                         <span className={styles.toggleIcon}>
-                            {activeIndex === index ? '-' : '+'}
+                            {activeIndices.includes(index) ? '-' : '+'}
                         </span>
                     </h3>
                     <p>{item.answer}</p>

@@ -1,9 +1,9 @@
-import { FC, useState } from 'react';
+import React, { FC, useState, Suspense } from 'react';
 import styles from "./FeaturesBlock.module.css";
 import stars from '/assets/stars-features.svg';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 import Button from '../Button/Button';
-import Modal from './modal/Modal';
+const Modal = React.lazy(() => import('./modal/Modal'));
 
 interface Props { }
 
@@ -50,7 +50,9 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                 </div>
             </div>
             {isMobile && <div style={{ height: 100 }}> <img src={'/assets/features/feature_img_mobile2.svg'} alt="feature" className={styles.featureImageMobile} /> </div>}
-            <Modal isVisible={isModalVisible} onClose={handleModalClose} />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Modal isVisible={isModalVisible} onClose={handleModalClose} />
+            </Suspense>
         </>
     );
 };

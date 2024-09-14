@@ -24,7 +24,7 @@ const LanguageSelector: FC<Props> = () => {
       <div className={styles.selectedOption} onClick={() => setIsOpen(!isOpen)}>
         <span>{selectedOption.label}</span>
         <span className={styles.arrow}>
-          <img src={isOpen ? '/assets/arrows/arrow-up.png"' :  "/assets/arrows/arrow-down.png"} alt="arrow" />
+          <img src={isOpen ? '/assets/arrows/arrow-up.png' : "/assets/arrows/arrow-down.png"} alt="arrow" />
         </span>
       </div>
       {isOpen && (

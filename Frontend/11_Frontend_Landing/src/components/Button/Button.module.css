@@ -10,6 +10,8 @@
     line-height: var(--header-button-height);
     font-weight: var(--header-button-weight);
     cursor: pointer;
+    width: 220px;
+    height: 56px;
 }
 
 .button:active,

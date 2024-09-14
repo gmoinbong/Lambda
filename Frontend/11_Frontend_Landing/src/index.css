@@ -129,25 +129,38 @@ table {
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Regular.woff2') format('woff2'),
-         url('/fonts/Gilroy-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Gilroy';
+	src: url('/fonts/Gilroy-Regular.woff2') format('woff2'),
+		url('/fonts/Gilroy-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Bold.woff2') format('woff2'),
-         url('/fonts/Gilroy-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'Gilroy';
+	src: url('/fonts/Gilroy-Bold.woff2') format('woff2'),
+		url('/fonts/Gilroy-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
 }
 
 body {
-    font-family: 'Gilroy', sans-serif;
+	font-family: 'Gilroy';
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, div {
-    font-family: 'Gilroy', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+div,
+button {
+	font-family: 'Gilroy';
+}
+
+p {
+	font-family: 'Gilroy', inter;
 }

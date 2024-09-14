@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import LazyLoad from 'react-lazyload';
 import styles from './FeaturesExampleBlock.module.css';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
 
@@ -12,11 +13,17 @@ export const FeaturesExampleBlock: FC<Props> = () => {
             <h2 className={styles.title}>Supercharge your business with Tinvio</h2>
             <div className={styles.features}>
                 {isMobile ? (
-                    <img src={'/assets/features/bg_mobile.svg'} alt="bg" className={styles.bgImage} />
+                    <LazyLoad height={200} offset={100}>
+                        <img src={'/assets/features/bg_mobile.svg'} alt="bg" className={styles.bgImage} />
+                    </LazyLoad>
                 ) : isTablet ? (
-                    <img src={'/assets/features/bg_tablet.svg'} alt="bg" className={styles.bgImage} />
+                    <LazyLoad height={200} offset={100}>
+                        <img src={'/assets/features/bg_tablet.svg'} alt="bg" className={styles.bgImage} />
+                    </LazyLoad>
                 ) : (
-                    <img src={'/assets/features/bg2.svg'} alt="bg" className={styles.bgImage} />
+                    <LazyLoad height={200} offset={100}>
+                        <img src={'/assets/features/bg2.svg'} alt="bg" className={styles.bgImage} />
+                    </LazyLoad>
                 )}
                 <div className={styles.textOverlay}>
                     <ul className={styles.featuresList}>
@@ -44,9 +51,13 @@ export const FeaturesExampleBlock: FC<Props> = () => {
                     </ul>
                 </div>
                 {isMobile ? null : isDesktop ? (
-                    <img src={'/assets/features/bg_stars_tablet.svg'} alt="stars background" className={styles.bgStarsTablet} />
+                    <LazyLoad height={200} offset={100}>
+                        <img src={'/assets/features/bg_stars_tablet.svg'} alt="stars background" className={styles.bgStarsTablet} />
+                    </LazyLoad>
                 ) : (
-                    <img src={'/assets/features/bg_stars.svg'} alt="stars background" className={styles.bgStars} />
+                    <LazyLoad height={200} offset={100}>
+                        <img src={'/assets/features/bg_stars.svg'} alt="stars background" className={styles.bgStars} />
+                    </LazyLoad>
                 )}
             </div>
         </div>

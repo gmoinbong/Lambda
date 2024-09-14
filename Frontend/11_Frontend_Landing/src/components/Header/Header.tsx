@@ -18,7 +18,7 @@ export const Header: FC<Props> = ({ buttonBackground, color }) => {
                 <LanguageSelector />
             </div>
             <NavigationMenu />
-            <Button className={styles.ctaButton} text='Get Started' bgColor={buttonBackground} color={color} height='40px' width='129px' />
+            <Button className={styles.ctaButton} text='Get Started' bgColor={buttonBackground} color={color} height='48px' width='156px' />
         </header>
     )
 }
