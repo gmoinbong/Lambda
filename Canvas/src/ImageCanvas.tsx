@@ -43,7 +43,7 @@ const ImageCanvas: React.FC = () => {
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    if (canvasRef.current && dragUrl.current) {
+    if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
       const offsetX = e.clientX - rect.left;
       const offsetY = e.clientY - rect.top;
@@ -54,13 +54,15 @@ const ImageCanvas: React.FC = () => {
             image.id === draggedImageId ? { ...image, x: offsetX, y: offsetY } : image
           )
         );
-      } else {
+      } else if (dragUrl.current) {
         setImages((prevImages) => [
           ...prevImages,
-          { id: Date.now(), src: dragUrl.current!, x: offsetX, y: offsetY }
+          { id: Date.now(), src: dragUrl.current || '', x: offsetX, y: offsetY }
         ]);
       }
     }
+    setDraggedImageId(null);
+    dragUrl.current = null; 
   };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -84,6 +86,10 @@ const ImageCanvas: React.FC = () => {
       ]);
       setText('');
     }
+  };
+
+  const handleDragStartText = (e: DragEvent<HTMLElement>, id: number) => {
+    setDraggedImageId(id);
   };
 
   return (
@@ -133,8 +139,8 @@ const ImageCanvas: React.FC = () => {
                   position: 'absolute',
                   top: image.y,
                   left: image.x,
-                  width: 50,
-                  height: 50,
+                  width: 100,
+                  height: 100,
                 }}
               />
             )}
@@ -148,7 +154,7 @@ const ImageCanvas: React.FC = () => {
                   whiteSpace: 'nowrap'
                 }}
                 draggable
-                onDragStart={(e) => handleDragStart(e, image.id, '')}
+                onDragStart={(e) => handleDragStartText(e, image.id)}
               >
                 {image.text}
               </div>
