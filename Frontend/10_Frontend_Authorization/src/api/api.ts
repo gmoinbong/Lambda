@@ -7,7 +7,8 @@ export const WhoAmIRequest = async (accessToken: string | null) => {
                 Authorization: `Bearer ${accessToken}`
             }
         });
-        console.log(response.data);
+        // console.log(localStorage.getItem("accessToken"), 'accessToken');
+
         return response.data;
     } catch (error: any) {
         if (error.response && error.response.status === 401) {

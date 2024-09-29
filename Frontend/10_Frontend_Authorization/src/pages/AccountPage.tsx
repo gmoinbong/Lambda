@@ -5,21 +5,27 @@ import { useNavigate } from 'react-router-dom';
 import { AuthStatus } from '../auth/authService';
 import styles from './AccountPage.module.css';
 
-interface AccountPageProps {}
-
-export const AccountPage: FC<AccountPageProps> = ({ }) => {
-    const { authStatus } = useContext(AuthContext);
+export const AccountPage: FC = () => {
     const navigate = useNavigate();
-
+    const { authStatus } = useContext(AuthContext);
+    const userEmail = localStorage.getItem("userEmail");
     useEffect(() => {
+        if (authStatus === AuthStatus.Loading) {
+            return;
+        }
         if (authStatus !== AuthStatus.SignedIn) {
             navigate('/login');
         }
     }, [authStatus, navigate]);
 
+    useEffect(() => {
+        console.log("User email updated:", userEmail);
+    }, [userEmail]);
+
     return (
         <div className={styles.accountPage}>
             <h1>Account Page</h1>
+            {userEmail && <p>Email: {userEmail}</p>}
             <Logout />
         </div>
     );

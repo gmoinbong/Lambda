@@ -9,9 +9,16 @@ export enum AuthStatus {
 
 export async function signIn(email: string, password: string) {
     const response = await axios.post(`http://142.93.134.108:1111/login?email=${email}&password=${password}`);
+    const accessToken = response.data.body.access_token;
+    const refreshToken = response.data.body.refresh_token;
+
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
+    localStorage.setItem("userEmail", email); 
+
     return {
-        accessToken: response.data.body.access_token,
-        refreshToken: response.data.body.refresh_token,
+        accessToken,
+        refreshToken,
     };
 }
 
@@ -33,6 +40,9 @@ export async function signUp(email: string, password: string) {
 
 export async function checkAuthStatus(token: string, refreshToken: string, setAuthStatus: (status: AuthStatus) => void) {
     try {
+        if (AuthStatus.Loading) {
+            return;
+        }
         await WhoAmIRequest(token);
         setAuthStatus(AuthStatus.SignedIn);
     } catch (error: any) {
@@ -54,5 +64,6 @@ export async function checkAuthStatus(token: string, refreshToken: string, setAu
 export function signOut(setAuthStatus: (status: AuthStatus) => void) {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
+    localStorage.removeItem("userEmail");
     setAuthStatus(AuthStatus.SignedOut);
 }
