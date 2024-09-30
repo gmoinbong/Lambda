@@ -9,7 +9,7 @@ export enum AuthStatus {
 
 export async function signIn(email: string, password: string) {
     try {
-        const response = await axios.post(`/api/proxy/login?email=${email}&password=${password}`);
+        const response = await axios.post(`/api/login?email=${email}&password=${password}`);
         const accessToken = response.data.body.access_token;
         const refreshToken = response.data.body.refresh_token;
 
@@ -29,7 +29,7 @@ export async function signIn(email: string, password: string) {
 
 export async function refreshAccessToken(token: string) {
     try {
-        const response = await axios.post(`/api/proxy/refresh`, null, {
+        const response = await axios.post(`/api/refresh`, null, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -47,7 +47,7 @@ export async function refreshAccessToken(token: string) {
 
 export async function signUp(email: string, password: string) {
     try {
-        await axios.post(`/api/proxy/sign_up`, { email, password }); 
+        await axios.post(`/api/sign_up`, { email, password }); 
     } catch (error) {
         console.error("Error during sign up:", error);
         throw error; 
