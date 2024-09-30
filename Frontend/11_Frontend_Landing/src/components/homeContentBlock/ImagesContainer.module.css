@@ -1,0 +1,198 @@
+.imageContainer {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+}
+
+.redDiamond,
+.overlayDiamond {
+    background-color: #FB242B;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    border-radius: 140px;
+}
+
+.redDiamond {
+    z-index: -1;
+    transform: rotate(360deg);
+    width: 900px;
+    height: 900px;
+}
+
+.overlayDiamond {
+    background-color: rgba(251, 36, 43, 0.6);
+    width: 1000px;
+    height: 1000px;
+    z-index: -2;
+}
+
+.redDiamond img,
+.overlayDiamond img {
+    max-width: 100%;
+    max-height: 100%;
+    transform: rotate(-45deg);
+}
+
+.rectangle {
+    bottom: 245px;
+    position: absolute;
+    left: 550px;
+}
+
+.rectangle2 {
+    width: 30%;
+    position: absolute;
+    left: -20px;
+    bottom: 220px;
+}
+
+.rectangle,
+.rectangle2 {
+    z-index: 0;
+}
+
+.backgroundImageDesktop {
+    position: absolute;
+    bottom: 30%;
+    right: 22%;
+    width: 85%;
+    height: 70%;
+}
+
+.imageWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundImageMobile {
+    position: absolute;
+    top: 58%;
+    left: 7%;
+    width: 42%;
+    height: auto;
+}
+
+.greyDiamondBottom,
+.greyDiamondTop {
+    position: absolute;
+    color: #DADADA;
+    width: 350px;
+    height: 350px;
+    border-radius: 40px;
+}
+
+.greyDiamondBottom {
+    left: 100px;
+    z-index: -2;
+    top: 150px;
+}
+
+.greyDiamondTop {
+    top: -300px;
+    left: 30%;
+}
+
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 200px;
+    }
+
+    .textContent {
+        margin-right: 0;
+        text-align: center;
+        padding: 0 20px;
+        left: 0;
+    }
+
+    .imageContainer {
+        margin-left: 0;
+        padding-left: 0;
+        left: -60%;
+    }
+
+    .redDiamond {
+        width: 130vw;
+        height: 100vw;
+    }
+
+    .overlayDiamond {
+        width: 140vw;
+        height: 110vw;
+    }
+
+    .backgroundImageDesktop {
+        position: absolute;
+        bottom: 79%;
+        right: -10%;
+        width: 80%;
+        height: 75%;
+    }
+
+    .backgroundImageMobile {
+        position: absolute;
+        top: 9%;
+        left: 36%;
+        width: 35%;
+        height: auto;
+    }
+
+    .greyDiamondTop {
+        top: -275px;
+        left: 70%;
+        z-index: 12;
+    }
+}
+
+@media (max-width: 500px) {
+    .backgroundImageDesktop {
+        bottom: 74%;
+        right: -2%;
+        width: 70%;
+        height: 70%;
+    }
+
+    .backgroundImageMobile {
+        top: 12%;
+        left: 35%;
+        width: 35%;
+        height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .content {
+        gap: 0px;
+    }
+
+    .imageContainer {
+        justify-content: flex-start;
+    }
+
+    .backgroundImageDesktop {
+        bottom: 73%;
+        right: -80px;
+        width: 80%;
+        height: 80%;
+    }
+
+    .backgroundImageMobile {
+        top: 5%;
+        left: 34%;
+        width: 45%;
+        height: auto;
+    }
+
+    .greyDiamondBottom {
+        top: -100px;
+    }
+}
