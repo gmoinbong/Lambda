@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default async function handler(req, res) {
     const { method, body, query } = req;
-    const apiUrl = `http://142.93.134.108:1111${req.url}`;
+    const apiUrl = `https://142.93.134.108:1111${req.url}`;
 
     try {
         const response = await axios({
