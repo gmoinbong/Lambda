@@ -8,34 +8,50 @@ export enum AuthStatus {
 }
 
 export async function signIn(email: string, password: string) {
-    const response = await axios.post(`http://142.93.134.108:1111/login?email=${email}&password=${password}`);
-    const accessToken = response.data.body.access_token;
-    const refreshToken = response.data.body.refresh_token;
+    try {
+        const response = await axios.post(`/api/proxy/login?email=${email}&password=${password}`);
+        const accessToken = response.data.body.access_token;
+        const refreshToken = response.data.body.refresh_token;
 
-    localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("refreshToken", refreshToken);
-    localStorage.setItem("userEmail", email); 
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
+        localStorage.setItem("userEmail", email);
 
-    return {
-        accessToken,
-        refreshToken,
-    };
+        return {
+            accessToken,
+            refreshToken,
+        };
+    } catch (error) {
+        console.error("Error during sign in:", error);
+        throw error;
+    }
 }
 
 export async function refreshAccessToken(token: string) {
-    const response = await axios.post("http://142.93.134.108:1111/refresh", null, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
-    return {
-        accessToken: response.data.body.access_token,
-        refreshToken: response.data.body.refresh_token,
-    };
+    try {
+        const response = await axios.post(`/api/proxy/refresh`, null, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return {
+            accessToken: response.data.body.access_token,
+            refreshToken: response.data.body.refresh_token,
+        };
+    } catch (error) {
+        console.error("Error refreshing access token:", error);
+        throw error;
+    }
+
 }
 
 export async function signUp(email: string, password: string) {
-    await axios.post("http://142.93.134.108:1111/sign_up", { email, password });
+    try {
+        await axios.post(`/api/proxy/sign_up`, { email, password }); 
+    } catch (error) {
+        console.error("Error during sign up:", error);
+        throw error; 
+    }
 }
 
 export async function checkAuthStatus(token: string, refreshToken: string, setAuthStatus: (status: AuthStatus) => void) {

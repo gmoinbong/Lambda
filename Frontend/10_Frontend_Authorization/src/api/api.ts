@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const WhoAmIRequest = async (accessToken: string | null) => {
     try {
-        const response = await axios.get("http://142.93.134.108:1111/me", {
+        const response = await axios.get("/api/proxy/me", { 
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }

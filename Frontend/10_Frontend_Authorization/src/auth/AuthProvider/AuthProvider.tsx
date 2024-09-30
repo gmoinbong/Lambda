@@ -58,7 +58,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
     async function signIn(email: string, password: string) {
         try {
             console.log("Attempting to sign in with email:", email);
-            const response = await fetch(`http://142.93.134.108:1111/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`, {
+            const response = await fetch(`/api/proxy/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
