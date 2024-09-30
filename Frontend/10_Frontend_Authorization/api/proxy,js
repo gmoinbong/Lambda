@@ -3,6 +3,7 @@ import axios from 'axios';
 export default async function handler(req, res) {
     const { method, body, query } = req;
     const apiUrl = `http://142.93.134.108:1111${req.url}`;
+    console.log([apiUrl, method, body, query], "url", apiUrl);
 
     try {
         const response = await axios({
