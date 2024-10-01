@@ -1,14 +1,16 @@
-import { FC, useContext } from 'react';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FC } from 'react';
 import styles from './Logout.module.css';
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../AuthService/AuthService';
 
 interface LogoutProps { }
 
-export const Logout: FC<LogoutProps> = ({ }) => {
-    const { signOut } = useContext(AuthContext);
+export const Logout: FC<LogoutProps> = () => {
+    const navigate = useNavigate();
 
     const handleLogout = () => {
-        signOut && signOut();
+        logout(); 
+        navigate('/login'); 
     };
 
     return (

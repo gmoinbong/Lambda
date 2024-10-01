@@ -1,32 +1,44 @@
-import { FC, useContext, useEffect } from 'react';
-import { Logout } from '../auth/Logout/Logout';
-import { AuthContext } from '../auth/AuthProvider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
-import { AuthStatus } from '../auth/authService';
+// src/pages/AccountPage.tsx
+import React, { useEffect, useState } from 'react';
+import { getAccount, AccountData } from '../auth/AuthService/AuthService';
 import styles from './AccountPage.module.css';
+import { Logout } from '../auth/Logout/Logout';
 
-export const AccountPage: FC = () => {
-    const navigate = useNavigate();
-    const { authStatus } = useContext(AuthContext);
-    const userEmail = localStorage.getItem("userEmail");
-    useEffect(() => {
-        if (authStatus === AuthStatus.Loading) {
-            return;
-        }
-        if (authStatus !== AuthStatus.SignedIn) {
-            navigate('/login');
-        }
-    }, [authStatus, navigate]);
+const AccountPage: React.FC = () => {
+    const [userData, setUserData] = useState<AccountData | null>(null);
+    const [email, setEmail] = useState<string | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log("User email updated:", userEmail);
-    }, [userEmail]);
+        const fetchData = async () => {
+            try {
+                const data = await getAccount();
+                const storedEmail = localStorage.getItem('userEmail');
+                setUserData(data);
+                setEmail(storedEmail);
+            } catch (error: any) {
+                console.error("Get account error:", error);
+                setErrorMessage(error.message || "Failed to load account data");
+            }
+        };
+        fetchData();
+    }, []);
+
+    if (errorMessage) {
+        return <p style={{ color: 'red' }}>{errorMessage}</p>;
+    }
+
+    if (!userData) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <div className={styles.accountPage}>
             <h1>Account Page</h1>
-            {userEmail && <p>Email: {userEmail}</p>}
+            <p>Email: {email || userData.email}</p>
             <Logout />
         </div>
     );
 };
+
+export default AccountPage;

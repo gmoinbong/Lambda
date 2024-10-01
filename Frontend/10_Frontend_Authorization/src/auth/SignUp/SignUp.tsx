@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useContext, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styles from "./SignUp.module.css";
-import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
-import { checkPasswordStrength } from './func';
+import { checkPasswordStrength, validateEmail } from './func';
+import { signUp } from '../AuthService/AuthService';
 
 type Props = {};
 
@@ -16,9 +16,6 @@ const SignUp: React.FC<Props> = () => {
 
     const [errors, setErrors] = useState<string | null>(null);
     const [passwordStrength, setPasswordStrength] = useState<string>("");
-
-    const { signUp } = useContext(AuthContext);
-
     const [success, setSuccess] = useState<string | null>(null);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,15 +30,10 @@ const SignUp: React.FC<Props> = () => {
         }
     };
 
-    const validateEmail = (email: string): boolean => {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    };
-
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
         setErrors(null);
-        setSuccess(null); 
+        setSuccess(null);
 
         if (!validateEmail(credentials.email)) {
             setErrors("Invalid email format");
@@ -54,11 +46,10 @@ const SignUp: React.FC<Props> = () => {
         }
 
         try {
-            if (signUp) {
-                await signUp(credentials.email, credentials.password);
-                setSuccess("Registration successful!"); 
-                navigate('/');
-            }
+            await signUp(credentials.email, credentials.password);
+            setSuccess("Registration successful!");
+            console.log(success);
+            navigate('/login'); 
         } catch (error: any) {
             setErrors(error.message || "An error occurred during registration");
         }
@@ -68,7 +59,7 @@ const SignUp: React.FC<Props> = () => {
         <form className={styles.form} onSubmit={handleSubmit}>
             <h2>Sign Up</h2>
             {errors && <div className={styles.error}>{errors}</div>}
-            {success && <div className={styles.success}>{success}</div>} 
+            {success && <div className={styles.success}>{success}</div>}
             <div className={styles.inputGroup}>
                 <label htmlFor="email">Email</label>
                 <input
