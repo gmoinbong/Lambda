@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import queryString from 'query-string';
 
-const API_URL = 'http://142.93.134.108:1111';
+const API_URL = '/api';
 
 
 export interface AuthResponse {
