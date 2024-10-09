@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import queryString from 'query-string';
 
 const API_URL = 'http://142.93.134.108:1111';
 
@@ -78,7 +79,8 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
   }
 
   try {
-    const url = `${API_URL}/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
+    const queryParams = queryString.stringify({ email, password });
+    const url = `${API_URL}/login?${queryParams}`;
     const response: AxiosResponse<APIResponseSuccess<AuthResponse>> = await axios.post(url);
 
     const statusCode = response.data.statusCode || response.data.status_code || response.status;
