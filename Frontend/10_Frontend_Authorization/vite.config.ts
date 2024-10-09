@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
+      '/apihui': {
         target: 'http://142.93.134.108:1111',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
