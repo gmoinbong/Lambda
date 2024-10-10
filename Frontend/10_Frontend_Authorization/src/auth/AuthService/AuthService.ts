@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import queryString from 'query-string';
 
-const API_URL = '/apihui';
+const API_URL = '/api';
 
 
 export interface AuthResponse {
