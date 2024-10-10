@@ -8,6 +8,9 @@ export interface AuthResponse {
   access_token: string;
   refresh_token: string;
   message: string;
+  statusCode?: number;
+  status?: string;
+
 }
 
 export interface AccountData {
@@ -20,6 +23,7 @@ interface APIResponseSuccess<T> {
   body: T;
   statusCode?: number;
   status_code?: number;
+  status?: string;
 }
 
 interface APIResponseError {
@@ -47,20 +51,33 @@ export const signUp = async (email: string, password: string): Promise<AuthRespo
   }
 
   try {
-    const url = `${API_URL}/sign_up?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
-    const response: AxiosResponse<APIResponseSuccess<AuthResponse>> = await axios.post(url);
+    const url = `${API_URL}/sign_up`;
+    const response: AxiosResponse<{ message: string; status: string; access_token?: string; refresh_token?: string; }> = await axios.post(url, {
+      email,
+      password
+    });
 
-    const statusCode = response.data.statusCode || response.data.status_code || response.status;
+    const { status, message, access_token, refresh_token } = response.data;
 
-    if (statusCode !== 200 || (response.data.body as any).status === 'error') {
-      throw new Error(response.data.body.message || 'Sign-up failed');
+    if (status !== 'Ok') {
+      throw new Error(message || 'Sign-up failed');
     }
 
-    localStorage.setItem('accessToken', response.data.body.access_token);
-    localStorage.setItem('refreshToken', response.data.body.refresh_token);
+    if (access_token && refresh_token) {
+      localStorage.setItem('accessToken', access_token);
+      localStorage.setItem('refreshToken', refresh_token);
+    }
+
     localStorage.setItem('userEmail', email);
 
-    return response.data.body;
+    await signIn(email, password);
+
+
+    return {
+      access_token: access_token || '',
+      refresh_token: refresh_token || '',
+      message: message || 'User was created successfully',
+    };
   } catch (error: any) {
     if (error.response && error.response.data) {
       const serverError: APIResponseError = error.response.data;
@@ -69,6 +86,9 @@ export const signUp = async (email: string, password: string): Promise<AuthRespo
     throw new Error('Sign-up failed');
   }
 };
+
+
+
 
 export const signIn = async (email: string, password: string): Promise<AuthResponse> => {
   if (!validateEmail(email)) {
@@ -84,14 +104,17 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
     const response: AxiosResponse<APIResponseSuccess<AuthResponse>> = await axios.post(url);
 
     const statusCode = response.data.statusCode || response.data.status_code || response.status;
+    const status = response.data.body?.status || response.data.status;
 
-    if (statusCode !== 200 || (response.data.body as any).status === 'error') {
+    if (statusCode !== 200 || status === 'error') {
       throw new Error(response.data.body.message || 'Sign-in failed');
     }
 
     localStorage.setItem('accessToken', response.data.body.access_token);
     localStorage.setItem('refreshToken', response.data.body.refresh_token);
     localStorage.setItem('userEmail', email);
+
+    window.location.href = '/me';
 
     return response.data.body;
   } catch (error: any) {
@@ -102,7 +125,6 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
     throw new Error('Sign-in failed');
   }
 };
-
 
 export const logout = (): void => {
   try {
@@ -123,7 +145,6 @@ export const getAccount = async (): Promise<AccountData> => {
     if (!email) throw new Error('No email available');
 
     const url = `${API_URL}/me?email=${encodeURIComponent(email)}`;
-    console.log(url);
 
     const response: AxiosResponse<APIResponseSuccess<AccountData>> = await axios.get(url, {
       headers: {

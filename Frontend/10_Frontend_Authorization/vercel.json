@@ -1,4 +1,42 @@
 {
+  "rewrites": [
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/signup",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/me",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/api/login",
+      "destination": "http://142.93.134.108:1111/login"
+    },
+    {
+      "source": "/api/sign_up",
+      "destination": "http://142.93.134.108:1111/sign_up"
+    },
+    {
+      "source": "/api/logout",
+      "destination": "http://142.93.134.108:1111/logout"
+    },
+    {
+      "source": "/api/me",
+      "destination": "http://142.93.134.108:1111/me"
+    },
+    {
+      "source": "/api/refresh",
+      "destination": "http://142.93.134.108:1111/refresh"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",
@@ -20,12 +58,6 @@
           "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
     }
   ]
 }
