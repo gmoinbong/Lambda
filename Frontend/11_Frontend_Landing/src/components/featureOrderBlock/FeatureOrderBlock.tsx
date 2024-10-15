@@ -6,7 +6,7 @@ interface Props { }
 export const FeatureOrderBlock: FC<Props> = () => {
     return (
         <>
-            <img className={styles.greyRectangleGroup} src={'/assets/background/rectangleGroup.png'} alt="Rectangle Group" />
+            {/* <img className={styles.greyRectangleGroup} src={'/assets/background/rectangleGroup.png'} alt="Rectangle Group" /> */}
             <div className={styles.container}>
                 <div className={styles.textContainer}>
                     <h1>Breeze through orders without the stress</h1>

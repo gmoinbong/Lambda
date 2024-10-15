@@ -6,11 +6,15 @@ import { Company } from './pages/Company/Company'
 
 import { Privacy } from './pages/Privacy/Privacy'
 import { Terms } from './pages/Terms/Terms'
+import ScrollToTop from './helpers/ScrollToTop'
+
 
 function App() {
-  return (
-    <div className='app'>
 
+  return (
+
+    <div className='app'>
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/features' element={<Features />} />
@@ -18,7 +22,7 @@ function App() {
         <Route path='/privacy' element={<Privacy />} />
         <Route path='/terms' element={<Terms />} />
       </Routes >
-    </div >
+    </div>
   )
 }
 

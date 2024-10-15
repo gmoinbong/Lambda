@@ -1,4 +1,4 @@
-import  { FC } from 'react';
+import { FC } from 'react';
 import styles from './CompanyCore.module.css';
 
 interface Props { }
@@ -6,6 +6,9 @@ interface Props { }
 export const CompanyCore: FC<Props> = ({ }) => {
     return (
         <div className={styles.container}>
+            <h1>
+                Our Core Commitments
+            </h1>
             <div className={styles.content}>
                 <div className={styles.item}>
                     <img src={'/assets/company/icon_pen.svg'} alt="Every pixel matters" className={styles.icon} />

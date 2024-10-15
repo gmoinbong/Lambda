@@ -9,7 +9,8 @@ export const FeatureExampleBottomBlock: FC<Props> = () => {
             <div className={styles.leftimg}>
                 <img className={styles.imageManage} src={'/assets/features/bg_3.svg'} alt="Manage orders" />
             </div>
-            <div className={styles.grid}>
+            <div className={styles.
+id}>
                 <div className={styles.upper}>
                     <img className={styles.upperImage} src={'/assets/features/bg3.svg'} alt="Upper background" />
                     <div className={styles.inputContainer}>

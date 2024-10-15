@@ -1,8 +1,11 @@
 import logo from '/assets/logo.png'
 import styles from './Header.module.css'
+import { Link } from 'react-router-dom';
 
 const HeaderLogo = () => (
-    <img src={logo} alt="logo" className={styles.headerLogo} />
+    <Link to="/">
+        <img src={logo} alt="logo" className={styles.headerLogo} />
+    </Link>
 );
 
 export default HeaderLogo;

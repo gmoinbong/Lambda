@@ -1,19 +1,16 @@
 import { FC } from 'react';
 import styles from './Terms.module.css';
-import { useScreenDetector } from '../../hooks/useScreenDetector';
-import { MobileHeader } from '../../components/Header/MobileHeader';
-import { Header } from '../../components/Header/Header';
 import { Tabs } from '../../components/tabsComponent/Tabs';
 import Footer from '../../components/Footer/Footer';
+import Wrapper from '../../components/Wrapper/Wrapper';
 
 interface Props { }
 
 export const Terms: FC<Props> = ({ }) => {
-    const { isTablet } = useScreenDetector();
     return (
         <>
-            {isTablet ? <MobileHeader /> : <Header buttonBackground="#FF474D" />}
             <div className={styles.container}>
+                <Wrapper />
                 <h1 className={styles.info}>Tinvio Legal Info</h1>
                 <Tabs />
                 <div className={styles.content}>

@@ -15,6 +15,7 @@
     align-items: center;
     margin-top: 20px;
     text-wrap: balance;
+    padding-top: 90px;
 }
 
 
@@ -70,7 +71,6 @@
     padding-bottom: 50px;
     height: auto;
     position: relative;
-    left: 200px;
     top: -30px;
 }
 
@@ -94,7 +94,7 @@
     font-size: 44px;
     line-height: 51.56px;
     text-align: center;
-
+    width: 500px;
 }
 
 .content p {
@@ -164,35 +164,14 @@
     top: -13%;
 }
 
-@media (max-width: 1800px) {
-    .stars {
-        left: 5%;
-    }
-}
 
-@media (max-width: 1500px) {
-    .stars {
-        width: 50px;
-        padding-bottom: 50px;
-        height: auto;
-        position: relative;
-        left: 140px;
-        top: -10px;
-    }
-}
+
 
 @media (max-width: 1200px) {
     .content {
         max-width: 80vw;
     }
 
-
-    .stars {
-        width: 35px;
-        padding-bottom: 20px;
-        left: auto;
-
-    }
 }
 
 @media (max-width: 768px) {
@@ -204,8 +183,8 @@
 
 @media (max-width: 480px) {
     .stars {
-        width: 30px;
-        left: -15px;
+        top: -50px;
+        left: 30px;
     }
 }
 

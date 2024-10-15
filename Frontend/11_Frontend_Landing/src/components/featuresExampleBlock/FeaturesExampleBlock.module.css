@@ -35,7 +35,6 @@
     color: var(--text-color);
     margin-right: 50px;
     max-width: 1688px;
-    max-height: 484px;
     margin-right: 50px;
 }
 
@@ -118,22 +117,22 @@
 }
 
 .bgStarsTablet {
-    position: relative;
+    position: absolute;
     top: -85px;
 }
 
-@media(min-width: 1300px) {
-    .title {
-        margin-bottom: 100px;
+@media(min-width: 1440px) {
+    .featuresList {
+        padding-left: 100px;
     }
-
-
 }
 
-@media (max-width:1440px) {
-    .wrapper {
-        height: 70%;
+@media(min-width: 1240px) {
+    .textOverlay {
+        padding: 10rem;
     }
+
+
 }
 
 @media (max-width: 1240px) {

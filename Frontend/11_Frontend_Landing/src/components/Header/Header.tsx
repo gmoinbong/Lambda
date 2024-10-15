@@ -1,9 +1,9 @@
-import  { FC } from 'react'
-import HeaderLogo from './HeaderLogo'
-import LanguageSelector from './languageSelector/LanguageSelector'
-import styles from './Header.module.css'
-import { NavigationMenu } from './NavigationMenu/NavigationMenu'
-import { Button } from '../Button/Button'
+import { FC, useEffect, useState } from 'react';
+import HeaderLogo from './HeaderLogo';
+import LanguageSelector from './languageSelector/LanguageSelector';
+import styles from './Header.module.css';
+import { NavigationMenu } from './NavigationMenu/NavigationMenu';
+import { Button } from '../Button/Button';
 
 interface Props {
     buttonBackground?: string;
@@ -11,14 +11,38 @@ interface Props {
 }
 
 export const Header: FC<Props> = ({ buttonBackground, color }) => {
+    const [isBlured, setIsBlured] = useState(false);
+
+    const handleScroll = () => {
+        const scrollThreshold = 5;
+        if (window.scrollY > scrollThreshold) {
+            setIsBlured(true);
+        } else {
+            setIsBlured(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <header className={styles.header}>
-            <div className={styles.headerLeft} >
+        <header className={`${styles.header} ${isBlured ? styles.headerBlured : ''}`}>
+            <div className={styles.headerLeft}>
                 <HeaderLogo />
                 <LanguageSelector />
             </div>
             <NavigationMenu />
-            <Button className={styles.ctaButton} text='Get Started' bgColor={buttonBackground} color={color} height='48px' width='156px' />
+            <Button
+                className={styles.ctaButton}
+                text="Get Started"
+                bgColor={isBlured ? "#FF474D" : buttonBackground}
+                color={color}
+
+            />
         </header>
-    )
-}
+    );
+};

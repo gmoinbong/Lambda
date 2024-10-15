@@ -8,11 +8,10 @@
     padding: 2rem;
     background-image: url('../../assets/background/home_bg_test.svg');
     background-size: cover;
-    background-position: center;
     z-index: 2;
     box-sizing: border-box;
     flex-direction: column;
-    height: 900px;
+    height: 940px;
 }
 
 .testimonialCard {
@@ -161,10 +160,11 @@
 
 .greyBg1 {
     position: absolute;
-    right: 25%;
-    top: -940px;
+    left: 43px;
+    top: -490px;
     z-index: 3;
-    width: 200px;
+    width: 14%;
+
 }
 
 .greyBg2 {
@@ -188,9 +188,13 @@
 }
 
 .greyDiamond2 {
-    top: 10%;
-    right: 20%;
+    right: -16%;
+    max-width: 50%;
+    top: -131%;
+    z-index: 2;
+
 }
+
 
 @media (max-width: 1024px) {
     .testimonialImage {
