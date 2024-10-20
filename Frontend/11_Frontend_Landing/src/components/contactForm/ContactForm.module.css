@@ -25,10 +25,10 @@
 
 .content {
     display: flex;
-    max-width: 1200px;
     width: 100%;
-    position: relative;
     align-items: center;
+    position: relative;
+    top: 50px;
 }
 
 .content p {
@@ -36,7 +36,7 @@
 }
 
 .left {
-    flex: 1;
+    flex: 0.75;
     padding-right: 20px;
     text-align: left;
 }
@@ -75,8 +75,9 @@
 }
 
 .mapImage {
-    width: 559px;
-    height: 386px;
+    width: 830px;
+    height: 625px;
+
 }
 
 .highlight {
@@ -124,12 +125,15 @@
     color: #777;
 }
 
-.title {
+.titleMap {
     font-size: 36px;
     font-weight: 600;
     line-height: 44.1px;
     text-align: left;
     margin-bottom: 40px;
+    position: absolute;
+    left: 200px;
+    top: 90px;
 }
 
 .botContent {
@@ -142,7 +146,6 @@
 
 .confetti {
     position: absolute;
-
     z-index: 1;
 }
 
@@ -154,12 +157,31 @@
 @media(min-width:1240px) {
 
     .confetti {
-        position: relative;
         top: 201px;
         right: -19vw;
         z-index: 1;
         height: 900px;
     }
+
+
+}
+
+@media(max-width:1240px) {
+    .confetti {
+        display: none;
+
+    }
+
+    .mapImage {
+        width: 600px;
+        height: 500px;
+    }
+
+    .titleMap {
+        left: 80px;
+        top: 40px;
+    }
+
 }
 
 @media(max-width:1024px) {
@@ -172,6 +194,15 @@
         width: 420px;
         height: 320px;
     }
+
+    .titleMap {
+        font-size: 32px;
+        left: 15px;
+        top: 85px;
+    }
+
+
+
 }
 
 @media(max-width: 768px) {

@@ -1,19 +1,24 @@
 .checkoutBlock {
     position: relative;
     width: 100%;
+    height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
-    background: url(../../assets/background/home_bg.svg) no-repeat center center;
-    background-size: cover;
     top: -350px;
-    height: 100vh;
+}
 
-
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: -80px;
+    width: 2000px;
+    height: 100%;
+    z-index: -1;
+    border-radius: 20px;
 }
 
 .content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     justify-content: center;
@@ -26,15 +31,18 @@
 .contentImage {
     max-width: 560px;
     max-height: 495px;
+    margin-left: 20px;
 }
 
 .textBlock {
-    max-width: 500px;
+    max-width: 478px;
     margin-left: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-top: 80px;
+    height: 69px;
+    padding-left: 10px;
 }
 
 .textBlock h2 {
@@ -61,8 +69,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
     color: black;
+    width: 220px !important;
+    height: 56px !important;
+    box-sizing: border-box;
 }
 
 .playIcon {
@@ -91,6 +101,32 @@
     height: 250px;
 }
 
+@media(min-width: 768px) {
+    .contentImage {
+        position: relative;
+        top: 50px;
+    }
+
+
+
+    .content {
+        justify-content: space-between;
+    }
+
+    .textBlock {
+        padding: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 1440px) {
+    .playButton {
+        width: 188px !important;
+        height: 48px !important;
+        ;
+    }
+}
+
 @media (max-width: 1200px) {
 
 
@@ -106,13 +142,37 @@
     }
 }
 
+@media (max-width:1024px) {
+    .textBlock h2 {
+        font-size: 32px;
+        line-height: 37.5px;
+    }
+
+    .textBlock p {
+        font-size: 16px;
+        line-height: 23px;
+    }
+}
+
 @media (max-width: 768px) {
+    .checkoutBlock {
+        height: 100%;
+    }
+
     .content {
         flex-direction: column-reverse;
         align-items: center;
+        justify-content: flex-end;
         width: 100%;
         text-align: center;
+        height: 1050px;
+        gap: 50px;
+    }
 
+    .backgroundImage {
+        left: -5px;
+        top: -300px;
+        height: 1200px;
     }
 
     .textBlock {
@@ -140,12 +200,36 @@
     }
 
     .checkoutBlock {
-        padding: 40px 0;
+        padding: 40px 0 0 0;
+        height: 900px;
     }
 
     .contentImage {
-        width: 125%;
+        width: 500px;
         padding-top: 20px;
     }
 
+}
+
+@media(max-width: 600px) {
+    .content {
+        gap: 80px;
+    }
+
+    .playButton {
+        margin: 0;
+    }
+
+
+}
+
+@media(max-width: 480px) {
+    .checkoutBlock {
+        padding-top: 120px;
+
+    }
+
+    .contentImage {
+        width: 100%;
+    }
 }

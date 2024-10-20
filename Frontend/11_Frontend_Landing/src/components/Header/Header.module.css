@@ -10,7 +10,6 @@
   height: 90px;
   position: fixed;
   z-index: 10;
-  padding-left: 20px;
 }
 
 .headerLeft {
@@ -81,7 +80,8 @@
 }
 
 .arrow img {
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-bottom: 2px;
   width: 10px;
   height: 6px;
 }
@@ -89,10 +89,10 @@
 .options {
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
+  left: 10px;
+  width: 48px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 999;
@@ -101,8 +101,9 @@
 .option {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 .option:hover {
@@ -110,9 +111,12 @@
 }
 
 .flagImage {
-  margin-right: 8px;
   width: 24px;
   height: 16px;
+}
+
+.moroccoFlag {
+  padding-bottom: 10px;
 }
 
 .ctaButton {

@@ -27,8 +27,8 @@ export const HomeContentBlock: FC<Props> = () => {
         <div className={styles.content}>
             <div className={styles.textContent}>
                 <div className={styles.textTitle}>
-                    <img className={styles.stars} src={'/assets/background/stars.png'} alt='stars' />
                     <h1>
+                        <img className={styles.stars} src={'/assets/background/stars.png'} alt='stars' />
                         Collecting payments <br /> <span> is easy</span>, right?
                     </h1>
                 </div>

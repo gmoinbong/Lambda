@@ -14,7 +14,7 @@ export const ContactForm: FC<Props> = () => {
             </div>
             <div className={styles.content}>
                 <div className={styles.left}>
-                    <h2 className={styles.title}>Fill up the form and we'll get <br /> in touch within a few hours</h2>
+                    <h2 className={styles.titleMap}>Fill up the form and we'll get <br /> in touch within a few hours</h2>
                     <img src={'/assets/maps.png'} alt="Map" className={styles.mapImage} />
                 </div>
                 <div className={styles.right}>

@@ -35,7 +35,7 @@ export const MobileHeader: FC<Props> = () => {
             </div>
             <nav className={`${styles.navMenu} ${isMenuOpen ? styles.navMenuOpen : ''}`}>
                 <NavigationMenu mobile />
-                <Button className={styles.ctaButton} text='Get Started' color='#FFFF' height='40px' width='129px' />
+                <Button className={styles.ctaButton} text='Get Started' color='#FFFF' height='48px' width='188px' />
             </nav>
         </header>
     );

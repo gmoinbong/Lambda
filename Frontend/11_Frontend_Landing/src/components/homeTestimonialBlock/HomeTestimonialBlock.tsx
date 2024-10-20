@@ -16,8 +16,8 @@ export const HomeTestimonialBlock: FC = () => {
     };
 
     return (
-        <div style={{ marginLeft: "20px" }}>
-            <div className={styles.testimonialBlock}>
+        <div className={styles.testimonialBlock}>
+            <div className={styles.cardWrapper} >
                 <h2 className={styles.title}>Why choose Tinvio?</h2>
                 <div className={styles.testimonialCard}>
                     {isTablet ? <img src={testimonials[current].image} alt="Testimonial" className={styles.testimonialImage} /> : null}

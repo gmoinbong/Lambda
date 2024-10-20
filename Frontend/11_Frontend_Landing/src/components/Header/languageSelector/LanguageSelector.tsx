@@ -7,7 +7,7 @@ const options = [
   { value: "en", label: "EN", flag: <img src={"/assets/flags/flag1.png"} alt="UK Flag" className={styles.flagImage} /> },
   { value: "ua", label: "UA", flag: <img src={"/assets/flags/flag2.png"} alt="Ukraine Flag" className={styles.flagImage} /> },
   { value: "th", label: "TH", flag: <img src={"/assets/flags/flag3.png"} alt="Thailand Flag" className={styles.flagImage} /> },
-  { value: "ma", label: "MA", flag: <img src={"/assets/flags/flag4.png"} alt="Morocco Flag" className={styles.flagImage} /> },
+  { value: "ma", label: "MA", flag: <img src={"/assets/flags/flag4.png"} alt="Morocco Flag" className={`${styles.flagImage} ${styles.moroccoFlag}`} /> },
 ];
 
 const LanguageSelector: FC<Props> = () => {

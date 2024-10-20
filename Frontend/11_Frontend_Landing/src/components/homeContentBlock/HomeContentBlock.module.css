@@ -9,6 +9,9 @@
 .textContent {
     z-index: 1;
     text-align: left;
+    position: sticky;
+    left: 200px;
+    width: 300px;
 }
 
 .textTitle {
@@ -16,13 +19,6 @@
     margin-bottom: 20px;
 }
 
-.textTitle img {
-    width: 60px;
-    margin-right: 10px;
-    position: relative;
-    top: 26px;
-    left: -25px;
-}
 
 .textContent h1 {
     font-size: 48px;
@@ -67,8 +63,10 @@
     justify-content: flex-end;
     align-items: center;
     transition: left 0.5s ease-in-out;
-    left: 100px;
+    left: 80px;
     z-index: -1;
+    flex: 1;
+
 }
 
 .diamondWrapper {
@@ -114,6 +112,14 @@
     position: absolute;
     left: 320px;
     height: 22%;
+}
+
+.stars {
+    position: absolute;
+    width: 60px;
+    top: -20px;
+    left: -34px;
+    z-index: 5;
 }
 
 .rectangle2 {
@@ -185,17 +191,19 @@
     .greyDiamondBottom {
         left: -100px;
     }
+
+    .imageContainer {
+        left: 200px;
+        top: 20px;
+    }
 }
 
 @media (max-width: 1600px) {
-    .imageContainer {
-        left: 300px;
-        top: 20px;
-    }
+
+
 
     .textContent {
-        position: relative;
-        left: 50px;
+        left: 150px
     }
 
     .content {
@@ -208,18 +216,33 @@
 
 }
 
+@media (max-width: 1440px) {
+    .textContent h1 {
+        font-size: 44px;
+    }
+
+    .textContent {
+        left: 120px
+    }
+
+    .textContent p {
+        font-size: 18px;
+    }
+
+    .ctaButton {
+        width: 188px !important;
+        height: 48px !important;
+    }
+}
+
 @media (max-width: 1300px) {
     .imageContainer {
         left: 350px;
     }
 
-    .textContent {
-        position: relative;
-        left: 200px;
-    }
 
-    .textContent h1 {
-        width: 350px;
+    .textContent {
+        left: 80px
     }
 
     .greyDiamondTop {
@@ -227,49 +250,53 @@
     }
 }
 
-@media (max-width: 1240px) and (min-width: 768px) {
-    .textContent {
-        margin-left: 5%;
-        max-width: 90%;
-        text-align: left;
+@media (max-width: 1240px) {
+    .content {
+        justify-content: flex-end;
+    }
+
+    .textContent h1 {
+        width: 300px;
     }
 
 }
 
-@media (max-width: 1250px) {
-
-    .textContent {
-        position: relative;
-        left: 300px;
-    }
-}
 
 @media (max-width: 1100px) {
-    .imageContainer {
-        left: 450px;
-    }
+
 
     .textContent {
-        position: relative;
-        left: 400px;
+        left: 20px;
     }
 }
 
-@media (max-width: 1000px) {
- 
-
-    .textContent {
-        position: relative;
-        left: 450px;
+@media (max-width: 1024px) {
+    .textContent h1 {
+        font-size: 36px;
+        line-height: 49px;
+        width: 220px;
     }
+
+    .imageContainer {
+        left: 400px;
+    }
+
 }
 
 @media (max-width: 900px) {
     .imageContainer {
-        left: 580px;
+        left: 450px;
     }
 
- 
+    .textContent {
+        width: 180px;
+    }
+}
+
+@media (max-width: 800px) {
+    .imageContainer {
+        left: 500px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -277,19 +304,37 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 200px;
+        padding-top: 20px;
+    }
+
+    .diamondWrapper {
+        left: 0;
     }
 
     .textContent {
-        margin-right: 0;
+        margin: 0 auto;
         text-align: center;
-        padding: 0 20px;
         left: 0;
+
+    }
+
+    .textContent h1 {
+        font-size: 32px;
+        line-height: 39.2px;
+        text-align: center;
+    }
+
+    .textContent p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
     }
 
     .imageContainer {
         margin-left: 0;
         padding-left: 0;
         left: -60%;
+
     }
 
     .redDiamond {
@@ -302,19 +347,25 @@
         height: 110vw;
     }
 
+    .redDiamond,
+    .overlayDiamond {
+        border-radius: 100px;
+    }
+
     .backgroundImageDesktop {
         position: absolute;
-        bottom: 79%;
-        right: -10%;
-        width: 80%;
-        height: 75%;
+        bottom: 85%;
+        right: 0%;
+        width: 75%;
+        height: 70%;
+
     }
 
     .backgroundImageMobile {
         position: absolute;
-        top: 9%;
-        left: 36%;
-        width: 35%;
+        top: 7%;
+        left: 33%;
+        width: 28%;
         height: auto;
     }
 
@@ -323,48 +374,106 @@
         left: 70%;
         z-index: 12;
     }
+
+    .greyDiamondBottom {
+        display: none;
+    }
+
+    .stars {
+        top: -25px;
+        left: 0px;
+    }
+
+    .freeText {
+        margin: 0 !important;
+    }
+
+    .textContent {
+        width: 350px;
+    }
+
+    .textContent h1 {
+        width: 100%;
+    }
 }
 
 @media (max-width: 500px) {
-    .backgroundImageDesktop {
-        bottom: 74%;
-        right: -2%;
-        width: 70%;
-        height: 70%;
+
+
+    .freeText {
+        margin: 20px 0 !important;
     }
 
-    .backgroundImageMobile {
-        top: 12%;
-        left: 35%;
-        width: 35%;
-        height: auto;
+    .stars {
+        left: 0vw;
     }
+
+
 }
 
 @media (max-width: 400px) {
     .content {
-        gap: 0px;
+        gap: 50px;
     }
 
     .imageContainer {
         justify-content: flex-start;
     }
 
-    .backgroundImageDesktop {
-        bottom: 73%;
-        right: -80px;
-        width: 80%;
-        height: 80%;
-    }
-
-    .backgroundImageMobile {
-        top: 5%;
-        left: 34%;
-        width: 45%;
-        height: auto;
-    }
 
     .greyDiamondBottom {
         top: -100px;
+    }
+
+    .textContent {
+        margin: 20px 0 !important;
+    }
+}
+
+
+
+@media (max-width: 375px) {
+    .textContent p {
+        font-size: 14px;
+    }
+
+    .textContent h1 {
+        font-size: 28px;
+        line-height: 34.66px;
+        line-height: 22px;
+    }
+
+    .freeText {
+        margin: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .diamondWrapper {
+        left: -70px;
+    }
+
+    .overlayDiamond {
+        width: 170vw;
+        height: 140vw;
+    }
+
+    .redDiamond {
+        width: 160vw;
+        height: 130vw;
+    }
+
+    .backgroundImageMobile {
+        top: 7%;
+        left: 36%;
+        width: 27%;
+        height: auto;
+
+    }
+
+    .backgroundImageDesktop {
+        bottom: 77%;
+        right: -3%;
+        width: 70%;
+        height: 70%;
     }
 }
