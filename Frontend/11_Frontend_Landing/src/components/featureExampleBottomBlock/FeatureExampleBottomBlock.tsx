@@ -7,27 +7,41 @@ export const FeatureExampleBottomBlock: FC<Props> = () => {
     return (
         <div className={styles.block}>
             <div className={styles.leftimg}>
-                <img className={styles.imageManage} src={'/assets/features/bg_3.svg'} alt="Manage orders" />
+                <img src={'/assets/features/bg_3.svg'} alt="Manage orders background" className={styles.imageManage} />
             </div>
-            <div className={styles.
-id}>
+            <div className={styles.grid}>
                 <div className={styles.upper}>
-                    <img className={styles.upperImage} src={'/assets/features/bg3.svg'} alt="Upper background" />
                     <div className={styles.inputContainer}>
-                        <img className={styles.icon} src={'/assets/features/pin_file_icon.svg'} alt="File icon" />
-                        <img src={ '/assets/features/add_file.svg'} alt="Add file" />
-                        <input type="text" placeholder="Type something..." />
-                        <button className={styles.sendButton}>
-                            <img className={styles.sentIcon} src={'/assets/features/bg3.svg'} alt="Send icon" />
-                        </button>
+                        <img src={'/assets/features/pin_file_icon.svg'} alt="Pin icon" className={styles.icon} />
+                        <img src={'/assets/features/add_file_icon.svg'} alt="Add icon" className={styles.icon} />
+                        <div className={styles.inputWrapper}>
+                            <input type="text" placeholder="Type something..." className={styles.input} />
+                            <button className={styles.sendButton}>
+                                <img src={'/assets/features/arrow_right.svg'} alt="Send icon" className={styles.sentIcon} />
+                            </button>
+                        </div>
+                        <p className={`${styles.caption} ${styles.captionMessages}`}>Send messages</p>
+                        <img src={'/assets/features/bg_example.svg'} alt="bg detail" className={styles.bgDetail} />
+                        <img src={'/assets/features/bg_dots.svg'} alt="bg detail" className={styles.bgDotsDetail} />
                     </div>
+                    <img src={'/assets/features/bg_detail1.svg'} alt="bg detail" className={styles.bg1Detail} />
 
                 </div>
-                <div>
-                    <img className={`${styles.gridItem} ${styles.down1}`} src={'/assets/features/dollar_icon.svg'} alt="Create invoices" />
+                <div className={styles.down1}>
+                    <img src={'/assets/features/dollar_icon.svg'} alt="Create invoices" className={styles.gridItem} />
+                    <p className={`${styles.caption} ${styles.captionInvoices}`}>Create invoices</p>
+                    <img src={'/assets/features/bg_dots1.svg'} alt="bg detail" className={styles.bgDots1Detail} />
+                    <img src={'/assets/features/bg_detail2.svg'} alt="bg detail" className={styles.bg2Detail} />
+                    <img src={'/assets/features/bg_detail3.svg'} alt="bg detail" className={styles.bg3Detail} />
                 </div>
-                <div style={{ width: "140%" }}>
-                    <img className={`${styles.gridItem} ${styles.down2}`} src={'/assets/features/bg5.svg'} alt="Share payment links" />
+                <div className={styles.down2}>
+                    <div className={styles.shareLinkContainer}>
+                        <img src={'/assets/features/bg_detail4.svg'} alt="bg detail" className={styles.bg4Detail} />
+                        <img src={'/assets/features/share-link_icon.svg'} alt="Share payment links" className={`${styles.gridItem} ${styles.shareLink}`} />
+                        <img src={'/assets/features/bg_dots2.svg'} alt="bg detail" className={styles.bgDots2Detail} />
+                        <p className={`${styles.caption} ${styles.captionPayment}`}>Share payment links
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

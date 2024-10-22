@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-bottom: 50px;
 }
 
 .titleWrapper h1 {
@@ -17,11 +18,12 @@
     flex-direction: row-reverse;
     align-items: center;
     font-family: Gilroy;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 2.5rem;
-    text-align: center;
     color: #FB242B;
+    font-family: Gilroy;
+    font-size: 48px;
+    line-height: 56.25px;
+    text-align: right;
+
 }
 
 .titleWrapper span {
@@ -69,8 +71,21 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%;
+    width: 650px;
 }
+
+.leftImages img {
+    height: 485px;
+    width: 650px;
+
+}
+
+.rightImages img {
+    height: 415px;
+    width: 650px;
+
+}
+
 
 .bg {
     height: auto;
@@ -114,15 +129,12 @@
     cursor: pointer;
 }
 
+
 @media (min-width: 375px) {
     .imageContainer {
         flex-direction: row;
     }
 
-    .leftImages,
-    .rightImages {
-        width: 45%;
-    }
 
     .bg {
         height: 200px;
@@ -131,23 +143,30 @@
 
 }
 
-@media (max-width: 1024px) {
-    .buttonContainer {
-        height: 100px;
-    }
-
-
-}
 
 @media (max-width: 1440px) {
     .buttonContainer {
         height: 100px;
     }
 
+    .leftImages,
+    .rightImages {
+        width: 50%;
+    }
+
     .container {
         padding: 0 100px;
     }
 
+    .titleWrapper h1 {
+        font-size: 44px;
+        line-height: 51.56px;
+    }
+
+    .Button {
+        width: 188px !important;
+        height: 48px !important;
+    }
 }
 
 @media(max-width: 1280px) {
@@ -160,14 +179,23 @@
         font-weight: 400;
         line-height: 25px;
     }
+
+
 }
 
 @media (max-width: 1024px) {
+    .buttonContainer {
+        height: 100px;
+    }
+
     .container {
         padding: 20px;
 
     }
 }
+
+
+
 
 @media (max-width:768px) {
     .container {
@@ -179,8 +207,16 @@
         width: 60%;
     }
 
+    .leftImages img {
+        height: 520px;
+    }
+
     .buttonContainer {
         height: 200px;
+    }
+
+    .rightImages {
+        width: 50%;
     }
 
     .buttonContainer p {
@@ -190,10 +226,22 @@
         width: 300px;
     }
 
+    .titleWrapper h1 {
+        font-size: 36px;
+        line-height: 42.19px;
+    }
+
 }
 
 @media (max-width:375px) {
-    .leftImages {
+
+    .leftImages,
+    .rightImages {
         width: 100%;
+    }
+
+    .titleWrapper h1 {
+        font-size: 32px;
+        line-height: 37.5px;
     }
 }

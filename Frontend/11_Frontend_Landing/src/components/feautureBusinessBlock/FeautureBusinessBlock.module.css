@@ -32,9 +32,9 @@
 
 .textContainer h2 {
     font-family: Gilroy;
-    font-size: 36px;
+    font-size: 56px;
     font-weight: 600;
-    line-height: 44.1px;
+    line-height: 68.6px;
     text-align: left;
     color: #212121;
     margin: 0;
@@ -52,10 +52,22 @@
     right: 0;
 }
 
+@media(max-width:1280px) {
+    .textContainer h2 {
+        font-size: 48px;
+        line-height: 58.8px;
+    }
+}
+
 @media(max-width: 1024px) {
 
     .image {
         width: 60%;
+    }
+
+    .textContainer h2 {
+        font-size: 44px;
+        line-height: 51.56px;
     }
 }
 
@@ -66,5 +78,17 @@
 
     .image {
         width: 100%;
+    }
+
+    .textContainer h2 {
+        text-align: center;
+    }
+
+}
+
+@media(max-width:375px) {
+    .textContainer h2 {
+        font-size: 32px;
+        line-height: 39.2px;
     }
 }

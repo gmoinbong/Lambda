@@ -101,6 +101,13 @@
     height: 250px;
 }
 
+@media(min-width: 1440px) {
+    .backgroundImage {
+        left: -80px;
+        width: auto;
+    }
+}
+
 @media(min-width: 768px) {
     .contentImage {
         position: relative;

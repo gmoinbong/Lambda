@@ -35,11 +35,10 @@
 }
 
 .content h2 {
-    width: 725.9px;
-    height: 86px;
     font-family: Gilroy;
-    font-size: 36px;
-    line-height: 42.19px;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53.9px;
     text-align: left;
     color: white;
 }
@@ -48,7 +47,7 @@
     background-color: white;
     color: #363636;
     border: none;
-    border-radius: 4px;
+    border-radius: 16px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
@@ -60,6 +59,20 @@
     position: absolute;
     top: 50px;
     z-index: 5;
+}
+
+@media(max-width:1440px) {
+    .content h2 {
+        font-family: Gilroy;
+        font-size: 36px;
+        line-height: 42.19px;
+        text-align: left;
+    }
+
+    .button {
+        width: 188px;
+        height: 48px;
+    }
 }
 
 @media(max-width:1300px) {
@@ -115,5 +128,16 @@
 
     .stars {
         display: none;
+    }
+}
+
+
+@media(max-width:375px) {
+    .content h2 {
+        font-family: Gilroy;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29.4px;
+        text-align: center;
     }
 }

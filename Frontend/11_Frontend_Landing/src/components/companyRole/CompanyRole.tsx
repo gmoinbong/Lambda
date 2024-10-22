@@ -1,4 +1,4 @@
-import  { FC } from 'react';
+import { FC } from 'react';
 import styles from './CompanyRole.module.css';
 import Button from '../Button/Button';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
@@ -11,9 +11,9 @@ export const CompanyRole: FC<Props> = ({ }) => {
         <h1>
             Global, local, remote.
             Find the perfect role
-            <img src={ '/assets/stars-features.svg'} alt="stars" className={styles.stars} />
+            <img src={'/assets/stars-features.svg'} alt="stars" className={styles.stars} />
         </h1>
-        <Button className={styles.Button} text='Explore Roles' />
+        <Button width='210px' height='56px' className={styles.Button} text='Explore Roles' />
     </div>
 
     return (
@@ -22,7 +22,7 @@ export const CompanyRole: FC<Props> = ({ }) => {
             <div className={styles.imageContainer}>
                 <div className={styles.leftImages}>
                     <img className={styles.leftImage0} src={'/assets/company/img_role.svg'} alt="" />
-                    <img className={styles.leftImage1} src={ '/assets/company/img_role_1.svg'} alt="" />
+                    <img className={styles.leftImage1} src={'/assets/company/img_role_1.svg'} alt="" />
                 </div>
                 <div className={styles.rightImages}>
                     <img className={styles.rightImage0} src={'/assets/company/img_role_2.svg'} alt="" />

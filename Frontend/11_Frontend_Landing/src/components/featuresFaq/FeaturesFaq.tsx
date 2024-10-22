@@ -16,21 +16,25 @@ const FeaturesFaq: React.FC = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.h2}>FAQ</h2>
-            {faqItems.map((item, index) => (
-                <div
-                    key={index}
-                    className={`${styles.faqItem} ${activeIndices.includes(index) ? styles.active : ''}`}
-                    onClick={() => handleToggle(index)}
-                >
-                    <h3>
-                        {item.question}
-                        <span className={styles.toggleIcon}>
-                            {activeIndices.includes(index) ? '-' : '+'}
-                        </span>
-                    </h3>
-                    <p>{item.answer}</p>
-                </div>
-            ))}
+            {faqItems.map((item, index) => {
+                const isLastItem = index === faqItems.length - 1;
+
+                return (
+                    <div
+                        key={index}
+                        className={`${styles.faqItem} ${activeIndices.includes(index) ? styles.active : ''} ${isLastItem ? styles.lastItem : ''}`}
+                        onClick={() => handleToggle(index)}
+                    >
+                        <h3 className={styles.h3}>
+                            {item.question}
+                            <span className={styles.toggleIcon}>
+                                {activeIndices.includes(index) ? '-' : '+'}
+                            </span>
+                        </h3>
+                        <p className={styles.p}>{item.answer}</p>
+                    </div>
+                );
+            })}
         </div>
     );
 };

@@ -21,11 +21,14 @@
 
 
 .content p {
-    font-family: Inter;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 22px;
+    font-family: Inter;
+    line-height: 23px;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #5C5C5C;
 }
 
 .backgroundContainer {
@@ -64,6 +67,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    font-size: 56px;
 }
 
 .stars {
@@ -91,40 +95,31 @@
 
 .content h1 {
     font-family: Gilroy;
-    font-size: 44px;
     line-height: 51.56px;
     text-align: center;
-    width: 500px;
+    width: 660px;
+    font-weight: 600;
 }
 
-.content p {
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 23px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #5C5C5C;
-
-}
 
 .ctaButton {
     background-color: #FF474D;
     color: white;
     padding: 1% 2%;
     border: none;
-    border-radius: 1.5vw;
+    border-radius: 18px;
     font-size: 1vw;
     cursor: pointer;
     z-index: 2;
     max-width: 200px;
-    width: 100%;
-    height: 50px;
+    width: 220px !important;
+    height: 56px !important;
+    font-family: Gilroy;
     font-size: 20px;
     font-weight: 700;
     line-height: 24.76px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .ctaButton:hover {
@@ -165,13 +160,49 @@
 }
 
 
+@media (max-width: 1440px) {
+    .content h1 {
+        font-family: Gilroy;
+        font-size: 48px;
+        line-height: 58.8px;
+    }
 
+    .content p {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+
+    }
+
+    .ctaButton {
+        width: 188px !important;
+        height: 48px !important;
+    }
+}
 
 @media (max-width: 1200px) {
     .content {
         max-width: 80vw;
     }
 
+}
+
+@media(max-width: 1024px) {
+    .content h1 {
+        font-family: Gilroy;
+        font-size: 44px;
+        line-height: 51.56px;
+    }
+
+    .content p {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        text-align: center;
+
+    }
 }
 
 @media (max-width: 768px) {
@@ -205,6 +236,23 @@
         bottom: 130px;
         left: 165px;
     }
+
+    .content h1 {
+        font-family: Gilroy;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 39.2px;
+        text-align: center;
+    }
+
+    .content p {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: center;
+    }
+
 
 
 }

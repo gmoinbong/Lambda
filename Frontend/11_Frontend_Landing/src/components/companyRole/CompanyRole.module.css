@@ -12,6 +12,8 @@
     align-items: center;
     position: relative;
     flex-direction: column;
+    max-width: 390px;
+    width: 100%;
 }
 
 
@@ -20,9 +22,10 @@
     flex-direction: row-reverse;
     align-items: center;
     font-family: Gilroy;
-    font-size: 2rem;
+    font-size: 56px;
     font-weight: 600;
-    line-height: 2.5rem;
+    line-height: 68.6px;
+    text-align: left;
     text-align: center;
     color: #212121;
 }
@@ -53,12 +56,13 @@
     height: 48px;
     border-radius: 16px;
     border: 1px solid #D2D2D2;
-    font-family: Gilroy;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19.81px;
-    text-align: center;
     margin-top: 10px;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.28px;
+    text-align: center;
+
 }
 
 .imageContainer {
@@ -73,8 +77,9 @@
 
 .imageContainer img {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    max-width: 390px;
+    max-height: 300px;
+    height: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
@@ -84,7 +89,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%;
 }
 
 .bg {
@@ -136,7 +140,6 @@
 
     .leftImages,
     .rightImages {
-        width: 45%;
     }
 
     .bg {
@@ -144,11 +147,7 @@
     }
 }
 
-@media (max-width: 1024px) {
-    .buttonContainer {
-        height: 100px;
-    }
-}
+
 
 @media (max-width: 1440px) {
     .buttonContainer {
@@ -157,6 +156,16 @@
 
     .container {
         padding: 0 100px;
+    }
+
+    .titleWrapper h1 {
+        font-size: 48px;
+        line-height: 58.8px;
+    }
+
+    .Button {
+        width: 188px !important;
+        height: 48px !important;
     }
 }
 
@@ -172,9 +181,19 @@
     }
 }
 
+
 @media (max-width: 1024px) {
+    .titleWrapper h1 {
+        font-size: 44px;
+        line-height: 51.56px;
+    }
+
     .container {
         padding: 20px;
+    }
+
+    .buttonContainer {
+        height: 100px;
     }
 
     .titleWrapper {
@@ -205,21 +224,23 @@
 
 @media (max-width: 375px) {
     .leftImages {
-        width: 100%;
     }
+
+    .titleWrapper h1 {
+        font-size: 32px;
+        line-height: 37.5px;
+    }
+
 }
 
 @media (min-width: 1024px) {
     .stars {
-        right: -35px;
-        top: -10px;
-    }
-}
+        right: -55px;
+        top: -35px;
 
-@media (min-width: 1000px) {
+    }
 
     .leftImages,
     .rightImages {
-        width: 50%;
     }
 }

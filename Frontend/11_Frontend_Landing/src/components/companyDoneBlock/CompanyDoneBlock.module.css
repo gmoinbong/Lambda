@@ -3,7 +3,8 @@
     font-size: 48px;
     line-height: 56.25px;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 58px;
+    padding-top: 140px;
 }
 
 .upperBlockWrapper {
@@ -112,6 +113,22 @@
 }
 
 @media(max-width: 1440px) {
+    .title {
+        font-size: 44px;
+        line-height: 51.56px;
+        text-align: center;
+    }
+
+    .listItem {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .textBlock h2 {
+        font-size: 32px;
+        line-height: 37.5px;
+    }
+
     .textBlock {
         padding-left: 100px;
     }
@@ -124,6 +141,8 @@
     .upperImage {
         width: 100%;
     }
+
+
 }
 
 @media(max-width: 1024px) {
@@ -131,9 +150,15 @@
         padding-left: 20px;
         padding-bottom: 20px;
     }
+
 }
 
 @media(max-width:768px) {
+    .title {
+        font-size: 36px;
+        line-height: 42.19px;
+    }
+
     .upperBlockWrapper {
         flex-direction: column;
     }
@@ -176,6 +201,11 @@
 }
 
 @media(max-width:375px) {
+    .title {
+        font-size: 32px;
+        line-height: 37.5px;
+    }
+
     .upperImage {
         margin-right: 43px;
         margin-top: 20px;
@@ -190,4 +220,16 @@
     .list {
         width: 70%;
     }
+
+    .listItem {
+        font-family: Inter;
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .textBlock h2 {
+        font-size: 20px;
+        line-height: 24.5px;
+    }
+
 }

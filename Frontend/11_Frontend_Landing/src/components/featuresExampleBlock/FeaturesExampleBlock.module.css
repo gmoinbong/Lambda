@@ -17,9 +17,9 @@
 
 .title {
     font-family: Gilroy;
-    font-size: 44px;
+    font-size: 48px;
     font-weight: 600;
-    line-height: 53.9px;
+    line-height: 58.8px;
     text-align: left;
     text-align: left;
     padding: 20px;
@@ -79,25 +79,21 @@
 }
 
 .featureItem h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.featureItem h3 {
     font-family: Gilroy;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 42px;
     text-align: left;
-
 }
 
 .featuresList p {
     font-family: Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 21px;
+    line-height: 24px;
     text-align: left;
+
+
 }
 
 .featureItem p {
@@ -121,9 +117,33 @@
     top: -85px;
 }
 
+@media(max-width:1440px) {
+    .featuresList h3 {
+        font-family: Gilroy;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: left;
+    }
+
+    .featuresList p {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+    }
+
+}
+
 @media(min-width: 1440px) {
     .featuresList {
         padding-left: 100px;
+    }
+
+    .title {
+        font-size: 44px;
+        line-height: 53.9px;
     }
 }
 
@@ -154,6 +174,7 @@
     .featuresList {
         flex-direction: row;
         flex-wrap: wrap;
+        padding-top: 50px;
     }
 
     .featureItem {
@@ -174,6 +195,8 @@
         top: 35%;
     }
 }
+
+
 
 @media (max-width: 1024px) {
     .featuresList {
@@ -203,12 +226,17 @@
 
     .title {
         margin: 0;
+        font-family: Gilroy;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 44.1px;
     }
 
     .featuresList {
         grid-column-gap: 40px;
         grid-row-gap: 40px;
     }
+
 
 
     .featuresList {
@@ -251,27 +279,19 @@
 
 }
 
-@media(max-width: 500px) {
+@media(max-width: 620px) {
     .featuresList {
         grid-column-gap: 15px;
         grid-row-gap: 15px;
+        position: relative;
+        right: 40px;
     }
 
 
 }
 
 @media (max-width: 480px) {
-    .textOverlay h2 {
-        font-size: 6vw;
-    }
-
-    .featureItem h3 {
-        font-size: 4vw;
-    }
-
-    .featureItem p {
-        font-size: 3.5vw;
-    }
+ 
 
 }
 
@@ -285,11 +305,8 @@
     }
 
     .title {
-        font-family: Gilroy;
         font-size: 32px;
-        font-weight: 600;
         line-height: 39.2px;
-        text-align: left;
     }
 
     .textOverlay {
@@ -301,6 +318,7 @@
     .featuresList {
         display: flex;
         text-wrap: balance;
+        position: static;
     }
 
     .featuresList h3 {

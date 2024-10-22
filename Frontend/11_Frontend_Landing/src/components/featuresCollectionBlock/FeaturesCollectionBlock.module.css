@@ -33,21 +33,32 @@
 
 .textContainer h2 {
     font-family: Gilroy;
-    font-size: 36px;
+    font-size: 44px;
     font-weight: 600;
-    line-height: 44.1px;
+    line-height: 49px;
     text-align: left;
-    color: #212121;
 }
 
 .textContainer p {
-    padding-top: 10px;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 23px;
+    line-height: 27px;
     text-align: left;
-    color: #5C5C5C;
+
+}
+
+@media(max-width: 1440px) {
+    .textContainer h2 {
+        font-size: 40px;
+        line-height: 49px;
+    }
+
+    .textContainer p {
+        font-family: Inter;
+        font-size: 16px;
+        line-height: 23px;
+    }
 }
 
 @media(max-width: 1024px) {
@@ -58,6 +69,11 @@
         width: 450px;
     }
 
+    .textContainer h2 {
+        font-size: 36px;
+        line-height: 44.1px;
+        text-align: center;
+    }
 
 }
 
@@ -78,10 +94,23 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
+
+}
+
+@media(max-width: 375px) {
     .textContainer h2 {
-        width: 70%;
+        font-size: 32px;
+        line-height: 39.2px;
+        text-align: center;
+    }
+
+    .textContainer p {
+        font-family: Inter;
+        font-size: 14px;
+        line-height: 23px;
     }
 
 }

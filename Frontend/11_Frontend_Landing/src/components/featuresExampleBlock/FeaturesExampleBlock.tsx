@@ -43,10 +43,7 @@ export const FeaturesExampleBlock: FC<Props> = () => {
                         )}
                     </ul>
                 </div>
-                {isMobile ? null : isDesktop ? (
-                    null) : (
-                    <img src={'/assets/features/bg_stars.svg'} alt="stars background" className={styles.bgStars} />
-                )}
+                <img src={'/assets/features/bg_stars.svg'} alt="stars background" className={styles.bgStars} />
             </div>
         </div>
     );

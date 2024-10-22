@@ -9,11 +9,10 @@ export const FeaturesSmarterBlock: FC<Props> = ({ }) => {
         <div className={styles.container}>
             <div className={styles.imageContainer}>
                 <div className={styles.textContainer}>
-                    <h2>Make your workflow smarter</h2>
+                    <h2>Get smarter about all the little details </h2>
                     <p>
-                        Streamline your processes with intelligent automation. Reduce manual tasks,
-                        improve efficiency, and focus on what really matters. Our solution adapts to your needs,
-                        ensuring a smarter workflow that boosts productivity.
+                        Monitor your transactions activity on one dashboard. Generate customized order, inventory, and payments reports.
+                        Prevent fraud, improve operations, manage working capital, and grow grow grow!
                     </p>
                 </div>
                 <img src={image} alt="smarter example" className={styles.image} />

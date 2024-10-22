@@ -52,9 +52,19 @@
     align-items: center;
     justify-content: center;
     font-family: Gilroy;
-    font-size: 44px;
-    line-height: 51.56px;
-    text-align: center;
+    font-size: 48px;
+    line-height: 56.25px;
+    text-align: left;
+
+}
+
+.valueInfo {
+    font-family: Gilroy;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.4px;
+    text-align: left;
+
 }
 
 .infoText {
@@ -67,13 +77,7 @@
     color: #FB242B;
 }
 
-.valueInfo {
-    font-family: Gilroy;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 24.5px;
-    text-align: center;
-}
+
 
 .infoItem:nth-child(1) {
     background-image: url('../../assets/company/info.svg');
@@ -94,6 +98,16 @@
 @media (max-width: 1440px) {
     .infoItem {
         height: 150px;
+    }
+
+    .value {
+        font-size: 44px;
+        line-height: 51.56px;
+    }
+
+    .valueInfo {
+        font-size: 20px;
+        line-height: 24.5px;
     }
 }
 
@@ -132,5 +146,15 @@
     .infoItem2,
     .infoItem4 {
         position: static;
+    }
+
+    .value {
+        font-size: 36px;
+        line-height: 42.19px;
+    }
+
+    .valueInfo {
+        font-size: 18px;
+        line-height: 22.05px;
     }
 }
