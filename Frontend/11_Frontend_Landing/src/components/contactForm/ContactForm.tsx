@@ -1,10 +1,13 @@
 import { FC } from 'react';
 import styles from './ContactForm.module.css';
 import Button from '../Button/Button';
+import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 interface Props { }
 
 export const ContactForm: FC<Props> = () => {
+    const { isTablet } = useScreenDetector()
+
     return (
         <div className={styles.contactFormContainer}>
             <div className={styles.svgBackground}>
@@ -14,10 +17,12 @@ export const ContactForm: FC<Props> = () => {
             </div>
             <div className={styles.content}>
                 <div className={styles.left}>
-                    <h2 className={styles.titleMap}>Fill up the form and we'll get <br /> in touch within a few hours</h2>
+                    {!isTablet ? <h2 className={styles.titleMap}>Fill up the form and we'll get <br /> in touch within a few hours</h2> : null}
+
                     <img src={'/assets/maps.png'} alt="Map" className={styles.mapImage} />
                 </div>
                 <div className={styles.right}>
+
                     <h3 className={styles.title}>Hi, we’re <span className={styles.highlight}>Tinvio</span>! And you?</h3>
                     <form className={styles.form}>
                         <div className={styles.inputGroup}>
@@ -38,7 +43,11 @@ export const ContactForm: FC<Props> = () => {
                         </div>
                     </form>
                 </div>
-                <img src={'/assets/confetti-group2.svg'} className={styles.confetti} alt="confetti" />
+                <div>
+                    <img src={'/assets/confetti-group2.svg'} className={styles.confetti} alt="confetti" />
+                </div>
+                {isTablet ? <h2 className={styles.titleMap }>Fill up the form and we'll get <br /> in touch within a few hours</h2> : null}
+
             </div>
         </div>
     );

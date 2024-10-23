@@ -51,7 +51,7 @@
 
 .greyBg {
     position: absolute;
-        left: 80%;
+    left: 80%;
     width: 410.5px;
     height: 322.75px;
 }
@@ -73,6 +73,11 @@
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .confetti {
+        top: 160%;
+    }
+
 }
 
 @media (max-width: 375px) {
@@ -81,6 +86,7 @@
     }
 
     .confetti {
-        right: -30px;
+        right: -100px;
+        top: 180%;
     }
 }

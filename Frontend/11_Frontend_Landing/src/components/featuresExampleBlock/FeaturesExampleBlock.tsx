@@ -5,7 +5,7 @@ import { useScreenDetector } from '../../hooks/useScreenDetector';
 interface Props { }
 
 export const FeaturesExampleBlock: FC<Props> = () => {
-    const { isMobile, isTablet, isDesktop } = useScreenDetector();
+    const { isMobile, isTablet } = useScreenDetector();
 
     return (
         <div className={styles.wrapper}>

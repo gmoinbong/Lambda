@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    padding: 20px;
+    padding: 36px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -20,8 +20,12 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    max-width: 400px;
+    box-sizing: border-box;
+    max-width: 420px;
+    height: 390px;
+    justify-content: center;
 }
+
 
 #support {
     background: url('../../assets/company/bg_contact.svg') no-repeat center center;
@@ -41,18 +45,19 @@
 
 .section h2 {
     font-family: Gilroy;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 29.4px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    line-height: 37.5px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .section p {
     font-family: Inter;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 23px;
-    margin-bottom: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .Button {
@@ -71,10 +76,17 @@
 
 .h1 {
     font-family: Gilroy;
-    font-size: 36px;
-    line-height: 42.19px;
+    font-size: 48px;
+    line-height: 56.25px;
     text-align: center;
-    margin-top: 50px;
+}
+
+
+@media(min-width:1440px) {
+    .Button {
+        width: 210px !important;
+        height: 56px !important;
+    }
 }
 
 @media (min-width: 768px) {
@@ -90,9 +102,62 @@
     }
 }
 
+@media(max-width: 1440px) {
+    .section h1 {
+        font-size: 28px;
+        line-height: 32.81px;
+        text-align: center;
+    }
+
+    .section p {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .h1 {
+        font-size: 44px;
+        line-height: 51.56px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .section p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+@media(max-width: 768px) and (min-width: 375px) {
+    #support {
+        background: url('../../assets/company/bg_contact_tablet.svg') no-repeat center center;
+        background-color: #F6F6F6;
+    }
+
+    #business {
+        background: url('../../assets/company/bg_contact_tablet_1.svg') no-repeat center center;
+        background-color: #363636;
+    }
+
+    #media {
+        background: url('../../assets/company/bg_contact_tablet_2.svg') no-repeat center center;
+        background-color: #F6F6F6;
+    }
+
+    .section {
+        height: 260px;
+    }
+
+    .h1 {
+        font-size: 36px;
+        line-height: 42.19px;
+    }
+
+}
+
 @media (max-width: 375px) {
     .section {
         padding: 20px 10px;
+        height: 350px;
     }
 
     .section h2 {
@@ -107,6 +172,11 @@
         width: 150px;
         height: 40px;
         font-size: 14px;
+    }
+
+    .h1 {
+        font-size: 32px;
+        line-height: 37.5px;
     }
 }
 

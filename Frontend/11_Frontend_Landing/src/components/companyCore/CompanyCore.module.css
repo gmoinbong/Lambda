@@ -12,7 +12,7 @@
     border-top-right-radius: 5em;
     border-bottom-right-radius: 5em;
     background-color: #363636;
-    margin-top: 100px;
+    margin-top: 180px;
     flex-direction: column;
 }
 
@@ -99,9 +99,18 @@
 }
 
 @media(max-width: 768px) {
+    .titleWrapper {
+        max-width: 500px;
+    }
+
     .container h1 {
         font-size: 32px;
         line-height: 37.5px;
+
+    }
+
+    .titleWrapper h1 {
+        padding-right: 10px;
     }
 
     .content h3 {
@@ -117,14 +126,23 @@
 }
 
 @media (max-width: 375px) {
+
+    .titleWrapper {
+        max-width: 250px;
+    }
+
+    .titleWrapper h1 {
+        padding-right: 10px;
+    }
+
     .container {
         margin-right: 0;
         width: 100%;
-        height: auto;
         margin-top: 20px;
         background: url('../../assets/company/img_core.svg') no-repeat center center;
         background-color: #363636;
-
+        height: 735px;
+        flex-direction: column;
     }
 
     .content {

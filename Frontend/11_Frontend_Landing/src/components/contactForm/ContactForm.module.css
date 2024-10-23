@@ -208,7 +208,6 @@
 @media(max-width: 768px) {
     .content {
         flex-direction: column-reverse;
-        top: -70px;
         background-color: #F6F6F6;
     }
 
@@ -224,8 +223,13 @@
     }
 
     .mapImage {
-        width: 100vw;
-        height: 30vh;
+        width: 110vw;
+        height: 40vh;
+        margin-top: 50px;
+    }
+
+    .titleMap {
+        position: static;
     }
 
     .confetti {

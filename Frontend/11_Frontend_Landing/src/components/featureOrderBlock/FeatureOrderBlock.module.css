@@ -58,7 +58,7 @@
 .backgroundDiamond {
     width: 600px;
     height: 600px;
-    background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.3) 0%, rgba(250, 250, 250, 0.3) 100%);
+    background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.3) 0%, rgba(250, 250, 250, 0.3) 100%)    ;
     z-index: 0;
 }
 

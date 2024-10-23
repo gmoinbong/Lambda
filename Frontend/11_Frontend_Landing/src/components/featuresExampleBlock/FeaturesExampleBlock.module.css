@@ -7,7 +7,7 @@
 
 .wrapper {
     height: 80%;
-    margin-top: 100px;
+    margin-top: 180px;
 }
 
 .featuresWrapper {
@@ -290,14 +290,12 @@
 
 }
 
-@media (max-width: 480px) {
- 
-
-}
+@media (max-width: 480px) {}
 
 @media(max-width: 375px) {
     .wrapper {
         height: 115%;
+        margin-top: 80px;
     }
 
     .bgStars {

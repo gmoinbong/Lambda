@@ -14,7 +14,6 @@ export const Terms: FC<Props> = ({ }) => {
                 <h1 className={styles.info}>Tinvio Legal Info</h1>
                 <Tabs />
                 <div className={styles.content}>
-                    <h2>Terms of Service</h2>
                     <p>
                         These terms and conditions (“Terms”, “Agreement”) are an agreement between Digital Services SG Six Pte. Ltd. (“Digital Services SG Six Pte. Ltd.”, “us”, “we” or “our”), a company incorporated in Singapore, and you (“User”, “you” or “your”). This Agreement sets forth the general terms and conditions of your use of the Tinvio mobile application, Tinvio web application and any of its products or services (collectively, “Transactions Platform” or “Services” or “Tinvio”).
                     </p>

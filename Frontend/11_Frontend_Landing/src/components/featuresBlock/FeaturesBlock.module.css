@@ -210,6 +210,10 @@
         max-width: 80vw;
     }
 
+    .container {
+        padding-top: 0;
+    }
+
 }
 
 @media (max-width: 480px) {

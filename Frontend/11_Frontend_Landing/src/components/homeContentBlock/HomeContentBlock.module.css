@@ -11,7 +11,7 @@
     text-align: left;
     position: sticky;
     left: 200px;
-    width: 300px;
+    width: 427px;
 }
 
 .textTitle {
@@ -170,6 +170,10 @@
     border-radius: 40px;
 }
 
+.freeText {
+    margin-left: 40px !important;
+}
+
 .greyDiamondBottom {
     left: 100px;
     z-index: -2;
@@ -233,6 +237,11 @@
         width: 188px !important;
         height: 48px !important;
     }
+
+    .freeText {
+        margin-left: 0;
+    }
+
 }
 
 @media (max-width: 1300px) {
@@ -315,6 +324,7 @@
         margin: 0 auto;
         text-align: center;
         left: 0;
+        width: 470px;
 
     }
 
@@ -386,6 +396,7 @@
 
     .freeText {
         margin: 0 !important;
+        padding-right: 20px !important;
     }
 
     .textContent {

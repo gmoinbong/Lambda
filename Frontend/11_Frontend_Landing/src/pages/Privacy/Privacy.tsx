@@ -22,7 +22,7 @@ export const Privacy: FC<Props> = ({ }) => {
                         This Policy applies to all users and others who access the Services (“Users”) in or outside Singapore. By accessing or using the Service, or providing information to us in connection with the Services, you expressly and unequivocally indicate your acceptance of Tinvio’s Privacy Policy. This Privacy Policy does not apply to the practices, policies, or procedures employed by third parties and/or entities that Tinvio does not own, manage or control, or to individuals and others whom Tinvio does not employ, contract, manage, or control.
                     </p>
                     <h3>What information do we collect?</h3>
-                    <p>
+                    <p className={styles.subTitle}>
                         Depending on your user profile, Tinvio collects some or all of the following types of information:
                     </p>
                     <ul className={styles.list}>
@@ -36,7 +36,7 @@ export const Privacy: FC<Props> = ({ }) => {
                         <li>Log file information: Log file information is automatically reported by your browser each time you make a request to access a site, i.e., with a page or app. It can also be provided when the content of the webpage or app is downloaded to your browser or device. When you use our Services, our servers automatically record certain log file information, including your web request, Internet Protocol (“IP”) address, browser type, referring / exit pages and URLs, number of clicks and how you interact with links on the webpage, domain names, landing pages, pages viewed, and other such information. The Information allows for Tinvio to provide you the features of the Service and for more accurate reporting and improvement of the Service.</li>
                     </ul>
                     <h3>What do we use your information for?</h3>
-                    <p>
+                    <p className={styles.subTitle}>
                         The information we collect from you may be used in one of the following ways:
                     </p>
                     <ul className={styles.list}>
