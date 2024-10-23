@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './ImagesContainer.module.css';
 
 export const ImagesContainer = () => {
