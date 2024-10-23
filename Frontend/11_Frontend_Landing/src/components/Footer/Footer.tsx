@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styles from './Footer.module.css';
+import { NavLink } from 'react-router-dom';
 
 const Footer: FC = () => {
     return (
@@ -11,21 +12,21 @@ const Footer: FC = () => {
                         <img className={styles.barrier} src={'/assets/barrier.svg'} alt="" />
                     </div>
                     <nav className={styles.nav}>
-                        <a href="/">Home</a>
-                        <a href="/features">Features</a>
-                        <a href="/company">Company</a>
-                        <a href="/login">Login</a>
+                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/features">Features</NavLink>
+                        <NavLink to="/company">Company</NavLink>
+                        <NavLink to="/#">Login</NavLink>
                     </nav>
                 </div>
                 <div className={styles.socialWrapper}>
                     <div className={styles.socialMedia}>
-                        <a href="#"><img src={'/assets/social/linkedin.svg'} alt="LinkedIn" /></a>
-                        <a href="#"><img src={'/assets/social/instagram.svg'} alt="Instagram" /></a>
+                        <NavLink to="#"><img src={'/assets/social/linkedin.svg'} alt="LinkedIn" /></NavLink>
+                        <NavLink to="#"><img src={'/assets/social/instagram.svg'} alt="Instagram" /></NavLink>
                     </div>
                     <img className={styles.barrier} src={'/assets/barrier.svg'} alt="" />
                     <div className={styles.appLinks}>
-                        <a href="#"><img src={'/assets/social/google-play.svg'} alt="Google Play" /></a>
-                        <a href="#"><img src={'/assets/social/app.store.svg'} alt="App Store" /></a>
+                        <NavLink to="#"><img src={'/assets/social/google-play.svg'} alt="Google Play" /></NavLink>
+                        <NavLink to="#"><img src={'/assets/social/app.store.svg'} alt="App Store" /></NavLink>
                     </div>
                 </div>
             </div>
@@ -33,9 +34,9 @@ const Footer: FC = () => {
                 <p>© Tinvio™ 2020. All Rights Reserved</p>
                 <img className={styles.barrierBot} src={'/assets/barrier.svg'} alt="" />
                 <nav className={styles.footerNav}>
-                    <a href="/privacy">Privacy Policy</a>
+                    <NavLink to="/privacy">Privacy Policy</NavLink>
                     <img className={styles.barrierBot} src={'/assets/barrier.svg'} alt="" />
-                    <a href="/terms">Terms of Service</a>
+                    <NavLink to="/terms">Terms of Service</NavLink>
                 </nav>
             </div>
         </footer>
