@@ -46,7 +46,7 @@ export const ContactForm: FC<Props> = () => {
                 <div>
                     <img src={'/assets/confetti-group2.svg'} className={styles.confetti} alt="confetti" />
                 </div>
-                {isTablet ? <h2 className={styles.titleMap }>Fill up the form and we'll get <br /> in touch within a few hours</h2> : null}
+                {isTablet ? <h2 className={styles.titleMap}>Fill up the form and we'll get <br /> in touch within a few hours</h2> : null}
 
             </div>
         </div>

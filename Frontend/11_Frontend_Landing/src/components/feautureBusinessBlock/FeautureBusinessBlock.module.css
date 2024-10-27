@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    margin-top: 140px;
     position: relative;
     justify-content: center;
 }
@@ -73,7 +73,8 @@
 
 @media(max-width:768px) {
     .container {
-        flex-direction: column-reverse
+        flex-direction: column-reverse;
+        margin-top: 120px;
     }
 
     .image {

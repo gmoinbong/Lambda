@@ -240,3 +240,16 @@
         width: 100%;
     }
 }
+
+@media(max-width: 375px) {
+
+    .checkoutBlock {
+        height: 100%;
+    }
+
+    .content {
+
+        height: 700px;
+    }
+
+}

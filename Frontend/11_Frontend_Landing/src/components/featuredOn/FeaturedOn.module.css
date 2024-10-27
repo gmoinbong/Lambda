@@ -83,6 +83,8 @@
 @media (max-width: 375px) {
     .grid {
         grid-template-columns: 1fr;
+        height: 100%;
+        background-color: #F6F6F6;
     }
 
     .confetti {

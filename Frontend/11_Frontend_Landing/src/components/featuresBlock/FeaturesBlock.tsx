@@ -49,7 +49,7 @@ export const FeaturesBlock: FC<Props> = ({ }) => {
                     )}
                 </div>
             </div>
-            {/* {isMobile && <div style={{ height: 100 }}> <img src={'/assets/features/feature_img_mobile2.svg'} alt="feature" className={styles.featureImageMobile} /> </div>} */}
+            {isMobile && <div style={{ height: 100 }}> <img src={'/assets/features/feature_img_mobile2.svg'} alt="feature" className={styles.featureImageMobile} /> </div>}
             <Suspense fallback={<div>Loading...</div>}>
                 <Modal isVisible={isModalVisible} onClose={handleModalClose} />
             </Suspense>

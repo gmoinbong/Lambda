@@ -16,6 +16,11 @@
     justify-content: center;
 }
 
+.bg2Detail2,
+.bg3Detail2 {
+    display: none;
+}
+
 .imageManage {
     width: 90%;
     height: auto;
@@ -72,6 +77,7 @@
     height: 40px;
     padding-right: 40px;
     box-sizing: border-box;
+    background-color: #F3F4F5;
 }
 
 
@@ -83,7 +89,7 @@
     transform: translateY(-50%);
     border: none;
     cursor: pointer;
-    background-color: none !important;
+    background-color: #F3F4F5;
 }
 
 .sentIcon {
@@ -318,11 +324,105 @@
 }
 
 @media(min-width: 1024px) {
-    .upper {}
 
     .inputContainer {
         justify-content: flex-start;
     }
 }
 
-@media(max-width: 1440px) {}
+@media(max-width: 375px) {
+    .imageManage {
+        width: 100%;
+        z-index: 10;
+    }
+
+    .upper {
+        height: 200px;
+    }
+
+    .bgDetail {
+        border-radius: 30px;
+        bottom: 0px;
+    }
+
+    .bg1Detail {
+        display: none;
+    }
+
+    .bgDotsDetail {
+        width: 40%;
+        top: 70%;
+    }
+
+    .bgDots1Detail {
+        width: 30%;
+        left: 60%;
+    }
+
+    .grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "upper"
+            "down1"
+            "down2";
+        gap: 20px;
+        justify-items: center;
+    }
+
+
+    .upper,
+    .down1,
+    .down2 {
+        width: 100vw;
+        border-radius: 32px;
+    }
+
+    .shareLinkContainer {
+        position: static;
+    }
+
+    .input {
+        width: 65vw;
+    }
+
+
+    .down1 {
+        background-color: #f4f4f4;
+    }
+
+    .captionInvoices {
+        color: #212121;
+        position: static;
+    }
+
+    .down2 {
+        background-color: #363636;
+    }
+
+    .gridItem {
+        z-index: 5;
+    }
+
+    .captionPayment {
+        color: #ffff;
+    }
+
+    .bg2Detail2,
+    .bg3Detail2 {
+        display: block;
+    }
+
+    .bg4Detail,
+    .bgDots2Detail {
+        display: none;
+    }
+
+    .bgDots3Detail {
+        position: absolute;
+        left: 50%;
+        top: 0%;
+    }
+
+}

@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 120px;
 }
 
 .faqItem {
@@ -94,6 +95,12 @@
     }
 }
 
+
+@media(max-width: 768px) {
+    .container {
+        margin-top: 120px;
+    }
+}
 
 @media(max-width: 375px) {
     .h2 {

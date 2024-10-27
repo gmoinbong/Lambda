@@ -94,13 +94,11 @@
 
 @media (max-width: 1280px) {
     .button {
-        margin-right: 50px;
     }
 }
 
 @media (max-width: 1024px) {
     .button {
-        margin-right: 80px;
     }
 
     .container {

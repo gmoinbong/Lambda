@@ -16,9 +16,9 @@
     text-align: left;
     color: #212121;
     width: 100%;
-    max-width: 1524px;
+    max-width: 1300px;
     box-sizing: border-box;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -38,7 +38,8 @@
     line-height: 24px;
     text-align: left;
     color: #5C5C5C;
-    max-width: 400px;
+    max-width: 600px;
+    padding-top: 10px;
     width: 100%;
 }
 
@@ -55,6 +56,7 @@
     display: block;
     border-radius: inherit;
     margin-left: 50px;
+    padding-top: 40px;
 }
 
 .stars {
@@ -102,6 +104,7 @@
     .textContainer h1 {
         font-size: 36px;
         line-height: 44.1px;
+        text-align: center;
     }
 
     .textContainer p {
@@ -116,6 +119,7 @@
 
     .image {
         margin-left: 20px;
+
     }
 
 }

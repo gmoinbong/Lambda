@@ -46,7 +46,7 @@
     cursor: pointer;
     transition: background-color 0.3s, border 0.3s;
     width: 107px;
-height: 40px;
+    height: 40px;
 }
 
 .featureButton:hover {
@@ -118,6 +118,16 @@ height: 40px;
     width: 450px;
     height: 450px;
     left: 70px;
+}
+
+.lineAndText {
+    display: flex;
+    align-items: center;
+}
+
+.lineAndText svg {
+    position: absolute;
+    margin-right: 10px;
 }
 
 @media(max-width: 1440px) {
@@ -198,6 +208,11 @@ height: 40px;
     .greyBg {
         display: none;
     }
+
+    .lineAndText svg {
+        height: 36px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -215,4 +230,16 @@ height: 40px;
         font-size: 12px;
         padding: 6px 12px;
     }
+}
+
+@media(max-width: 375px) {
+    .textContent {
+        width: 100%;
+    }
+
+    .featureImage {
+        width: 500px;
+    }
+
+
 }

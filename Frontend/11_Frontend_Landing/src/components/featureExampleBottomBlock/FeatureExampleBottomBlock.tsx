@@ -41,6 +41,9 @@ export const FeatureExampleBottomBlock: FC<Props> = () => {
                         <img src={'/assets/features/bg_dots2.svg'} alt="bg detail" className={styles.bgDots2Detail} />
                         <p className={`${styles.caption} ${styles.captionPayment}`}>Share payment links
                         </p>
+                        <img src={'/assets/features/bg_detail2.svg'} alt="bg detail" className={`${styles.bg2Detail} ${styles.bg2Detail2}`} />
+                        <img src={'/assets/features/bg_detail3.svg'} alt="bg detail" className={`${styles.bg3Detail} ${styles.bg3Detail2}`} />
+                        <img src={'/assets/features/bg_dots_3.svg'} alt="bg detail" className={styles.bgDots3Detail} />
                     </div>
                 </div>
             </div>
