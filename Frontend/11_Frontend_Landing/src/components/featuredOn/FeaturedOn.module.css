@@ -88,7 +88,15 @@
     }
 
     .confetti {
+        display: none;
         right: -100px;
         top: 180%;
+    }
+
+    .confettiMobile {
+        position: absolute;
+        top: 180%;
+        transform: translateY(-50%);
+        right: 10px;
     }
 }

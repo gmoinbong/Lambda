@@ -175,7 +175,7 @@
 }
 
 .greyDiamondBottom {
-    left: 100px;
+    left: 0px;
     z-index: -2;
     top: 150px;
 }
@@ -187,7 +187,6 @@
 
 @media (min-width: 1600px) {
     .greyDiamondBottom {
-        top: 500px;
     }
 }
 

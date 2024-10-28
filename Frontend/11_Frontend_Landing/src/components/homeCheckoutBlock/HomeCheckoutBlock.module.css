@@ -87,7 +87,7 @@
 .bgDetail {
     position: absolute;
     top: 80%;
-    left: -10%;
+    left: 0%;
     width: 300px;
     height: 250px;
 }
@@ -95,10 +95,11 @@
 
 .bgDetail2 {
     position: absolute;
-    top: 45%;
+    top: 60%;
     left: 90%;
     width: 300px;
     height: 250px;
+
 }
 
 @media(min-width: 1440px) {

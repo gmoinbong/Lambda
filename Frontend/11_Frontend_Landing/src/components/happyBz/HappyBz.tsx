@@ -15,6 +15,7 @@ export const HappyBz: FC<Props> = () => {
             <img src={'/assets/background/rectangleGroup.png'} className={styles.greyBg} alt="Grey Diamond" />
             <img src={'/assets/background/rectangleGroup.png'} className={styles.greyBg1} alt="Grey Diamond" />
             <img src={'/assets/background/rectangleGroup.png'} className={styles.greyBg2} alt="Grey Diamond" />
+            <img src={'/assets/background/rectangleGroup.png'} className={styles.greyBg3} alt="Grey Diamond" />
         </div>
     );
 };

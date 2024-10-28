@@ -251,6 +251,10 @@
         margin: 0 auto;
     }
 
+    .title h3 {
+        margin-top: 20px;
+    }
+
     .contactFormContainer {
         height: 100%;
     }
@@ -265,7 +269,13 @@
         top: 0;
     }
 
-    .botContent {}
+    .inputGroup {
+        padding: 5px 40px 0 40px;
+    }
+
+    .input {
+        width: 90%;
+    }
 
     .right {
         box-shadow: none;

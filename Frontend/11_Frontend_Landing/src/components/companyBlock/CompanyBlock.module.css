@@ -256,7 +256,15 @@
 }
 
 @media (max-width: 375px) {
-    .companyImage {}
+    .titleWrapper {
+        justify-content: flex-start;
+    }
 
+
+
+    .additionalContent {
+        padding: 20px;
+        align-items: center;
+    }
 
 }
