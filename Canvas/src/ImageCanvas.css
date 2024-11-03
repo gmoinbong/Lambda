@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  gap: 20px;
 }
 
 .sidebar {
@@ -43,6 +44,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 .asset {
@@ -56,13 +60,13 @@
   border: 1px solid #ccc;
   position: relative;
   width: 500px;
-  height: 500px;
+  max-height: 100%;
 }
 
 .canvas-element {
   position: absolute;
-  width: 100px !important; 
-  height: 100px  !important; 
+  width: 100px !important;
+  height: 100px !important;
 }
 
 .canvas-text {

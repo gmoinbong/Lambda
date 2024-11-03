@@ -14,7 +14,7 @@ export const HomeFeatureBlock: FC<Props> = () => {
         <div className={styles.featureBlock}>
             <div className={styles.textContent}>
                 <div className={styles.lineAndText}>
-                    <h2>Smarter supply chain <br /> transactions. <span>More buddy</span> <svg style={{ verticalAlign: 'middle', marginRight: '10px' }} width="2" height="40" viewBox="0 0 2 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <h2>Smarter supply chain transactions.  <span> More buddy</span> <svg style={{ verticalAlign: 'middle', marginRight: '10px' }} width="2" height="40" viewBox="0 0 2 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="2" height="40" fill="#212121" />
                     </svg>
                     </h2>

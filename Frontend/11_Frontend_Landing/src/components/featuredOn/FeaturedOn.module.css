@@ -1,40 +1,48 @@
 .container {
     background-color: #F6F6F6;
-    border-radius: 16px;
-    padding: 20px;
-    margin: 20px 0;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
     text-align: center;
     height: auto;
     position: relative;
-    margin-right: 100px;
+    margin-right: 54px;
+    box-sizing: border-box;
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
-    font-size: 36px;
-    line-height: 42.19px;
-    text-align: left;
-    height: 80px;
+    font-family: Gilroy;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53.9px;
+    height: 54px;
     text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    color: #212121;
 }
 
 .grid {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     align-items: center;
     justify-items: center;
-    height: 120px;
+    height: 50px;
+    padding-top: 32px;
+    gap: 94px;
 }
 
 .line {
     height: 1px;
     border-top: 1px gainsboro solid;
-    width: 80%;
-    margin: 10px auto;
+    width: 666px;
+    margin-top: 16px;
 }
 
 .text {
@@ -44,9 +52,9 @@
 
 .confetti {
     position: absolute;
-    top: 90%;
+    top: 89%;
     transform: translateY(-50%);
-    right: -100px;
+    right: -49px;
 }
 
 .greyBg {
@@ -67,6 +75,30 @@
         transform: translateY(-50%);
         right: -40px;
     }
+}
+
+.text1 {
+    width: 222.75px;
+    height: 33px;
+}
+
+.text2 {
+    width: 228.37px;
+    height: 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text3 {
+    width: 187.77px;
+    height: 27px;
+}
+
+.text4 {
+    width: 211.25px;
+    height: 25px;
 }
 
 @media (max-width: 768px) {

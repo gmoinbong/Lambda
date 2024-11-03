@@ -3,11 +3,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f2f5;
     color: #333;
+    padding: 0 50px 0 50px
 }
 
-h1 {
+.accountContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.accountContent h1 {
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.accountContent p {
+    margin-bottom: 15px;
 }

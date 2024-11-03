@@ -132,17 +132,24 @@
     gap: 0.5rem;
     margin-top: 1rem;
     z-index: 3;
+    height: 12px !important;
     justify-content: center;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 12px !important;
+    height: 12px !important;
     transform: rotate(45deg);
     border-radius: 2px;
     display: inline-block;
     cursor: pointer;
     z-index: 3;
+
+}
+
+.dots span {
+    height: 8.49px !important;
+    width: 8.49px !important;
 }
 
 .dot:hover {

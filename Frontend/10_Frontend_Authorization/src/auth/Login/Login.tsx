@@ -1,77 +1,61 @@
-// src/auth/Login/Login.tsx
 import React, { ChangeEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import styles from "./Login.module.css";
+import { useNavigate, Link } from 'react-router-dom';
 import { signIn } from '../AuthService/AuthService';
 
-type Props = {};
-
-const Login: React.FC<Props> = () => {
+export default function Login() {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     email: "",
     password: ""
   });
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false); 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
-      [name]: value
-    }));
+    setCredentials((prev) => ({ ...prev, [name]: value }));
     setErrorMessage(null);
   };
 
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true); 
+    setIsLoading(true);
     try {
       await signIn(credentials.email, credentials.password);
-      console.log("Sign-in successful");
       navigate('/me');
     } catch (error: any) {
       setErrorMessage(error.message || "Authentication failed");
     } finally {
-      setIsLoading(false); 
+      setIsLoading(false);
     }
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      <div className={styles.inputGroup}>
-        <label htmlFor="email">Email</label>
+    <div className="container">
+      <form className="form" onSubmit={handleSubmit}>
+        <header>Login</header>
+        {errorMessage && <p className="error">{errorMessage}</p>}
         <input
-          onChange={handleChange}
-          value={credentials.email}
-          name='email'
           type="email"
-          required
-        />
-      </div>
-      <div className={styles.inputGroup}>
-        <label htmlFor="password">Password</label>
-        <input
+          name="email"
+          placeholder="Enter your email"
+          value={credentials.email}
           onChange={handleChange}
-          value={credentials.password}
-          type="password"
-          id='password'
-          name='password'
           required
         />
-      </div>
-      <button className={styles.submit} type='submit' disabled={isLoading}>
-        {isLoading ? 'Logging in...' : 'Submit'}
-      </button>
-      <p>
-        Don't have an account? <Link to="/sign-up">Sign Up</Link>
-      </p>
-    </form>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          value={credentials.password}
+          onChange={handleChange}
+          required
+        />
+        <input type="submit" className="button" value={isLoading ? 'Logging in...' : 'Login'} disabled={isLoading} />
+        <div className="signup">
+          <span>Don't have an account? <Link to="/sign-up">Sign Up</Link></span>
+        </div>
+      </form>
+    </div>
   );
-};
-
-export default Login;
+}

@@ -1,10 +1,18 @@
 .checkoutBlock {
-    position: relative;
     width: 100%;
-    height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
-    top: -350px;
+    position: relative;
+    display: flex;
+    height: 900px;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    bottom: 400px;
+    background: url(../../assets/background/home_bg.svg);
+    background-position: -100px 0;
+
 }
 
 .backgroundImage {
@@ -20,18 +28,20 @@
 .content {
     display: flex;
     align-items: center;
-    max-width: 1200px;
-    justify-content: center;
-    margin: 0 auto;
+    max-width: 1312px;
+    justify-content: flex-start;
     height: 100%;
     position: relative;
     top: 50px;
+    width: 100%;
+    gap: 15%;
 }
 
 .contentImage {
     max-width: 560px;
     max-height: 495px;
-    margin-left: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .textBlock {
@@ -39,24 +49,29 @@
     margin-left: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     padding-top: 80px;
     height: 69px;
     padding-left: 10px;
 }
 
 .textBlock h2 {
-    font-size: 36px;
-    line-height: 44px;
+    font-family: Gilroy;
+    font-size: 44px;
     font-weight: 600;
+    line-height: 53.9px;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .textBlock p {
+    font-family: Inter;
     font-size: 18px;
-    line-height: 26px;
     font-weight: 400;
+    line-height: 24px;
+    text-align: left;
     margin-bottom: 20px;
+    color: #5C5C5C;
 }
 
 .playButton {
@@ -107,6 +122,11 @@
         left: -80px;
         width: auto;
     }
+
+    .checkoutBlock {
+        justify-content: center;
+    }
+
 }
 
 @media(min-width: 768px) {
@@ -115,14 +135,7 @@
         top: 50px;
     }
 
-
-
-    .content {
-        justify-content: space-between;
-    }
-
     .textBlock {
-        padding: 0;
         text-align: left;
     }
 }
@@ -133,10 +146,43 @@
         height: 48px !important;
         ;
     }
+
+    .content {
+        gap: 10%;
+    }
+
+    .contentImage {
+        padding-left: 60px;
+    }
+
+    .checkoutBlock {
+        background-position: -200px 0;
+    }
+
+    .textBlock {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .textBlock h2 {
+        font-size: 36px;
+        line-height: 44.1px;
+    }
+
+    .textBlock p {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        max-width: 356px;
+        width: 100%;
+    }
 }
 
-@media (max-width: 1200px) {
-
+@media (max-width: 1280px) {
+    .content {
+        gap: 3%;
+    }
 
     .contentImage {
         position: relative;
@@ -156,6 +202,14 @@
         line-height: 37.5px;
     }
 
+    .content {
+        gap: 1%;
+    }
+
+    .contentImage {
+        padding-left: 24px;
+    }
+
     .textBlock p {
         font-size: 16px;
         line-height: 23px;
@@ -165,23 +219,25 @@
 @media (max-width: 768px) {
     .checkoutBlock {
         height: 100%;
+        background: url('../../assets/background/home_bg_tablet.svg') no-repeat center center;
+        height: 1200px;
+        background-size: cover;
+        border-radius: 15px;
+        background-position: center;
     }
 
     .content {
         flex-direction: column-reverse;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         width: 100%;
         text-align: center;
-        height: 1050px;
+        height: 100%;
         gap: 50px;
+        background: none;
     }
 
-    .backgroundImage {
-        left: -5px;
-        top: -300px;
-        height: 1200px;
-    }
+
 
     .textBlock {
         align-items: center
@@ -207,9 +263,9 @@
         height: 250px;
     }
 
-    .checkoutBlock {
-        padding: 40px 0 0 0;
-        height: 900px;
+
+    .textBlock h2 {
+        line-height: 39.2px;
     }
 
     .contentImage {
@@ -252,5 +308,16 @@
 
         height: 700px;
     }
+
+    .textBlock h2 {
+        font-size: 28px;
+        line-height: 32.81px;
+    }
+
+    .textBlock p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
 
 }

@@ -1,6 +1,5 @@
 .featureBlock {
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
@@ -8,33 +7,41 @@
     overflow: hidden;
     z-index: 3;
     top: -200px;
-
+    max-width: 1312px;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .textContent {
-    max-width: 600px;
+    max-width: 518px;
     z-index: 1;
-    margin-left: 50px;
+    width: 100%;
     text-align: left;
 }
 
 .textContent h2 {
-    font-size: 36px;
-    line-height: 44px;
+    font-family: Gilroy;
+    font-size: 44px;
     font-weight: 600;
-    margin-bottom: 20px;
+    line-height: 53.9px;
     color: var(--text-color-2);
     text-align: left;
+    width: 518px;
 }
 
 .textContent h2 span {
-    color: red;
+    color: #FF474D;
+    font-family: Gilroy;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44.1px;
+    text-align: left;
 }
 
 .buttonGroup {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-top: 24px;
 }
 
 .featureButton {
@@ -61,7 +68,7 @@
 .featureList {
     list-style: none;
     padding: 0;
-    margin-bottom: 20px;
+    margin-top: 24px;
 }
 
 .featureList li {
@@ -93,6 +100,7 @@
     transition: background-color 0.3s;
     width: 210px !important;
     height: 56px !important;
+    margin-top: 32px;
 }
 
 .moreFeaturesButton:hover {
@@ -101,16 +109,18 @@
 
 .imageContainer {
     position: relative;
-    width: 50%;
+    width: auto;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
 }
 
 .featureImage {
-    width: 840px;
+    width: 820px;
     height: 790px;
+    object-fit: contain;
 }
 
 .greyBg {

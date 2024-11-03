@@ -14,14 +14,14 @@ export const FeaturedOn: FC<Props> = () => {
             </h2>
             <div className={styles.line}></div>
             <div className={styles.grid}>
-                <img src={'/assets/text/text.svg'} alt="TechCrunch" className={styles.text} />
-                <img src={'/assets/text/text_1.svg'} alt="TechInAsia" className={styles.text} />
-                <img src={'/assets/text/text_2.svg'} alt="PYMNTS" className={styles.text} />
-                <img src={'/assets/text/text_3.svg'} alt="VentureBeat" className={styles.text} />
+                <img src={'/assets/text/text.svg'} alt="TechCrunch" className={styles.text + " " + styles.text1} />
+                <img src={'/assets/text/text_1.svg'} alt="TechInAsia" className={styles.text + " " + styles.text2} />
+                <img src={'/assets/text/text_2.svg'} alt="PYMNTS" className={styles.text + " " + styles.text3} />
+                <img src={'/assets/text/text_3.svg'} alt="VentureBeat" className={styles.text + " " + styles.text4} />
             </div>
             {isMobile && <img src={'/assets/confetti-group_mobile.svg'} alt="confetti" className={styles.confettiMobile} />}
             <img src={'/assets/confetti-group.svg'} alt="confetti" className={styles.confetti} />
-            <DotsBackground />
+            {/* <DotsBackground /> */}
         </div>
     );
 };

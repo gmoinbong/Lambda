@@ -107,7 +107,8 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
     const status = response.data.body?.status || response.data.status;
 
     if (statusCode !== 200 || status === 'error') {
-      throw new Error(response.data.body.message || 'Sign-in failed');
+      console.log(response.data.body.message, "response.data.body.message");
+      throw new Error('Email or password is incorrect');
     }
 
     localStorage.setItem('accessToken', response.data.body.access_token);
@@ -118,13 +119,15 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
 
     return response.data.body;
   } catch (error: any) {
-    if (error.response && error.response.data) {
-      const serverError: APIResponseError = error.response.data;
-      throw new Error(serverError.body.message || 'Sign-in failed');
+    // Проверка на наличие ошибки сервера
+    if (error.response && error.response.status >= 500) {
+      throw new Error('Server error, please try again later');
     }
-    throw new Error('Sign-in failed');
+    // Вывод сообщения "Email or password is incorrect" для всех остальных ошибок
+    throw new Error('Email or password is incorrect');
   }
 };
+
 
 export const logout = (): void => {
   try {

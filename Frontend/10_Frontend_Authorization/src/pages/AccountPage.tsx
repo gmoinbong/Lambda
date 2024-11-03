@@ -1,4 +1,3 @@
-// src/pages/AccountPage.tsx
 import React, { useEffect, useState } from 'react';
 import { getAccount, AccountData } from '../auth/AuthService/AuthService';
 import styles from './AccountPage.module.css';

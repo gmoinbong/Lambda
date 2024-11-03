@@ -1,17 +1,26 @@
+.container {
+    max-width: 1312px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
 .content {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: relative;
-    justify-content: flex-end;
 }
 
 .textContent {
     z-index: 1;
     text-align: left;
-    position: sticky;
-    left: 200px;
-    width: 427px;
+    width: 478px;
+    padding-bottom: 100px;
 }
 
 .textTitle {
@@ -19,25 +28,27 @@
     margin-bottom: 20px;
 }
 
-
 .textContent h1 {
     font-size: 48px;
     line-height: 58.8px;
     font-weight: bold;
-    color: #000;
-    text-align: left;
+    color: #212121;
+    font-family: Gilroy;
+    width: 478px;
 }
 
 .textContent h1 span {
-    color: red;
+    color: #FF474D;
 }
 
-.textContent p {
+.textDescription {
     font-size: 20px;
     line-height: 26px;
     font-weight: 400;
-    color: #555;
-    margin: 20px 0;
+    color: #5C5C5C;
+    margin: 16px 0 0 0;
+    max-width: 415px;
+    width: 100%;
 }
 
 .ctaButton {
@@ -49,7 +60,7 @@
     font-size: 1rem;
     cursor: pointer;
     z-index: 2;
-    margin-bottom: 20px;
+    margin-top: 32px;
 }
 
 .ctaButton:hover {
@@ -58,21 +69,19 @@
 
 .imageContainer {
     position: relative;
-    height: 100%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    transition: left 0.5s ease-in-out;
-    left: 80px;
-    z-index: -1;
     flex: 1;
-
+    z-index: -1;
+    justify-content: flex-end;
+    left: 150px;
+    top: 0;
 }
 
 .diamondWrapper {
     position: relative;
-    top: -50px;
-    left: 80px;
+    top: -25px;
+    left: 120px;
 }
 
 .redDiamond,
@@ -82,21 +91,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease-in-out;
     border-radius: 140px;
 }
 
 .redDiamond {
     z-index: -1;
     transform: rotate(360deg);
-    width: 925px;
-    height: 925px;
+    width: 975px;
+    height: 975px;
 }
 
 .overlayDiamond {
     background-color: rgba(251, 36, 43, 0.6);
-    width: 1000px;
-    height: 1000px;
+    width: 1050px;
+    height: 1050px;
     z-index: -2;
 }
 
@@ -104,7 +112,7 @@
 .overlayDiamond img {
     max-width: 100%;
     max-height: 100%;
-    transform: rotate(317deg);
+    transform: rotate(315deg);
 }
 
 .rectangle {
@@ -114,51 +122,37 @@
     height: 22%;
 }
 
-.stars {
+.backgroundImageMobile {
     position: absolute;
-    width: 60px;
-    top: -20px;
-    left: -34px;
-    z-index: 5;
-}
-
-.rectangle2 {
-    width: 20%;
-    position: absolute;
-    left: -20px;
-    bottom: 540px;
-}
-
-.rectangle,
-.rectangle2 {
-    z-index: 0;
+    top: 75%;
+    left: 5%;
+    width: 26%;
 }
 
 .backgroundImageDesktop {
     position: absolute;
-    bottom: 17%;
-    right: 20%;
+    bottom: 18%;
+    right: 22%;
     width: 85%;
     height: 67%;
-    transform: rotate(317deg) !important;
+    transform: rotate(314deg) !important;
 
 }
 
-
-.imageWrapper {
+.stars {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 87px;
+    height: 79px;
+    bottom: 67%;
+    left: -50px;
+    z-index: 5;
 }
 
-.backgroundImageMobile {
+.rectangle2 {
+    width: 19%;
     position: absolute;
-    top: 75%;
-    left: 6%;
-    width: 29%;
+    left: -35px;
+    bottom: 560px;
 }
 
 .greyDiamondBottom,
@@ -171,23 +165,39 @@
 }
 
 .freeText {
+    margin: 0;
     margin-left: 40px !important;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.41px;
+    color: #5C5C5C;
+    margin-top: 12px;
 }
 
-.greyDiamondBottom {
-    left: 0px;
-    z-index: -2;
-    top: 150px;
+@media(max-width: 1440px) {
+    .container {
+        padding-left: 124px;
+    }
+
+    .stars {
+        left: 75px;
+    }
 }
 
-.greyDiamondTop {
-    top: -300px;
-    left: 30%;
+
+@media(max-width: 1024px) {
+    .container {
+        padding-left: 40px;
+    }
+
+    .stars {
+        left: 0;
+    }
 }
 
 @media (min-width: 1600px) {
-    .greyDiamondBottom {
-    }
+    .greyDiamondBottom {}
 }
 
 @media (max-width: 1750px) {
@@ -196,7 +206,6 @@
     }
 
     .imageContainer {
-        left: 200px;
         top: 20px;
     }
 }
@@ -222,10 +231,11 @@
 @media (max-width: 1440px) {
     .textContent h1 {
         font-size: 44px;
+        width: 427px;
     }
 
     .textContent {
-        left: 120px
+        left: 120px;
     }
 
     .textContent p {
@@ -241,13 +251,13 @@
         margin-left: 0;
     }
 
+    .diamondWrapper {
+        left: 80px;
+    }
+
 }
 
 @media (max-width: 1300px) {
-    .imageContainer {
-        left: 350px;
-    }
-
 
     .textContent {
         left: 80px
@@ -258,20 +268,30 @@
     }
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1280px) {
     .content {
         justify-content: flex-end;
     }
 
     .textContent h1 {
-        width: 300px;
+        width: 427px;
+    }
+
+    .imageContainer {
+        left: 50px;
     }
 
 }
 
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
+    .imageContainer {
+        left: 0px;
+    }
 
+    .container {
+        gap: 20px;
+    }
 
     .textContent {
         left: 20px;
@@ -282,29 +302,13 @@
     .textContent h1 {
         font-size: 36px;
         line-height: 49px;
-        width: 220px;
+        width: 373px;
     }
 
-    .imageContainer {
-        left: 400px;
+    .textContent p {
+        width: 373px;
     }
 
-}
-
-@media (max-width: 900px) {
-    .imageContainer {
-        left: 450px;
-    }
-
-    .textContent {
-        width: 180px;
-    }
-}
-
-@media (max-width: 800px) {
-    .imageContainer {
-        left: 500px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -315,6 +319,12 @@
         padding-top: 20px;
     }
 
+    .container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+
     .diamondWrapper {
         left: 0;
     }
@@ -323,26 +333,33 @@
         margin: 0 auto;
         text-align: center;
         left: 0;
-        width: 470px;
-
+        width: 477px;
+        padding-top: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
     }
 
     .textContent h1 {
         font-size: 32px;
         line-height: 39.2px;
         text-align: center;
+        width: 333px;
     }
 
     .textContent p {
         font-size: 16px;
         line-height: 24px;
         text-align: center;
+        width: 477px;
     }
 
     .imageContainer {
         margin-left: 0;
         padding-left: 0;
-        left: -60%;
+        left: -40%;
 
     }
 
@@ -389,34 +406,63 @@
     }
 
     .stars {
-        top: -25px;
-        left: 0px;
+        position: relative;
+        top: 30px;
+        left: -170px;
+        transform: rotate(30deg);
     }
 
     .freeText {
-        margin: 0 !important;
+        margin: 0;
+        margin-top: 12px;
         padding-right: 20px !important;
-    }
-
-    .textContent {
-        width: 350px;
+        width: auto !important;
     }
 
     .textContent h1 {
         width: 100%;
     }
+
+    .textDescription {
+        max-width: max-content;
+    }
+
+    .textDescription p {
+        height: 44px;
+    }
+
+    .rectangle {
+        left: auto;
+        right: 0px;
+        height: 40%;
+        bottom: 300px;
+    }
+
 }
+
+
 
 @media (max-width: 500px) {
 
+    .textContent p {
+        width: 333px;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: center;
+
+    }
 
     .freeText {
         margin: 20px 0 !important;
     }
 
-    .stars {
-        left: 0vw;
+    .diamondWrapper {
+        top: -80px;
+        left: -15px;
     }
+
 
 
 }
@@ -430,6 +476,15 @@
         justify-content: flex-start;
     }
 
+    .overlayDiamond {
+        width: 185vw;
+        height: 155vw;
+    }
+
+    .redDiamond {
+        width: 175vw;
+        height: 145vw;
+    }
 
     .greyDiamondBottom {
         top: -100px;
@@ -447,10 +502,14 @@
         font-size: 14px;
     }
 
+    .stars {
+        top: 30px;
+        left: -130px;
+    }
+
     .textContent h1 {
         font-size: 28px;
         line-height: 34.66px;
-        line-height: 22px;
     }
 
     .freeText {
@@ -458,18 +517,9 @@
         margin-bottom: 20px !important;
     }
 
-    .diamondWrapper {
-        left: -70px;
-    }
-
-    .overlayDiamond {
-        width: 170vw;
-        height: 140vw;
-    }
-
-    .redDiamond {
-        width: 160vw;
-        height: 130vw;
+    .textDescription {
+        width: auto;
+        max-width: none;
     }
 
     .backgroundImageMobile {

@@ -10,6 +10,8 @@
     background: white;
     position: relative;
     z-index: 11;
+    padding-left: 16px;
+    padding-top: 24px;
 }
 
 .wrapper {
@@ -85,5 +87,3 @@
     height: 48px;
     background-color: #FF474D !important;
 }
-
-

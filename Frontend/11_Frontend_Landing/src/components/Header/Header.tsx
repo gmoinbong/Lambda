@@ -31,18 +31,18 @@ export const Header: FC<Props> = ({ buttonBackground, color }) => {
 
     return (
         <header className={`${styles.header} ${isBlured ? styles.headerBlured : ''}`}>
-            <div className={styles.headerLeft}>
-                <HeaderLogo />
-                <LanguageSelector />
+            <div className={styles.headerContent}>
+                <div className={styles.headerLeft}>
+                    <HeaderLogo />
+                    <LanguageSelector />
+                </div>
+                <NavigationMenu />
+                <Button
+                    className={styles.ctaButton}
+                    text="Get Started"
+                    bgColor={isBlured ? "#FF474D" : buttonBackground}
+                    color={color} />
             </div>
-            <NavigationMenu />
-            <Button
-                className={styles.ctaButton}
-                text="Get Started"
-                bgColor={isBlured ? "#FF474D" : buttonBackground}
-                color={color}
-
-            />
         </header>
     );
 };

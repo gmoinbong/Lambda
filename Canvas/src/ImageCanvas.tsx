@@ -24,6 +24,7 @@ const ImageCanvas: React.FC = () => {
   const [draggedImageId, setDraggedImageId] = useState<number | null>(null);
   const [text, setText] = useState<string>('');
 
+
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -62,7 +63,7 @@ const ImageCanvas: React.FC = () => {
       }
     }
     setDraggedImageId(null);
-    dragUrl.current = null; 
+    dragUrl.current = null;
   };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
