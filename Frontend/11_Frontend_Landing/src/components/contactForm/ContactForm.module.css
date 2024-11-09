@@ -1,17 +1,14 @@
 .contactFormContainer {
-    --svg-top-offset: 0;
-    --svg-left-offset: -30px;
-    --confetti-top-offset: 20%;
-    --confetti-right-offset: 5%;
-
     position: relative;
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     height: 1000px;
     box-sizing: border-box;
+    background: url(/assets/contactFormBackground.svg) no-repeat left bottom;
+    background-size: cover;
+    background-position-x: calc(-100% + 215%);
 }
 
 .svgBackground {
@@ -23,12 +20,20 @@
     z-index: -1;
 }
 
+.contentWrapper {
+    display: flex;
+    width: 1500px;
+    align-items: center;
+}
+
 .content {
     display: flex;
     width: 100%;
     align-items: center;
     position: relative;
+    justify-content: space-between;
     top: 50px;
+
 }
 
 .content p {
@@ -68,6 +73,7 @@
     font-weight: 700;
     line-height: 34.66px;
     text-align: center;
+    color: #212121;
 }
 
 .form {
@@ -75,13 +81,12 @@
 }
 
 .mapImage {
-    width: 830px;
-    height: 625px;
-
+    width: 987px;
+    height: 688px;
 }
 
 .highlight {
-    color: red;
+    color: #FF474D;
 }
 
 .inputGroup {
@@ -145,34 +150,45 @@
     padding-top: 40px;
 }
 
-.confetti {
-    position: absolute;
-    z-index: 1;
-}
-
 .greyBg {
     position: absolute;
     background-color: firebrick;
 }
 
-@media(min-width:1240px) {
+.confetti {
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
 
-    .confetti {
-        top: 201px;
-        right: -19vw;
-        z-index: 1;
-        height: 900px;
+@media(min-width:1600px) {
+    .contactFormContainer {
+        background: url(/assets/contactFormBackground.svg) no-repeat center center;
+        background-size: contain;
+        background-position-x: -60px;
     }
 
+    .confetti {
+        bottom: -40px;
+        position: relative;
+        margin-left: 10px;
+    }
+}
 
+@media(max-width:1600px) {
+    .content {
+        justify-content: flex-end;
+        top: 100px;
+    }
+}
+
+@media(max-width:1440px) {
+    .right h3 {
+        font-size: 24px;
+        line-height: 29.4px;
+    }
 }
 
 @media(max-width:1240px) {
-    .confetti {
-        display: none;
-
-    }
-
     .mapImage {
         width: 600px;
         height: 500px;
@@ -186,9 +202,12 @@
 }
 
 @media(max-width:1024px) {
+    .contactFormContainer {
+        background-position-x: center;
+    }
+
     .confetti {
-        top: calc(var(--confetti-top-offset) + 10%);
-        right: calc(var(--confetti-right-offset) + 10%);
+        display: none;
     }
 
     .mapImage {
@@ -251,6 +270,13 @@
         margin: 0 auto;
     }
 
+    .titleMap {
+        font-family: Gilroy;
+        font-size: 28px;
+        line-height: 32.81px;
+        text-align: center;
+    }
+
     .title h3 {
         margin-top: 20px;
     }
@@ -279,6 +305,12 @@
 
     .right {
         box-shadow: none;
+    }
+
+    .right h3 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24.5px;
     }
 
 }

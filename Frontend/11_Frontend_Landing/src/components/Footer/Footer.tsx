@@ -8,7 +8,7 @@ const Footer: FC = () => {
             <div className={styles.footerContent}>
                 <div className={styles.logoWrapper}>
                     <div className={styles.logo}>
-                        <img className={styles.logoImg} src={'/assets/tinvio-logo.svg'} alt="Tinvio Logo" />
+                        <img className={styles.logoImg} src={'/assets/logoImg.svg'} alt="Tinvio Logo" />
                         <img className={styles.barrier} src={'/assets/barrier.svg'} alt="" />
                     </div>
                     <nav className={styles.nav}>
@@ -32,7 +32,7 @@ const Footer: FC = () => {
             </div>
             <div className={styles.footerBottom}>
                 <p>© Tinvio™ 2020. All Rights Reserved</p>
-                <img className={styles.barrierBot} src={'/assets/barrier.svg'} alt="" />
+                <img className={`${styles.barrierBot} + ${styles.barrierBotReserved}`} src={'/assets/barrier.svg'} alt="" />
                 <nav className={styles.footerNav}>
                     <NavLink to="/privacy">Privacy Policy</NavLink>
                     <img className={styles.barrierBot} src={'/assets/barrier.svg'} alt="" />

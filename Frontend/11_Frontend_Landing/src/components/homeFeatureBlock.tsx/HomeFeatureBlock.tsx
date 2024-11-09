@@ -1,9 +1,13 @@
 import { FC, useState } from 'react';
 import styles from './HomeFeatureBlock.module.css';
+import { useScreenDetector } from '../../hooks/useScreenDetector';
+import { RombFeature } from '../RombFeature/RombFeature';
 
 interface Props { }
 
 export const HomeFeatureBlock: FC<Props> = () => {
+    const { isTablet, isDesktop } = useScreenDetector()
+
     const [selectedTab, setSelectedTab] = useState<string>('Chats');
 
     const handleTabClick = (tab: string) => {
@@ -53,7 +57,20 @@ export const HomeFeatureBlock: FC<Props> = () => {
                 <button className={styles.moreFeaturesButton}>More Features</button>
             </div>
             <div className={styles.imageContainer}>
-                <img className={styles.featureImage} src={'/assets/background/homeFeature.png'} alt="Feature example" />
+                {isTablet ? (
+                    <RombFeature />
+                ) : (
+                    <img
+                        className={styles.featureImage}
+                        src={
+                            isDesktop
+                                ? '/assets/background/homeFeatureMobile.svg'
+                                : '/assets/background/homeFeature.png'
+                        }
+                        alt="Feature example"
+                    />
+                )}
+
             </div>
             <img src={'/assets/background/greyDiamond.png'} className={styles.greyBg} alt="grey diamond" />
         </div>

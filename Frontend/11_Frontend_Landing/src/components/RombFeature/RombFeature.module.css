@@ -1,0 +1,113 @@
+.RombFeature {
+    position: relative;
+}
+
+.bgRomb1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700.53px;
+    height: 670.53px;
+    transform: translate(-50%, -50%);
+}
+
+.bgRomb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 768.33px;
+    height: 763.33px;
+    transform: translate(-50%, -50%);
+}
+
+.bgPhone,
+.bgPhone1,
+.bgRombStars,
+.bgDots {
+    position: absolute;
+    z-index: 10;
+}
+
+.bgPhone1 {
+    transform: translate(-89%, -60%);
+    width: 350px;
+    height: 530px;
+}
+
+.bgPhone {
+    width: 350px;
+    height: 530px;
+    transform: translate(-7%, -38%);
+}
+
+.bgRombStars {
+    transform: translate(-247%, -170%);
+}
+
+.bgDots {
+    transform: translate(-23%, -108%);
+}
+
+@media (max-width: 500px) {
+    .bgRomb {
+        width: 600px;
+        height: 600px;
+    }
+
+    .bgRomb1 {
+        width: 550px;
+        height: 550px;
+    }
+
+    .bgPhone {
+        width: 280px;
+        height: 420px;
+    }
+
+    .bgPhone1 {
+        width: 280px;
+        height: 420px;
+    }
+
+    .bgRombStars {
+        z-index: 1;
+
+    }
+
+}
+
+@media (max-width: 375px) {
+    .bgRomb {
+        width: 550px;
+        height: 550px;
+    }
+
+    .bgRomb1 {
+        width: 490px;
+        height: 490px;
+    }
+
+    .bgPhone {
+        width: 259px;
+        height: 373px;
+        transform: translate(-10%, -40%);
+    }
+
+    .bgPhone1 {
+        width: 259px;
+        height: 377px;
+        transform: translate(-86%, -60%);
+    }
+
+    .bgRombStars {
+        transform: translate(-215%, -231%);
+        width: 83.19px;
+        height: 130.22px;
+    }
+
+    .bgDots {
+        width: 277.55px;
+        height: 210.04px;
+        transform: translate(-20%, -102%);
+    }
+}

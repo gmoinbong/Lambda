@@ -62,6 +62,8 @@
     line-height: 53.9px;
     margin-bottom: 20px;
     text-align: left;
+    color: #212121;
+
 }
 
 .textBlock p {
@@ -181,18 +183,19 @@
 
 @media (max-width: 1280px) {
     .content {
-        gap: 3%;
+        gap: 5%;
     }
 
     .contentImage {
         position: relative;
         width: 60%;
+        padding-left: 124px;
 
     }
 
     .textBlock {
         margin-left: 0;
-        margin-top: 20px;
+        margin-bottom: 50px;
     }
 }
 
@@ -203,11 +206,15 @@
     }
 
     .content {
-        gap: 1%;
+        gap: 3%;
     }
 
     .contentImage {
         padding-left: 24px;
+    }
+
+    .textBlock {
+        margin-bottom: 40px;
     }
 
     .textBlock p {
@@ -224,6 +231,10 @@
         background-size: cover;
         border-radius: 15px;
         background-position: center;
+    }
+
+    .checkoutBlock {
+        background-position: left;
     }
 
     .content {
@@ -269,19 +280,34 @@
     }
 
     .contentImage {
-        width: 500px;
+        width: 520px;
         padding-top: 20px;
+        height: 459px;
     }
+
+    .content {
+        top: 100px;
+    }
+
 
 }
 
 @media(max-width: 600px) {
+
+
     .content {
         gap: 80px;
+        top: 50px;
     }
 
     .playButton {
         margin: 0;
+    }
+
+    .contentImage {
+        width: 343px;
+        height: 302.65px;
+        padding: 0;
     }
 
 
@@ -296,17 +322,25 @@
     .contentImage {
         width: 100%;
     }
+
+    .textBlock p {
+        width: 343px;
+        height: 69px;
+        text-align: center;
+        word-break: break-word;
+
+    }
+
 }
 
 @media(max-width: 375px) {
 
     .checkoutBlock {
-        height: 100%;
+        height: 900px;
     }
 
     .content {
-
-        height: 700px;
+        height: 800px;
     }
 
     .textBlock h2 {

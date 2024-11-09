@@ -1,9 +1,9 @@
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 60vh;
     position: relative;
     margin: 120px 0;
     box-sizing: border-box;
@@ -13,6 +13,23 @@
     max-width: 80%;
     height: auto;
     z-index: 1;
+    text-align: center;
+    clip-path: inset(10% 0 0 0);
+
+}
+
+.title {
+    max-width: 800px;
+    max-height: 54px;
+    height: 100%;
+    width: 100%;
+    font-family: Gilroy;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53.9px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
 .greyDiamond {
@@ -72,28 +89,57 @@
 
 }
 
+@media(max-width:1440px) {
+    .title {
+        font-family: Gilroy;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 44.1px;
+        text-align: center;
+    }
+}
+
 @media(max-width:1600px) {
     .happyBz {
         max-width: 80%;
     }
 }
 
-@media(max-width:1200px) {
+@media(max-width:1280px) {
     .happyBz {
         max-width: 100%;
     }
 
+    .title {
+        line-height: 42.19px;
+    }
+
+
 }
 
+@media(max-width:1024px) {
+    .title {
+        font-size: 32px;
+        line-height: 37.5px;
+    }
+
+}
 
 @media(max-width:768px) {
     .container {
         margin-top: 210px;
         margin-bottom: 50px;
+        gap: 50px;
     }
 
     .happyBz {
         max-width: 100%;
+        clip-path: none;
+
+    }
+
+    .title {
+        line-height: 39.2px;
     }
 
 }
@@ -109,6 +155,10 @@
 
 }
 
-@media(max-width:500px) {
-    .container {}
+@media(max-width:375px) {
+    .title {
+        font-size: 28px;
+        line-height: 32.81px;
+    }
+
 }

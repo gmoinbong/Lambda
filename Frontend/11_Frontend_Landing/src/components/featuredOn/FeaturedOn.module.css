@@ -64,6 +64,53 @@
     height: 322.75px;
 }
 
+.text1 {
+    max-width: 222.75px;
+    height: 33px;
+}
+
+.text2 {
+    max-width: 228.37px;
+    height: 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text3 {
+    max-width: 187.77px;
+    height: 27px;
+}
+
+.text4 {
+    max-width: 211.25px;
+    height: 25px;
+}
+
+@media(max-width:1440px) {
+    .container {
+        height: 228px;
+    }
+
+    .grid {
+        gap: 106px;
+    }
+
+    .title {
+        font-size: 36px;
+        line-height: 42.19px;
+    }
+
+}
+
+@media(max-width:1240px) {
+    .container {
+        margin-right: 0;
+    }
+}
+
+
 @media(max-width:1024px) {
     .container {
         margin-right: 0;
@@ -75,48 +122,90 @@
         transform: translateY(-50%);
         right: -40px;
     }
-}
 
-.text1 {
-    width: 222.75px;
-    height: 33px;
-}
+    .grid {
+        gap: 76px;
+    }
 
-.text2 {
-    width: 228.37px;
-    height: 45px;
+    .text1 {
+        width: 189px;
+        height: 28px;
+    }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    .text2 {
+        width: 203px;
+        height: 40px;
+    }
 
-.text3 {
-    width: 187.77px;
-    height: 27px;
-}
+    .text3 {
+        max-width: 153px;
+        height: 22px;
+    }
 
-.text4 {
-    width: 211.25px;
-    height: 25px;
+    .text4 {
+        max-width: 169px;
+        height: 20px;
+    }
+
 }
 
 @media (max-width: 768px) {
     .grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        column-gap: 94px;
+        row-gap: 48px;
+        padding: 0;
+    }
+
+    .title {
+        padding-top: 48px;
     }
 
     .confetti {
         top: 160%;
     }
 
+    .container {
+        justify-content: flex-start;
+        height: 324px;
+    }
+
+    .line {
+        width: 294px;
+    }
+
+
 }
 
 @media (max-width: 375px) {
+    .container {
+        height: 451px;
+        box-sizing: border-box;
+    }
+
+    .title {
+        padding-top: 49px;
+    }
+
+    .title {
+        font-size: 28px;
+        line-height: 32.81px;
+    }
+
+    .line {
+        margin-top: 24px;
+    }
+
     .grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         height: 100%;
         background-color: #F6F6F6;
+        gap: 48px;
+        padding-top: 32px;
     }
 
     .confetti {
@@ -131,4 +220,5 @@
         transform: translateY(-50%);
         right: 10px;
     }
+
 }

@@ -11,7 +11,7 @@
     z-index: 2;
     box-sizing: border-box;
     flex-direction: column;
-    height: 1050px;
+    height: 1000px;
     margin-left: 20px;
 }
 
@@ -31,7 +31,7 @@
     border-radius: 24px;
     margin-bottom: 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1132px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -39,33 +39,37 @@
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+    height: 377px;
 }
 
 .textWrapper {
-    max-width: 80%;
-    width: 100%;
     background: #F1F1F1;
-    padding: 1rem;
+    padding: 24px;
     border-radius: 8px;
-    margin-bottom: 1rem;
     position: relative;
     z-index: 3;
+    width: 850px;
+    height: 123px;
+    box-sizing: border-box;
 }
 
 .text {
-    width: 90%;
-    max-width: 700px;
-    font-size: 1rem;
-    line-height: 1.5;
+    max-width: 750px;
+    height: 75px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
     position: relative;
     z-index: 3;
+    color: #212121;
+
 }
 
 .quotes {
     position: relative;
     width: 24px;
-    left: 30px;
-    top: 15px;
+    left: 98%;
+    top: -30%;
     z-index: 3;
 }
 
@@ -83,28 +87,37 @@
 }
 
 .authorName {
-    font-size: 1rem;
+    font-family: Gilroy;
+    font-size: 18px;
     font-weight: 700;
+    line-height: 22.28px;
     margin-bottom: 0.5rem;
-    padding-left: 10px;
     z-index: 3;
+    color: #212121;
+
 }
 
 .title {
-    font-size: 36px;
-    font-weight: 600;
     margin-bottom: 20px;
     color: white;
     text-align: center;
     width: 100%;
     z-index: 3;
+    font-family: Gilroy;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53.9px;
+
 }
 
 .authorTitle {
-    font-size: 0.875rem;
-    color: #ccc;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
     margin-bottom: 1rem;
     z-index: 3;
+    color: #5C5C5C;
+
 }
 
 .authorWrapper {
@@ -116,15 +129,17 @@
 }
 
 .testimonialImage {
-    width: 50%;
-    max-width: 250px;
     height: auto;
     position: absolute;
     top: 50%;
-    right: 7rem;
+    right: 2rem;
     transform: translateY(-50%);
     border-radius: 8px;
-    z-index: 3;
+    z-index: 5;
+}
+
+.testimonialImageStyle1 {
+    top: 53%;
 }
 
 .dots {
@@ -177,16 +192,8 @@
 }
 
 
-.greyBg1 {
-    position: absolute;
-    left: 43px;
-    top: -490px;
-    z-index: 3;
-    width: 14%;
-
-}
-
 .greyBg2 {
+    transition: clip-path 0.3s ease;
     position: absolute;
     right: -25%;
     top: -180%;
@@ -197,13 +204,15 @@
 .greyDiamond1,
 .greyDiamond2 {
     position: absolute;
-    background-color: thistle;
     z-index: 1;
 }
 
 .greyDiamond1 {
-    left: 66%;
-    bottom: 33%;
+    left: 63%;
+    top: 33%;
+    width: 698.85px;
+    height: 698.85px;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 79%, 0 93%, 0% 38%);
 }
 
 .greyDiamond2 {
@@ -214,10 +223,194 @@
 
 }
 
+.testimonialImageStyle1 {
+    width: 277.88px;
+    height: 353px;
+}
+
+.testimonialImageStyle2 {
+    height: 111%;
+    transform: translateY(-59%);
+    right: 0rem;
+}
+
+.testimonialImageStyle3 {
+    height: 370.91px;
+}
+
+.testimonialImageStyle4 {
+    width: 328.01px;
+    height: 317px;
+}
+
+.textStyle1 {
+    width: 730px;
+}
+
+.textStyle2 {
+    width: 700px;
+}
+
+.textWrapperStyle1 {
+    width: 935px;
+    height: 123px;
+}
+
+.textWrapperStyle2 {
+    width: 866px;
+    height: 123px;
+}
+
+.textWrapperStyle3 {
+    width: 976px;
+    height: 123px;
+}
+
+.textWrapperStyle4 {
+    width: 933px;
+    height: 123px;
+}
+
+.greyDiamond {
+    position: absolute;
+    right: 53%;
+    max-width: 50%;
+    z-index: 1;
+}
+
+.greyDiamond2 {
+    position: absolute;
+    right: 86%;
+    max-width: 50%;
+    z-index: 1;
+}
+
+.greyBg {
+    height: 30%;
+    position: absolute;
+    right: 76%;
+    z-index: 1;
+    top: 74%;
+    width: 22%;
+
+
+}
+
+.greyBg1 {
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    right: 76%;
+
+}
+
+.confetti {
+    position: absolute;
+    top: 89%;
+    transform: translateY(-50%);
+    right: -49px;
+}
+
+.fade {
+    animation: fadeIn 0.5s ease-in-out;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @media (max-width: 1440px) {
+    .testimonialCard {
+        max-width: 1032px;
+        max-height: 377px;
+    }
+
+    .testimonialImage {
+        right: 3.5rem;
+    }
+
+    .textWrapper {
+        width: 100%;
+        height: 100%;
+        max-height: 120px;
+    }
+
+    .textWrapperStyle4 {
+        max-width: 840px;
+        max-height: 120px;
+    }
+
     .cardWrapper {
         top: 50px;
     }
+
+    .title {
+        font-size: 36px;
+        line-height: 42.19px;
+    }
+
+    .text {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        width: 100%;
+        height: 100%;
+        max-height: 72px;
+    }
+
+    .textWrapperStyle1 {
+        max-width: 840px;
+    }
+
+    .textStyle1 {
+        max-width: 560px;
+    }
+
+    .testimonialImageStyle1 {
+        top: 53.4%;
+    }
+
+    .textWrapperStyle2 {
+        max-width: 741px;
+    }
+
+    .textStyle2 {
+        max-width: 478px;
+    }
+
+    .textWrapperStyle3 {
+        max-width: 874px;
+    }
+
+    .textStyle3 {
+        max-width: 570px;
+    }
+
+    .testimonialImageStyle3 {
+        right: 2.5rem;
+
+    }
+
+    .textWrapperStyle4 {
+        max-width: 823px;
+    }
+
+    .textStyle4 {
+        max-width: 540px;
+    }
+
+    .quotes {
+        left: 100%;
+    }
+
 }
 
 @media (max-width: 1280px) {
@@ -230,11 +423,68 @@
     .testimonialImage {
         right: 0rem;
     }
+
+    .testimonialCard {
+        max-width: 947px;
+        max-height: 377px;
+    }
+
+    .textWrapper {
+        max-width: 724px;
+        max-height: 144px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 37.5px;
+    }
+
+    .text {
+        max-width: 460px;
+        max-height: 96px;
+    }
+
+    .textStyle2 {
+        max-width: 435px;
+    }
+
+    .textWrapperStyle2 {
+        max-width: 653px;
+    }
+
+    .textStyle4 {
+        max-width: 405px;
+    }
+
+    .testimonialImage {
+        right: 4.5rem;
+    }
+
+
+    .quotes {
+        top: -50%;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .textWrapper {
+        max-width: 600px;
+        max-height: 144px;
+    }
+
+    .testimonialImage {
+        right: 0;
+    }
 }
 
 @media (max-width: 768px) {
     .testimonialCard {
         align-items: center;
+        max-width: 490px;
+        max-height: 610px;
+        width: 100%;
+        height: 100%;
     }
 
     .cardWrapper {
@@ -244,6 +494,26 @@
     .testimonialImage {
         position: initial;
         transform: none;
+    }
+
+    .testimonialImageStyle2 {
+        max-width: 237.98px;
+        max-height: 322.34px;
+    }
+
+    .testimonialImageStyle4 {
+        max-width: 287.12px;
+        max-height: 287px;
+    }
+
+    .testimonialImageStyle1 {
+        max-width: 200.54px;
+        max-height: 298px;
+    }
+
+    .testimonialImageStyle3 {
+        width: 160.03px;
+        height: 300.48px;
     }
 
     .author {
@@ -281,15 +551,32 @@
         height: 1200px;
     }
 
+    .text {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+    }
+
 }
 
 @media (max-width: 375px) {
-    .cardWrapper {
-        top: 120px;
+    .testimonialBlock {
+        margin: 0;
+        padding: 0;
     }
 
-    .reviewWrapper {
-        width: 50px;
+    .text {
+        max-height: 200px;
+    }
+
+    .testimonialCard {
+        max-width: 343px;
+        max-height: 650px;
+    }
+
+    .cardWrapper {
+        top: 120px;
     }
 
 
@@ -297,4 +584,24 @@
         left: 16px;
         top: 55px;
     }
+
+    .title {
+        font-size: 28px;
+        line-height: 32.81px;
+    }
+
+    .textWrapper {
+        max-height: 178px;
+    }
+
+    .authorName {
+        font-size: 16px;
+        line-height: 19.81px;
+    }
+
+    .authorTitle {
+        font-size: 10px;
+        line-height: 12.1px;
+    }
+
 }
