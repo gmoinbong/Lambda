@@ -184,11 +184,9 @@ export const getAccount = async (): Promise<AccountData> => {
 export const refreshToken = async (): Promise<void> => {
   try {
     const refreshToken = localStorage.getItem('refreshToken');
-    const email = localStorage.getItem('userEmail');
     if (!refreshToken) throw new Error('No refresh token available');
-    if (!email) throw new Error('No email available');
 
-    const url = `${API_URL}/refresh?email=${encodeURIComponent(email)}`;
+    const url = `${API_URL}/refresh`;
     const response: AxiosResponse<APIResponseSuccess<{ access_token: string }>> = await axios.post(url, null, {
       headers: {
         Authorization: `Bearer ${refreshToken}`,

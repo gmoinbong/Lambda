@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import './App.css';
 import ImageCanvas from './ImageCanvas';
 
 function App() {
+
   return (
 
     <div className="App">

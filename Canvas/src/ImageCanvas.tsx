@@ -1,5 +1,6 @@
 import React, { useState, useRef, ChangeEvent, DragEvent, FormEvent } from 'react';
 import './ImageCanvas.css';
+import useDragAndDrop from './useDragAndDrops';
 
 interface Asset {
   id: number;
@@ -24,7 +25,40 @@ const ImageCanvas: React.FC = () => {
   const [draggedImageId, setDraggedImageId] = useState<number | null>(null);
   const [text, setText] = useState<string>('');
 
+  const {
+    dragOver,
+    setDragOver,
+    onDragOver,
+    onDragLeave,
+    fileDropError,
+    setFileDropError,
+  } = useDragAndDrop();
 
+  const [files, setFiles] = useState<File[]>([]);
+
+  const onDrop = (e: React.DragEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    setDragOver(false);
+
+    const selectedFile = e?.dataTransfer?.files[0];
+
+    if (selectedFile.type.split("/")[0] !== "image") {
+      return setFileDropError("Please provide an image file to upload!");
+    }
+
+    setFiles(() => [...files, selectedFile]);
+  };
+
+  const fileSelect = (e: any) => {
+    let selectedFile = e?.dataTransfer?.files[0];
+
+    if (selectedFile.type.split("/")[0] !== "image") {
+      return setFileDropError("Please provide an image file to upload!");
+    }
+
+    setFileDropError("");
+  };
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -97,7 +131,11 @@ const ImageCanvas: React.FC = () => {
     <div className="container">
       <div className="sidebar">
         <div className="upload-container">
-          <input type="file" accept="image/*" onChange={handleImageUpload} className="upload-input" />
+          <input type="file" accept="image/*" onChange={handleImageUpload} onDragOver={onDragOver}
+            onDragLeave={onDragLeave}
+            onDrop={onDrop} className="upload-input" />
+          {fileDropError && (
+            <span className="file-drop-error">{fileDropError}</span>)}
         </div>
         <div className="assets-container">
           <h3>Assets</h3>
@@ -115,8 +153,16 @@ const ImageCanvas: React.FC = () => {
                 alt=""
                 draggable
                 onDragStart={(e) => handleDragStart(e, null, asset.src)}
-                className="asset"
-              />
+                className="asset" />
+            ))}
+            {files.map((file) => (
+              <img
+                key={file.name}
+                src={URL.createObjectURL(file)}
+                alt=""
+                draggable
+                onDragStart={(e) => handleDragStart(e, null, URL.createObjectURL(file))}
+                className="asset" />
             ))}
           </div>
         </div>
@@ -125,8 +171,7 @@ const ImageCanvas: React.FC = () => {
         ref={canvasRef}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
-        className="canvas"
-      >
+        className="canvas"      >
         {images.map((image) => (
           <React.Fragment key={image.id}>
             {image.src && (
@@ -142,8 +187,7 @@ const ImageCanvas: React.FC = () => {
                   left: image.x,
                   width: 100,
                   height: 100,
-                }}
-              />
+                }} />
             )}
             {image.text && (
               <div
@@ -155,8 +199,7 @@ const ImageCanvas: React.FC = () => {
                   whiteSpace: 'nowrap'
                 }}
                 draggable
-                onDragStart={(e) => handleDragStartText(e, image.id)}
-              >
+                onDragStart={(e) => handleDragStartText(e, image.id)}>
                 {image.text}
               </div>
             )}
