@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styles from './FeaturedOn.module.css';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
-import { DotsBackground } from '../BackgroundPercs/DotsBackground';
 
 interface Props { }
 
@@ -21,7 +20,6 @@ export const FeaturedOn: FC<Props> = () => {
             </div>
             {isMobile && <img src={'/assets/confetti-group_mobile.svg'} alt="confetti" className={styles.confettiMobile} />}
             <img src={'/assets/confetti-group.svg'} alt="confetti" className={styles.confetti} />
-            {/* <DotsBackground /> */}
         </div>
     );
 };
