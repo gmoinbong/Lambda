@@ -163,7 +163,7 @@
     }
 
     .confetti {
-        top: 160%;
+        top: 150%;
     }
 
     .container {
@@ -210,15 +210,18 @@
 
     .confetti {
         display: none;
-        right: -100px;
-        top: 180%;
+        top: 144%;
+        transform: translateY(-50%);
+        right: 0px;
     }
 
     .confettiMobile {
         position: absolute;
-        top: 180%;
+        top: 115%;
         transform: translateY(-50%);
         right: 10px;
+        z-index: -2;
+        width: 110%;
     }
 
 }

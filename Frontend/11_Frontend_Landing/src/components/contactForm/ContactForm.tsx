@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import styles from './ContactForm.module.css';
-import Button from '../Button/Button';
 import { useScreenDetector } from '../../hooks/useScreenDetector';
+import Button from '../Button/Button';
+import styles from './ContactForm.module.css';
 
 interface Props { }
 
@@ -17,27 +17,28 @@ export const ContactForm: FC<Props> = () => {
 
                         <img src={'/assets/maps.png'} alt="Map" className={styles.mapImage} />
                     </div>
-                    <div className={styles.right}>
-
-                        <h3 className={styles.title}>Hi, we’re <span className={styles.highlight}>Tinvio</span>! And you?</h3>
-                        <form className={styles.form}>
-                            <div className={styles.inputGroup}>
-                                <p>Name</p>
-                                <input type="text" placeholder="John Appleseed" className={styles.input} />
-                            </div>
-                            <div className={styles.inputGroup}>
-                                <p>Business Name</p>
-                                <input type="text" placeholder="Burgers &Boba (Singapore)" className={styles.input} />
-                            </div>
-                            <div className={styles.inputGroup}>
-                                <p>Phone</p>
-                                <input type="text" placeholder="65 9123 4567" className={styles.input} />
-                            </div>
-                            <div className={styles.botContent}>
-                                <Button type="submit" className={styles.submitButton} text='Submit' />
-                                <p className={styles.noSpam}>No spam, promise <span role="img" aria-label="fire">🔥</span></p>
-                            </div>
-                        </form>
+                    <div className={styles.rightWrapper}>
+                        <div className={styles.right}>
+                            <h3 className={styles.title}>Hi, we’re <span className={styles.highlight}>Tinvio</span>! And you?</h3>
+                            <form className={styles.form}>
+                                <div className={styles.inputGroup}>
+                                    <p>Name</p>
+                                    <input type="text" placeholder="John Appleseed" className={styles.input} />
+                                </div>
+                                <div className={styles.inputGroup}>
+                                    <p>Business Name</p>
+                                    <input type="text" placeholder="Burgers &Boba (Singapore)" className={styles.input} />
+                                </div>
+                                <div className={styles.inputGroup}>
+                                    <p>Phone</p>
+                                    <input type="text" placeholder="65 9123 4567" className={styles.input} />
+                                </div>
+                                <div className={styles.botContent}>
+                                    <Button type="submit" className={styles.submitButton} text='Submit' />
+                                    <p className={styles.noSpam}>No spam, promise <span role="img" aria-label="fire">🔥</span></p>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div>

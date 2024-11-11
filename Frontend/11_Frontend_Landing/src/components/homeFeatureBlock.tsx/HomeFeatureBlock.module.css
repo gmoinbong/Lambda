@@ -75,6 +75,14 @@
     margin-top: 10px;
     display: flex;
     align-items: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
 
 .diamond {
@@ -93,12 +101,13 @@
     padding: 10px 20px;
     border: none;
     border-radius: 18px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     width: 210px !important;
     height: 56px !important;
     margin-top: 32px;
+    font-weight: 700;
 }
 
 .moreFeaturesButton:hover {
@@ -143,6 +152,10 @@
     .moreFeaturesButton {
         width: 180px !important;
         height: 48px !important;
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19.81px;
     }
 
     .featureBlock {
@@ -335,10 +348,7 @@
         line-height: 20px;
     }
 
-    .moreFeaturesButton {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
+
 }
 
 @media (max-width: 420px) {

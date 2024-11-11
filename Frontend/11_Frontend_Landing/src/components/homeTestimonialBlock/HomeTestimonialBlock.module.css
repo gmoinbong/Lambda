@@ -13,6 +13,8 @@
     flex-direction: column;
     height: 1000px;
     margin-left: 20px;
+    margin-top: 20px;
+    clip-path: polygon(0 27%, 100% 0, 100% 800px, 0 1100px);
 }
 
 .cardWrapper {
@@ -29,7 +31,6 @@
     background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 24px;
-    margin-bottom: 2rem;
     width: 100%;
     max-width: 1132px;
     display: flex;
@@ -98,7 +99,7 @@
 }
 
 .title {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: white;
     text-align: center;
     width: 100%;
@@ -144,8 +145,8 @@
 
 .dots {
     display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    gap: 16px;
+    margin-top: 32px;
     z-index: 3;
     height: 12px !important;
     justify-content: center;
@@ -186,6 +187,7 @@
     z-index: 3;
 }
 
+
 .arrow {
     cursor: pointer;
     z-index: 3;
@@ -208,19 +210,21 @@
 }
 
 .greyDiamond1 {
-    left: 63%;
-    top: 33%;
-    width: 698.85px;
-    height: 698.85px;
-    clip-path: polygon(50% 0%, 100% 0%, 100% 79%, 0 93%, 0% 38%);
+    left: 62%;
+    top: 27%;
+    width: 1000.85px;
+    height: 603.85px;
+    opacity: 30%;
 }
 
 .greyDiamond2 {
-    right: -16%;
-    max-width: 50%;
-    top: -131%;
-    z-index: 2;
-
+    position: absolute;
+    right: 64%;
+    top: 4%;
+    width: 721.27px;
+    height: 757.27px;
+    border-radius: 67.61px 0px 0px 0px;
+    opacity: 30%;
 }
 
 .testimonialImageStyle1 {
@@ -278,30 +282,22 @@
     z-index: 1;
 }
 
-.greyDiamond2 {
+.greyBg2 {
     position: absolute;
-    right: 86%;
-    max-width: 50%;
     z-index: 1;
-}
-
-.greyBg {
-    height: 30%;
-    position: absolute;
-    right: 76%;
-    z-index: 1;
-    top: 74%;
-    width: 22%;
-
-
+    left: 2%;
+    top: 77%;
+    width: 25%;
+    opacity: 30%;
 }
 
 .greyBg1 {
     position: absolute;
     z-index: 1;
-    width: 200px;
-    right: 76%;
-
+    left: 62%;
+    top: 27%;
+    width: 17%;
+    opacity: 30%;
 }
 
 .confetti {
@@ -323,6 +319,14 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1600px) {
+    .testimonialBlock {
+        margin-top: 0px;
+        top: -50px;
+
     }
 }
 
@@ -357,7 +361,6 @@
     }
 
     .text {
-        font-family: Inter;
         font-size: 18px;
         font-weight: 400;
         line-height: 24px;
@@ -371,7 +374,7 @@
     }
 
     .textStyle1 {
-        max-width: 560px;
+        max-width: 600px;
     }
 
     .testimonialImageStyle1 {
@@ -411,22 +414,69 @@
         left: 100%;
     }
 
+    .greyBg1 {
+        position: absolute;
+        z-index: 1;
+        left: 72%;
+        top: 27%;
+        width: 17%;
+        opacity: 30%;
+    }
+
 }
 
 @media (max-width: 1280px) {
     .testimonialBlock {
         height: 900px;
+        top: -40px;
+    }
+
+    .greyBg2 {
+        left: -12%;
+        top: 82%;
+        width: 27%;
     }
 }
 
 @media (max-width: 1024px) {
+    .testimonialBlock {
+        top: 10px;
+
+    }
+
+    .greyBg1 {
+        position: absolute;
+        z-index: 1;
+        left: 71%;
+        top: 29%;
+        width: 23%;
+        opacity: 30%;
+    }
+
+    .greyBg2 {
+        left: -18%;
+        top: 84%;
+        width: 35%;
+    }
+
+    .greyDiamond2 {
+        position: absolute;
+        right: 64%;
+        top: -2%;
+        width: 607.27px;
+        height: 657.27px;
+        border-radius: 67.61px 0px 0px 0px;
+        opacity: 30%;
+    }
+
     .testimonialImage {
         right: 0rem;
     }
 
     .testimonialCard {
-        max-width: 947px;
+        max-width: 900px;
         max-height: 377px;
+        margin-right: 50px;
     }
 
     .textWrapper {
@@ -440,7 +490,7 @@
     }
 
     .text {
-        max-width: 460px;
+        max-width: 510px;
         max-height: 96px;
     }
 
@@ -453,16 +503,20 @@
     }
 
     .textStyle4 {
-        max-width: 405px;
+        max-width: 457px;
+    }
+
+    .textStyle3 {
+        max-width: 476px;
     }
 
     .testimonialImage {
-        right: 4.5rem;
+        right: 1.5rem;
     }
 
 
     .quotes {
-        top: -50%;
+        top: -30%;
     }
 
 }
@@ -488,7 +542,7 @@
     }
 
     .cardWrapper {
-        top: 150px;
+        top: 110px;
     }
 
     .testimonialImage {
@@ -521,13 +575,17 @@
     }
 
     .textWrapper {
-        width: 100%;
-        max-width: 100%;
+        width: 110%;
+        max-width: 460px;
     }
 
     .author {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .dots {
+        margin-right: 50px;
     }
 
     .arrow {
@@ -549,6 +607,7 @@
 
     .testimonialBlock {
         height: 1200px;
+        clip-path: polygon(0 28%, 178% 0, 100% 100%, 0 100%);
     }
 
     .text {
@@ -558,17 +617,78 @@
         line-height: 23px;
     }
 
+    .title {
+        margin-bottom: 32px;
+    }
+
+    .greyDiamond1 {
+        left: 9%;
+        top: 42%;
+        width: 1026.85px;
+        height: 666.85px;
+        opacity: 30%;
+        transform: rotate(267deg);
+    }
+
+    .greyDiamond2 {
+        right: 25%;
+        top: 12%;
+        width: 800px;
+        height: 728px;
+    }
+
+    .greyBg1 {
+        display: none;
+    }
+
+    .greyBg2 {
+        left: -27%;
+        top: 92%;
+        width: 88%;
+    }
+
+}
+
+@media(max-width: 525px) {
+    .testimonialCard {
+        margin-right: 0;
+    }
+
+    .cardWrapper {
+        align-items: flex-end
+    }
+
+
+
+    .dots {
+        margin: 0 auto;
+        margin-top: 32px;
+    }
+
+    .greyDiamond2 {
+        right: -65%;
+        top: 21%;
+    }
 }
 
 @media (max-width: 375px) {
     .testimonialBlock {
+        height: 1320px;
         margin: 0;
         padding: 0;
+
+    }
+
+    .testimonialBlock {
+        top: -180px;
     }
 
     .text {
         max-height: 200px;
+        padding-bottom: 0;
     }
+
+
 
     .testimonialCard {
         max-width: 343px;
@@ -576,7 +696,7 @@
     }
 
     .cardWrapper {
-        top: 120px;
+        top: 150px;
     }
 
 
@@ -591,7 +711,8 @@
     }
 
     .textWrapper {
-        max-height: 178px;
+        width: 102%;
+        max-height: 190px;
     }
 
     .authorName {
@@ -602,6 +723,11 @@
     .authorTitle {
         font-size: 10px;
         line-height: 12.1px;
+    }
+
+    .textWrapperStyle3,
+    .textWrapperStyle4 {
+        max-height: 210px;
     }
 
 }

@@ -85,6 +85,10 @@ export const HomeTestimonialBlock: FC = () => {
                     ))}
                 </div>
             </div>
+            <img className={styles.greyBg1} src={'./assets/background/rectangleGroup.png'} alt="grey bg" />
+            <img className={styles.greyBg2} src={'./assets/background/rectangleGroup.png'} alt="grey bg" />
+            <img className={styles.greyDiamond1} src='/assets/background/greyDiamondCut.png' alt="grey diamond" />
+            <img className={styles.greyDiamond2} src={'./assets/background/greyDiamond.svg'} alt="grey diamond" />
         </div >
     );
 };

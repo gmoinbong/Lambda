@@ -101,6 +101,11 @@
     height: 975px;
 }
 
+.smile {
+    margin-left: 8px;
+    height: 16px !important;
+}
+
 .overlayDiamond {
     background-color: rgba(251, 36, 43, 0.6);
     width: 1050px;
@@ -173,6 +178,9 @@
     line-height: 19.41px;
     color: #5C5C5C;
     margin-top: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 @media(max-width: 1440px) {
@@ -242,6 +250,10 @@
         font-size: 18px;
     }
 
+    .textDescription {
+        max-width: 368px;
+    }
+
     .ctaButton {
         width: 188px !important;
         height: 48px !important;
@@ -277,6 +289,10 @@
         width: 427px;
     }
 
+    .textDescription {
+        max-width: 358px;
+    }
+
     .imageContainer {
         left: 50px;
     }
@@ -305,8 +321,17 @@
         width: 373px;
     }
 
+    .textDescription {
+        max-width: 365px;
+    }
+
+    .textContent {
+        width: 425px;
+        margin-right: 20px;
+    }
+
     .textContent p {
-        width: 373px;
+        width: 385px;
     }
 
 }
@@ -380,18 +405,18 @@
 
     .backgroundImageDesktop {
         position: absolute;
-        bottom: 85%;
-        right: 0%;
-        width: 75%;
-        height: 70%;
-
+        bottom: 81%;
+        right: -19%;
+        width: 91%;
+        height: 89%;
+        transform: rotate(315deg) !important;
     }
 
     .backgroundImageMobile {
         position: absolute;
-        top: 7%;
-        left: 33%;
-        width: 28%;
+        top: 5%;
+        left: 34%;
+        width: 30%;
         height: auto;
     }
 
@@ -417,6 +442,7 @@
         margin-top: 12px;
         padding-right: 20px !important;
         width: auto !important;
+
     }
 
     .textContent h1 {
@@ -433,9 +459,18 @@
 
     .rectangle {
         left: auto;
-        right: 0px;
-        height: 40%;
-        bottom: 300px;
+        right: -4%;
+        height: 37%;
+        bottom: 35%;
+        width: 42%;
+    }
+
+    .rectangle2 {
+        width: 22%;
+        position: absolute;
+        bottom: 91%;
+        right: 33%;
+        left: auto;
     }
 
 }
@@ -498,6 +533,11 @@
 
 
 @media (max-width: 375px) {
+    .textContent {
+        margin-top: 0 !important;
+        padding-top: 0;
+    }
+
     .textContent p {
         font-size: 14px;
     }
@@ -515,6 +555,7 @@
     .freeText {
         margin: 0 !important;
         margin-bottom: 20px !important;
+        margin-top: 12px;
     }
 
     .textDescription {

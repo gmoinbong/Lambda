@@ -227,10 +227,11 @@
     .checkoutBlock {
         height: 100%;
         background: url('../../assets/background/home_bg_tablet.svg') no-repeat center center;
-        height: 1200px;
+        height: 1250px;
         background-size: cover;
         border-radius: 15px;
         background-position: center;
+        bottom: 510px;
     }
 
     .checkoutBlock {
@@ -337,6 +338,7 @@
 
     .checkoutBlock {
         height: 900px;
+        bottom: 470px;
     }
 
     .content {

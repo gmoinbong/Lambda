@@ -14,7 +14,7 @@ function App() {
   return (
 
     <div className='app'>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/features' element={<Features />} />
