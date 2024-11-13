@@ -307,6 +307,8 @@
     right: -49px;
 }
 
+
+
 .fade {
     animation: fadeIn 0.5s ease-in-out;
     opacity: 1;
@@ -642,9 +644,9 @@
     }
 
     .greyBg2 {
-        left: -27%;
-        top: 92%;
-        width: 88%;
+        left: -20%;
+        top: 86%;
+        width: 50%;
     }
 
 }

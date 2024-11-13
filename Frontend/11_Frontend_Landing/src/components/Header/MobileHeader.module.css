@@ -17,6 +17,7 @@
 .wrapper {
     display: flex;
     align-items: center;
+    z-index: 11;
 }
 
 .headerTop {
@@ -82,8 +83,106 @@
 
 .ctaButton {
     position: absolute;
-    top: 85%;
+    top: 80%;
     width: 188px;
     height: 48px;
     background-color: #FF474D !important;
+    z-index: 15;
+}
+
+.menuBg {
+    position: relative;
+    left: 38%;
+}
+
+.menuBg1 {
+    position: relative;
+    right: 35%;
+    width: 456.27px;
+    height: 456.27px;
+    border-radius: 42.47px 0px 0px 0px;
+    bottom: 24%;
+}
+
+.menuBgDots {
+    z-index: 5;
+    position: relative;
+    width: 313.23px;
+    height: 237.03px;
+    left: -44%;
+    bottom: 58%;
+}
+
+.menuBgDots1 {
+    z-index: 5;
+    position: absolute;
+    width: 381.07px;
+    height: 288.37px;
+    left: 64%;
+    bottom: 10%;
+}
+
+.socialMedia {
+    display: flex;
+    gap: 20px;
+}
+
+.socialMedia img {
+    width: 32px;
+    height: 32px;
+}
+
+.socialWrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 3%;
+    height: 40px;
+    gap: 32px;
+    z-index: 15;
+}
+
+.burgerMenuOpen {
+    width: 24px !important;
+    height: 18px !important;
+}
+
+.burgerMenuClose {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.appLinks {
+    display: flex;
+    gap: 16px;
+}
+
+.greyDiamondTop {
+    position: absolute;
+    z-index: 10;
+    width: 537.11px;
+    height: 537.11px;
+    left: 60%;
+    top: -32vh;
+}
+
+@media(min-width: 769px) {
+    .menuBg {
+        display: none;
+    }
+}
+
+@media(max-width: 375px) {
+    .ctaButton {
+        display: none;
+
+    }
+
+    .s {
+        top: 35%;
+    }
+
+    .socialWrapper {
+        display: none;
+    }
 }

@@ -11,6 +11,7 @@ export const ContactForm: FC<Props> = () => {
     return (
         <div className={styles.contactFormContainer}>
             <div className={styles.content}>
+                <img src={'/assets/background/dotsBg.svg'} className={styles.dotsDown1} alt="Grey Diamond" />
                 <div className={styles.contentWrapper}>
                     <div className={styles.left}>
                         {!isTablet ? <h2 className={styles.titleMap}>Fill up the form and we'll get <br /> in touch within a few hours</h2> : null}
@@ -35,7 +36,9 @@ export const ContactForm: FC<Props> = () => {
                                 </div>
                                 <div className={styles.botContent}>
                                     <Button type="submit" className={styles.submitButton} text='Submit' />
-                                    <p className={styles.noSpam}>No spam, promise <span role="img" aria-label="fire">🔥</span></p>
+                                    <p className={styles.noSpam}>No spam, promise <span role="img" aria-label="fire">
+                                        <img src="/assets/hands.svg" className={styles.hands} alt="" />
+                                    </span></p>
                                 </div>
                             </form>
                         </div>
@@ -44,8 +47,11 @@ export const ContactForm: FC<Props> = () => {
                 <div>
                     <img src={'/assets/confetti-group2.svg'} className={styles.confetti} alt="confetti" />
                 </div>
-                {isTablet ? <h2 className={styles.titleMap}>Fill up the form and we'll get <br /> in touch within a few hours</h2> : null}
+                {isTablet ? <h2 className={styles.titleMap}>Fill up the form and we'll get <br className={styles.br} /> in touch within a few hours</h2> : null}
             </div>
+            <img src={'/assets/background/dotsBg.svg'} className={styles.dotsDown} alt="Grey Diamond" />
+
+            <img src={'/assets/background/dotsBg.svg'} className={styles.dotsUp} alt="Grey Diamond" />
         </div>
     );
 };

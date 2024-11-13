@@ -60,7 +60,6 @@
     font-size: 44px;
     font-weight: 600;
     line-height: 53.9px;
-    margin-bottom: 20px;
     text-align: left;
     color: #212121;
 
@@ -72,8 +71,9 @@
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    margin-bottom: 20px;
+    margin-top: 16px;
     color: #5C5C5C;
+    width: 574px;
 }
 
 .playButton {
@@ -90,6 +90,7 @@
     width: 220px !important;
     height: 56px !important;
     box-sizing: border-box;
+    margin-top: 32px;
 }
 
 .playIcon {
@@ -117,6 +118,25 @@
     width: 300px;
     height: 250px;
 
+}
+
+.dotsBg,
+.dotsBg1 {
+    position: absolute;
+}
+
+.dotsBg {
+    top: 85%;
+    left: 17%;
+    width: 297px;
+    height: 224.75px;
+}
+
+.dotsBg1 {
+    top: 67%;
+    left: 76%;
+    width: 253.72px;
+    height: 192px;
 }
 
 @media(min-width: 1440px) {
@@ -149,6 +169,16 @@
         ;
     }
 
+    .dotsBg1 {
+        top: 72%;
+        left: 81%;
+    }
+
+    .dotsBg {
+        top: 84%;
+        left: 6%;
+    }
+
     .content {
         gap: 10%;
     }
@@ -176,8 +206,9 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 23px;
-        max-width: 356px;
+        max-width: 478px;
         width: 100%;
+
     }
 }
 
@@ -196,6 +227,20 @@
     .textBlock {
         margin-left: 0;
         margin-bottom: 50px;
+    }
+
+    .textBlock p {
+        max-width: 424px;
+    }
+
+    .dotsBg {
+        top: 83%;
+        left: 0%;
+    }
+
+    .dotsBg1 {
+        top: 71%;
+        left: 87%;
     }
 }
 
@@ -220,6 +265,17 @@
     .textBlock p {
         font-size: 16px;
         line-height: 23px;
+        max-width: 356px;
+    }
+
+    .dotsBg {
+        top: 85%;
+        left: -8%;
+    }
+
+    .dotsBg1 {
+        top: 67%;
+        left: 85%;
     }
 }
 
@@ -236,6 +292,7 @@
 
     .checkoutBlock {
         background-position: left;
+        z-index: 7;
     }
 
     .content {
@@ -280,16 +337,31 @@
         line-height: 39.2px;
     }
 
+    .textBlock p {
+        max-width: 429px;
+        max-height: 69px;
+        text-align: center;
+    }
+
     .contentImage {
         width: 520px;
         padding-top: 20px;
         height: 459px;
+        z-index: 2;
     }
 
     .content {
         top: 100px;
     }
 
+    .dotsBg1 {
+        top: 77%;
+        left: 75%;
+    }
+
+    .dotsBg {
+        top: 44%;
+    }
 
 }
 
@@ -299,10 +371,6 @@
     .content {
         gap: 80px;
         top: 50px;
-    }
-
-    .playButton {
-        margin: 0;
     }
 
     .contentImage {
@@ -330,6 +398,18 @@
         text-align: center;
         word-break: break-word;
 
+    }
+
+    .dotsBg {
+        width: 199.21px;
+        height: 150.75px;
+        top: 60%;
+        left: -20%;
+    }
+
+    .dotsBg1 {
+        top: 82%;
+        left: 59%;
     }
 
 }

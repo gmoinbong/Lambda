@@ -72,7 +72,8 @@ export const HomeFeatureBlock: FC<Props> = () => {
                 )}
 
             </div>
-            <img src={'/assets/background/greyDiamond.png'} className={styles.greyBg} alt="grey diamond" />
+            <img src={'/assets/background/greyDiamond.png'} alt="grey diamond" className={styles.greyBg} />
+            <img src={'/assets/background/dots.svg'} alt="grey dots" className={styles.dotsBg} />
         </div>
     );
 };

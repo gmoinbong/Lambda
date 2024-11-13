@@ -79,7 +79,7 @@ export const HomeTestimonialBlock: FC = () => {
                         <span
                             key={index}
                             className={styles.dot}
-                            style={{ backgroundColor: current === index ? '#ccc' : 'white' }}
+                            style={{ backgroundColor: current === index ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.3)' }}
                             onClick={() => setCurrent(index)}>
                         </span>
                     ))}

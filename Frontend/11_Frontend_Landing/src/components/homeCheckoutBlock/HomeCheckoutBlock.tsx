@@ -34,6 +34,8 @@ export const HomeCheckoutBlock: FC<Props> = () => {
                 <img src={'/assets/background/rectangleGroup.png'} className={styles.bgDetail} alt="" />
                 <img src={'/assets/background/rectangleGroup.png'} className={styles.bgDetail2} alt="" />
             </div>
+            <img src={'/assets/background/dots.svg'} alt="grey dots" className={styles.dotsBg} />
+            <img src={'/assets/background/dots.svg'} alt="grey dots" className={styles.dotsBg1} />
         </div>
     );
 };

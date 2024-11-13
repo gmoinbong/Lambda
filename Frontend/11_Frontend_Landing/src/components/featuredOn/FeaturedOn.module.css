@@ -36,6 +36,7 @@
     height: 50px;
     padding-top: 32px;
     gap: 94px;
+    z-index: 2;
 }
 
 .line {
@@ -59,9 +60,11 @@
 
 .greyBg {
     position: absolute;
-    left: 80%;
-    width: 410.5px;
+    left: 57%;
+    width: 426.5px;
     height: 322.75px;
+    bottom: 57%;
+
 }
 
 .text1 {
@@ -88,6 +91,14 @@
     height: 25px;
 }
 
+.greyDots {
+    position: absolute;
+    width: 426.5px;
+    height: 322.75px;
+    top: 106%;
+    left: 11%;
+}
+
 @media(max-width:1440px) {
     .container {
         height: 228px;
@@ -102,12 +113,31 @@
         line-height: 42.19px;
     }
 
+    .greyBg {
+        left: 59%;
+    }
+
+    .greyDots {
+        top: 115%;
+        left: -5%;
+    }
+}
+
+
+@media(max-width:1280px) {
+    .greyDots {
+        top: 115%;
+        left: -10%;
+    }
 }
 
 @media(max-width:1240px) {
     .container {
         margin-right: 0;
     }
+
+
+
 }
 
 
@@ -147,6 +177,16 @@
         height: 20px;
     }
 
+    .greyBg {
+        left: 66%;
+        bottom: 57%;
+    }
+
+    .greyDots {
+        top: 125%;
+        left: -20%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -175,6 +215,18 @@
         width: 294px;
     }
 
+    .greyBg {
+        width: 270.57px;
+        height: 204.75px;
+        left: 76%;
+        bottom: 64%;
+    }
+
+    .greyBg2 {
+        left: -20%;
+        top: 87%;
+        width: 53%;
+    }
 
 }
 
@@ -208,11 +260,22 @@
         padding-top: 32px;
     }
 
+    .greyBg {
+        left: 72%;
+        bottom: 76%;
+    }
+
     .confetti {
         display: none;
         top: 144%;
         transform: translateY(-50%);
         right: 0px;
+    }
+
+    .greyDots {
+        top: 103%;
+        left: -60%;
+        width: 97%;
     }
 
     .confettiMobile {

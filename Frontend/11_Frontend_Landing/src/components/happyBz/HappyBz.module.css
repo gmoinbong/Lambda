@@ -5,7 +5,6 @@
     align-items: center;
     width: 100%;
     position: relative;
-    margin: 120px 0;
     box-sizing: border-box;
 }
 
@@ -30,59 +29,71 @@
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    color: #212121;
 }
 
-.greyDiamond {
+.leftBg,
+.rightBg {
     position: absolute;
-    right: -30%;
-    max-width: 50%;
-    top: -115%;
-    z-index: 2;
 }
 
-.greyDiamond2 {
+.greyDots,
+.greyDots1,
+.greyDots2,
+.greyBg,
+.greyBg1,
+.greyBg2,
+.dotsDown {
     position: absolute;
-    right: 86%;
-    max-width: 50%;
-    top: -162%;
-    z-index: 2;
-
-}
-
-.greyBg {
-    position: absolute;
-    right: 16%;
-    top: -891px;
-    z-index: 2;
-    width: 200px;
-}
-
-.greyBg1 {
-    position: absolute;
-    left: 10px;
-    top: -450px;
-    z-index: 3;
-    width: 200px;
 }
 
 .greyBg2 {
-    position: absolute;
-    left: 10px;
-    top: 119%;
-    z-index: 36;
-    width: 200px;
+    bottom: -3vh;
+    left: 22vw;
 }
 
-.greyBg3 {
-    position: absolute;
-    z-index: 4;
-    top: 95%;
-    left: 10%;
+.greyDots1 {
+    bottom: 25vh;
+    left: 22vw;
+    z-index: 1;
+    width: 587.93px;
+    height: 444.92px;
+}
+
+.greyBg,
+.greyBg1 {
+    right: 14vw;
+    rotate: 180deg;
+    width: 700.34px;
+    height: 700.34px;
+}
+
+.greyBg {
+    bottom: -18vh;
+    z-index: 1;
+
+}
+
+.greyBg1 {
+    top: -25vh;
+}
+
+.greyDots {
+    right: 30vw;
+    z-index: 2;
+    width: 162.75px;
+    height: 123.16px;
+}
+
+.dotsDown {
+    width: 383.22px;
+    height: 290px;
+    right: 70%;
+    bottom: -27%;
 }
 
 @media(min-width:1600px) {
     .container {
-        margin-top: 150px;
         margin-bottom: 50px;
     }
 
@@ -96,6 +107,30 @@
         font-weight: 600;
         line-height: 44.1px;
         text-align: center;
+    }
+
+    .greyDots1 {
+        left: 27vw;
+    }
+
+    .greyBg2 {
+        bottom: -13vh;
+        left: 28vw;
+    }
+
+    .greyBg1 {
+        top: -36vh;
+        right: 17vw;
+    }
+
+    .greyBg {
+        right: 15vw;
+        bottom: -12vh;
+    }
+
+    .dotsDown {
+        right: 76%;
+        bottom: -30%;
     }
 }
 
@@ -114,6 +149,24 @@
         line-height: 42.19px;
     }
 
+    .greyBg {
+        top: -37vh;
+        right: 26vw;
+    }
+
+    .greyBg2 {
+        bottom: 5vh;
+        left: 30vw;
+    }
+
+    .greyDots1 {
+        left: 34vw;
+        bottom: 25vh;
+    }
+
+    .greyDots {
+        display: none;
+    }
 
 }
 
@@ -123,11 +176,29 @@
         line-height: 37.5px;
     }
 
+    .container {
+        margin-top: 124px;
+    }
+
+    .greyBg {
+        top: -80vh;
+        right: 20vw;
+    }
+
+    .greyBg1 {
+        top: -38vh;
+        right: 23vw;
+    }
+
+    .dotsDown {
+        right: 85%;
+        bottom: -40%;
+    }
+
 }
 
 @media(max-width:768px) {
     .container {
-        margin-top: 210px;
         margin-bottom: 50px;
         gap: 50px;
     }
@@ -140,6 +211,44 @@
 
     .title {
         line-height: 39.2px;
+        z-index: 4;
+    }
+
+    .greyBg,
+    .greyBg1 {
+        width: 459.3px;
+        height: 459.3px;
+    }
+
+    .greyBg {
+        top: -81vh;
+        right: 11vw;
+        z-index: 3;
+    }
+
+
+    .greyBg1 {
+        top: -45vh;
+        right: 16vh;
+    }
+
+    .greyBg2 {
+        display: none;
+    }
+
+
+    .greyDots1 {
+        width: 381.07px;
+        height: 288.37px;
+        left: 14vw;
+        bottom: 42vh;
+    }
+
+    .dotsDown {
+        width: 248.38px;
+        height: 187.96px;
+        right: 84%;
+        bottom: 32%;
     }
 
 }
@@ -161,7 +270,37 @@
         line-height: 32.81px;
     }
 
-    
+    .greyBg {
+        top: -67vh;
+        right: 12vw;
+        z-index: 3;
+    }
+
+    .greyBg1 {
+        top: -21vh;
+        right: 2vh;
+    }
+
+    .greyBg2 {
+        display: block;
+        bottom: 3vh;
+        left: 12vw;
+    }
+
+    .dotsDown {
+        width: 150.94px;
+        height: 114.22px;
+        right: 88%;
+        bottom: 41%;
+    }
+
+    .greyDots1 {
+        width: 231.57px;
+        height: 175.24px;
+        bottom: 33vh;
+    }
+
+
 
     .container {
         margin-top: 0;

@@ -76,12 +76,8 @@
     display: flex;
     align-items: center;
     font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    color: #212121;
+
 
 }
 
@@ -133,9 +129,14 @@
 
 .greyBg {
     position: absolute;
-    width: 450px;
-    height: 450px;
-    left: 70px;
+    width: 600px;
+    height: 600px;
+    left: 4%;
+    bottom: 5%;
+}
+
+.dotsBg {
+    display: none;
 }
 
 .lineAndText {
@@ -189,6 +190,11 @@
         bottom: 60.3%;
     }
 
+    .greyBg {
+        left: -16%;
+        bottom: 9%;
+    }
+
 }
 
 @media (max-width: 1280px) {
@@ -217,9 +223,8 @@
     }
 
     .greyBg {
-        width: 350px;
-        height: 350px;
-        left: 20px;
+        left: -25%;
+        bottom: 17%;
     }
 }
 
@@ -287,11 +292,6 @@
         padding: 0;
     }
 
-    .greyBg {
-        width: 300px;
-        height: 300px;
-        left: 10px;
-    }
 
     .textContent h2 {
         font-size: 28px;
@@ -307,7 +307,7 @@
     .featureList li {
         font-size: 16px;
         line-height: 24px;
-        text-align: center;
+        text-align: left;
         width: 489px;
 
     }
@@ -326,7 +326,17 @@
     }
 
     .greyBg {
-        display: none;
+        top: 3%;
+        left: -55%;
+    }
+
+    .dotsBg {
+        display: block;
+        position: absolute;
+        width: 243.1px;
+        height: 183.97px;
+        left: 77%;
+        top: 31%;
     }
 
     .lineAndText svg {
@@ -334,6 +344,13 @@
         bottom: 93.8%;
         padding-left: 2px;
     }
+
+    .dotsBg {
+        left: 69%;
+        top: 26%;
+    }
+
+
 
 }
 
@@ -374,6 +391,11 @@
     .featureList li {
         width: 340px;
         text-align: left;
+    }
+
+    .greyBg {
+        left: -117%;
+        z-index: -1;
     }
 
 }

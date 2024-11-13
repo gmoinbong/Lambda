@@ -9,7 +9,7 @@ export const FeaturedOn: FC<Props> = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Featured On
-                <img src={'/assets/background/rectangleGroup.png'} alt="confetti" className={styles.greyBg} />
+                <img src={'/assets/background/rectangleGroup.png'} alt="dots" className={styles.greyBg} />
             </h2>
             <div className={styles.line}></div>
             <div className={styles.grid}>
@@ -20,6 +20,8 @@ export const FeaturedOn: FC<Props> = () => {
             </div>
             {isMobile && <img src={'/assets/confetti-group_mobile.svg'} alt="confetti" className={styles.confettiMobile} />}
             <img src={'/assets/confetti-group.svg'} alt="confetti" className={styles.confetti} />
+            <img className={styles.greyDots} src={'./assets/background/dotsBg.svg'} alt="grey dots" />
+
         </div>
     );
 };

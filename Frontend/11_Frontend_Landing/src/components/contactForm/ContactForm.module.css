@@ -57,6 +57,7 @@
     align-items: center;
     margin-top: 100px;
     border-radius: 36px;
+    z-index: 2;
 }
 
 .right {
@@ -135,6 +136,14 @@
     border-radius: 4px;
     cursor: pointer;
     border-radius: 18px;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.76px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
 
 .submitButton:hover {
@@ -146,7 +155,15 @@
     text-align: center;
     margin-top: 10px;
     font-size: 12px;
-    color: #777;
+    color: #BDBDBD;
+    display: flex;
+    align-items: center;
+}
+
+.hands {
+    width: 15px;
+    height: 16px;
+    margin-left: 8px;
 }
 
 .titleMap {
@@ -178,6 +195,30 @@
     padding-bottom: 20px;
 }
 
+
+.dotsDown {
+    position: absolute;
+    bottom: 4vh;
+    width: 263px;
+    height: 200px;
+    left: 65.5vw;
+    z-index: 1;
+}
+
+.dotsUp {
+    position: absolute;
+    bottom: 27vh;
+    z-index: 1;
+    left: 39.5vw;
+    width: 150.65px;
+    height: 114px;
+    display: none;
+}
+
+.dotsDown1 {
+    display: none;
+}
+
 @media(min-width:1600px) {
     .contactFormContainer {
         background: url(/assets/contactFormBackground.svg) no-repeat center center;
@@ -189,6 +230,11 @@
         bottom: -40px;
         position: relative;
         margin-left: 10px;
+    }
+
+    .hands {
+        width: 16px;
+        height: 18px;
     }
 
     .titleMap {
@@ -224,16 +270,38 @@
         padding-right: 50px;
     }
 
+    .submitButton {
+        font-size: 16px;
+        line-height: 19.81px;
+    }
+
     .rightWrapper {
         width: 489px;
         height: 545px;
     }
 
+    .dotsDown {
+        bottom: -3vh;
+        left: 73.5vw;
+    }
 }
 
 @media(max-width:1280px) {
     .left {
         padding: 0;
+    }
+
+    .dotsDown {
+        width: 253.72px;
+        height: 192px;
+        bottom: 0vh;
+        left: 81.5vw;
+    }
+
+    .dotsUp {
+        display: block;
+        bottom: 29vh;
+        left: 48.5vw;
     }
 
 }
@@ -260,8 +328,11 @@
     }
 
     .mapImage {
-        width: 709px;
-        height: 450px;
+        width: 752px;
+        height: 489px;
+        position: relative;
+        top: 100px;
+        right: 95px;
     }
 
 
@@ -271,9 +342,8 @@
 
     .titleMap {
         font-size: 32px;
-        left: 160px;
-        left: calc(10% + 20px);
-        top: 0;
+        left: calc(10% + 70px);
+        top: 10vh;
     }
 
     .left {
@@ -285,6 +355,10 @@
         margin-top: 0;
     }
 
+    .dotsDown {
+        bottom: 6vh;
+        left: 88.5vw;
+    }
 }
 
 @media(max-width: 908px) {
@@ -347,6 +421,25 @@
         position: static;
     }
 
+    .dotsUp {
+        display: block;
+        position: absolute;
+        bottom: 118vh;
+        z-index: 1;
+        left: 3.5vw;
+        width: 244px;
+        height: 185px;
+    }
+
+    .dotsDown {
+        width: 457.23px;
+        height: 346px;
+
+
+        bottom: 71vh;
+        left: 56.5vw;
+    }
+
     .confetti {
         top: calc(var(--confetti-top-offset) + 20%);
         right: calc(var(--confetti-right-offset) + 20%);
@@ -370,7 +463,32 @@
         line-height: 32.81px;
         text-align: center;
         width: 310px;
+        font-weight: 600;
         height: 99px;
+    }
+
+    .dotsUp {
+        bottom: 123vh;
+        left: -20.5vw;
+        display: none;
+    }
+
+    .dotsDown1 {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 311px;
+        height: 235px;
+        left: -23vw;
+        top: 7vh;
+    }
+
+    .dotsDown {
+        display: none;
+    }
+
+    .br {
+        display: none;
     }
 
     .title h3 {
@@ -394,6 +512,12 @@
     .inputGroup {
         padding: 5px 40px 0 40px;
     }
+
+    .dotsUp {
+        width: 311px;
+        height: 235.35px;
+    }
+
 
     .input {
         width: 90%;

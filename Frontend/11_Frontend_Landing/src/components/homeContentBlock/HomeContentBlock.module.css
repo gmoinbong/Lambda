@@ -160,28 +160,48 @@
     bottom: 560px;
 }
 
-.greyDiamondBottom,
+.greyDiamondBottom {
+    position: absolute;
+    width: 400px;
+    height: 370px;
+    border-radius: 40px;
+    left: -8%;
+    z-index: -1;
+    bottom: 25%;
+}
+
 .greyDiamondTop {
     position: absolute;
     color: #DADADA;
     width: 350px;
     height: 350px;
     border-radius: 40px;
+    left: 25%;
+    bottom: 90%;
+}
+
+.dotsBg {
+    position: absolute;
+    left: -5%;
+    bottom: 28%;
+    z-index: -1;
 }
 
 .freeText {
-    margin: 0;
-    margin-left: 40px !important;
+    max-width: 220px;
     font-family: Gilroy;
     font-size: 16px;
     font-weight: 400;
     line-height: 19.41px;
     color: #5C5C5C;
     margin-top: 12px;
+    text-align: center;
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }
+
+
 
 @media(max-width: 1440px) {
     .container {
@@ -191,8 +211,18 @@
     .stars {
         left: 75px;
     }
+
+    .dotsBg {
+        left: 0%;
+        bottom: 25%;
+    }
 }
 
+@media(max-width: 1280px) {
+    .dotsBg {
+        left: -5%;
+    }
+}
 
 @media(max-width: 1024px) {
     .container {
@@ -204,15 +234,7 @@
     }
 }
 
-@media (min-width: 1600px) {
-    .greyDiamondBottom {}
-}
-
 @media (max-width: 1750px) {
-    .greyDiamondBottom {
-        left: -100px;
-    }
-
     .imageContainer {
         top: 20px;
     }
@@ -230,10 +252,6 @@
         gap: 0;
     }
 
-    .greyDiamondBottom {
-        left: -100px;
-    }
-
 }
 
 @media (max-width: 1440px) {
@@ -242,16 +260,23 @@
         width: 427px;
     }
 
+    .greyDiamondBottom {
+        left: -7%;
+    }
+
+    .greyDiamondTop {
+        left: 27%;
+    }
+
     .textContent {
         left: 120px;
     }
 
-    .textContent p {
-        font-size: 18px;
-    }
 
     .textDescription {
         max-width: 368px;
+        font-size: 18px;
+
     }
 
     .ctaButton {
@@ -261,6 +286,11 @@
 
     .freeText {
         margin-left: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.98px;
+        max-width: 188px;
+        margin-left: 5px;
     }
 
     .diamondWrapper {
@@ -276,7 +306,7 @@
     }
 
     .greyDiamondTop {
-        left: calc(25%-40px);
+        left: 25%;
     }
 }
 
@@ -293,8 +323,16 @@
         max-width: 358px;
     }
 
+    .freeText {
+        margin-left: 0;
+    }
+
     .imageContainer {
         left: 50px;
+    }
+
+    .greyDiamondBottom {
+        left: -10%;
     }
 
 }
@@ -330,8 +368,17 @@
         margin-right: 20px;
     }
 
+    .greyDiamondTop {
+        left: 19%;
+    }
+
     .textContent p {
         width: 385px;
+    }
+
+    .freeText {
+        font-size: 14px;
+        line-height: 16.98px;
     }
 
 }
@@ -349,6 +396,9 @@
         padding: 0;
     }
 
+    .textTitle {
+        margin: 0;
+    }
 
     .diamondWrapper {
         left: 0;
@@ -359,7 +409,6 @@
         text-align: center;
         left: 0;
         width: 477px;
-        padding-top: 64px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -385,6 +434,7 @@
         margin-left: 0;
         padding-left: 0;
         left: -40%;
+        z-index: 5;
 
     }
 
@@ -421,13 +471,11 @@
     }
 
     .greyDiamondTop {
-        top: -275px;
-        left: 70%;
-        z-index: 12;
+        display: none;
     }
 
     .greyDiamondBottom {
-        display: none;
+        bottom: 58%;
     }
 
     .stars {
@@ -489,6 +537,11 @@
 
     }
 
+    .greyDiamondBottom {
+        bottom: 54%;
+        left: -60%;
+    }
+
     .freeText {
         margin: 20px 0 !important;
     }
@@ -519,10 +572,6 @@
     .redDiamond {
         width: 175vw;
         height: 145vw;
-    }
-
-    .greyDiamondBottom {
-        top: -100px;
     }
 
     .textContent {
