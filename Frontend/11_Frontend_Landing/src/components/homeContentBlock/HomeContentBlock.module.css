@@ -20,7 +20,7 @@
     z-index: 1;
     text-align: left;
     width: 478px;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
 }
 
 .textTitle {
@@ -39,7 +39,13 @@
 
 .textContent h1 span {
     color: #FF474D;
+    font-weight: 700;
 }
+
+.textDescription {
+    font-family: Inter;
+}
+
 
 .textDescription {
     font-size: 20px;
@@ -49,18 +55,21 @@
     margin: 16px 0 0 0;
     max-width: 415px;
     width: 100%;
+
 }
 
 .ctaButton {
-    background-color: #FF474D;
+    background-color: #FF474D !important;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 18px;
-    font-size: 1rem;
+    font-size: 20px !important;
     cursor: pointer;
     z-index: 2;
     margin-top: 32px;
+    font-weight: 700 !important;
+    line-height: 24.76px !important;
 }
 
 .ctaButton:hover {
@@ -232,6 +241,8 @@
     .stars {
         left: 0;
     }
+
+
 }
 
 @media (max-width: 1750px) {
@@ -258,6 +269,7 @@
     .textContent h1 {
         font-size: 44px;
         width: 427px;
+        font-weight: 600;
     }
 
     .greyDiamondBottom {
@@ -275,13 +287,20 @@
 
     .textDescription {
         max-width: 368px;
-        font-size: 18px;
-
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
     }
 
     .ctaButton {
         width: 188px !important;
         height: 48px !important;
+        font-size: 16px !important;
+        cursor: pointer;
+        z-index: 2;
+        margin-top: 32px;
+        font-weight: 700 !important;
+        line-height: 19.81px !important;
     }
 
     .freeText {
@@ -290,7 +309,6 @@
         font-weight: 400;
         line-height: 16.98px;
         max-width: 188px;
-        margin-left: 5px;
     }
 
     .diamondWrapper {
@@ -359,6 +377,10 @@
         width: 373px;
     }
 
+    .textContent h1 span {
+        font-weight: 600;
+    }
+
     .textDescription {
         max-width: 365px;
     }
@@ -373,7 +395,7 @@
     }
 
     .textContent p {
-        width: 385px;
+        width: 355px;
     }
 
     .freeText {
@@ -415,6 +437,8 @@
         align-self: center;
         align-items: center;
     }
+
+
 
     .textContent h1 {
         font-size: 32px;
@@ -488,7 +512,6 @@
     .freeText {
         margin: 0;
         margin-top: 12px;
-        padding-right: 20px !important;
         width: auto !important;
 
     }
@@ -604,7 +627,7 @@
     .freeText {
         margin: 0 !important;
         margin-bottom: 20px !important;
-        margin-top: 12px;
+        padding-top: 12px;
     }
 
     .textDescription {

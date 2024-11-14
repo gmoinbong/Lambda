@@ -31,7 +31,7 @@ const Footer: FC = () => {
                 </div>
             </div>
             <div className={styles.footerBottom}>
-                <p>© Tinvio™ 2020. All Rights Reserved</p>
+                <p className={styles.rights}>© Tinvio™ 2020. All Rights Reserved</p>
                 <img className={`${styles.barrierBot} + ${styles.barrierBotReserved}`} src={'/assets/barrier.svg'} alt="" />
                 <nav className={styles.footerNav}>
                     <NavLink to="/privacy">Privacy Policy</NavLink>

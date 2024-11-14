@@ -15,7 +15,7 @@
 }
 
 .textContent {
-    max-width: 530px;
+    max-width: 536px;
     z-index: 1;
     width: 100%;
     text-align: left;
@@ -52,6 +52,12 @@
     transition: background-color 0.3s, border 0.3s;
     width: 107px;
     height: 40px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    color: #212121;
+
 }
 
 .featureButton:hover {
@@ -77,6 +83,8 @@
     align-items: center;
     font-family: Inter;
     color: #212121;
+    gap: 10px;
+
 
 
 }
@@ -146,7 +154,7 @@
 
 .lineAndText svg {
     position: absolute;
-    bottom: 62%;
+    bottom: 61%;
 }
 
 @media(max-width: 1440px) {
@@ -294,10 +302,10 @@
 
 
     .textContent h2 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 39.2px;
         text-align: center;
-
     }
 
     .featureList {
@@ -317,7 +325,7 @@
     }
 
     .moreFeaturesButton {
-        font-size: 14px;
+        font-size: 16px;
         padding: 8px 16px;
     }
 
@@ -370,7 +378,7 @@
 
 @media (max-width: 420px) {
     .textContent h2 {
-        width: 331px;
+        width: 340px;
     }
 
     .lineAndText svg {
@@ -409,6 +417,14 @@
         width: 100%;
     }
 
+    .textContent h2 {
+        font-family: Gilroy;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 34.66px;
+
+    }
+
     .featureImage {
         width: 500px;
         margin: 0;
@@ -423,4 +439,10 @@
         bottom: 93%;
     }
 
+    .moreFeaturesButton {
+        font-family: Gilroy;
+        font-weight: 700;
+        line-height: 19.81px;
+
+    }
 }

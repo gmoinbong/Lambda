@@ -63,6 +63,8 @@
     position: relative;
     z-index: 3;
     color: #212121;
+    font-family: Inter;
+
 
 }
 
@@ -118,6 +120,7 @@
     margin-bottom: 1rem;
     z-index: 3;
     color: #5C5C5C;
+    font-family: Inter;
 
 }
 
@@ -187,6 +190,9 @@
     z-index: 3;
 }
 
+.quotesAdaptive {
+    display: none;
+}
 
 .arrow {
     cursor: pointer;
@@ -376,7 +382,7 @@
     }
 
     .textStyle1 {
-        max-width: 600px;
+        max-width: 621px;
     }
 
     .testimonialImageStyle1 {
@@ -388,7 +394,7 @@
     }
 
     .textStyle2 {
-        max-width: 478px;
+        max-width: 565px;
     }
 
     .textWrapperStyle3 {
@@ -396,7 +402,7 @@
     }
 
     .textStyle3 {
-        max-width: 570px;
+        max-width: 681px;
     }
 
     .testimonialImageStyle3 {
@@ -409,7 +415,11 @@
     }
 
     .textStyle4 {
-        max-width: 540px;
+        max-width: 626px;
+    }
+
+    .testimonialImageStyle4 {
+        right: 0.5rem;
     }
 
     .quotes {
@@ -475,6 +485,8 @@
         right: 0rem;
     }
 
+
+
     .testimonialCard {
         max-width: 900px;
         max-height: 377px;
@@ -492,12 +504,12 @@
     }
 
     .text {
-        max-width: 510px;
+        max-width: 541px;
         max-height: 96px;
     }
 
     .textStyle2 {
-        max-width: 435px;
+        max-width: 513px;
     }
 
     .textWrapperStyle2 {
@@ -509,13 +521,16 @@
     }
 
     .textStyle3 {
-        max-width: 476px;
+        max-width: 548px;
     }
 
     .testimonialImage {
         right: 1.5rem;
     }
 
+    .testimonialImageStyle2 {
+        right: -0.5rem;
+    }
 
     .quotes {
         top: -30%;
@@ -577,8 +592,9 @@
     }
 
     .textWrapper {
-        width: 110%;
-        max-width: 460px;
+        width: 111%;
+        max-width: 500px;
+        margin-right: 15px;
     }
 
     .author {
@@ -594,11 +610,8 @@
         display: none;
     }
 
-    .authorContainer {
-        padding-left: 10px;
-    }
 
-    .quotesAdaptive {
+    .quotes {
         display: none;
     }
 
@@ -607,9 +620,18 @@
         top: 25px;
     }
 
+    .quotesAdaptive {
+        display: block;
+        margin-top: 20px;
+    }
+
     .testimonialBlock {
         height: 1200px;
         clip-path: polygon(0 28%, 178% 0, 100% 100%, 0 100%);
+    }
+
+    .authorTitle {
+        width: 111%;
     }
 
     .text {
@@ -681,6 +703,10 @@
 
     }
 
+    .authorWrapper {
+        padding-top: 20px;
+    }
+
     .testimonialBlock {
         top: -180px;
     }
@@ -688,6 +714,8 @@
     .text {
         max-height: 200px;
         padding-bottom: 0;
+        width: 287px;
+
     }
 
 
@@ -702,6 +730,7 @@
     }
 
 
+
     .quotes {
         left: 16px;
         top: 55px;
@@ -713,23 +742,46 @@
     }
 
     .textWrapper {
-        width: 102%;
+        width: 115%;
         max-height: 190px;
+        margin-right: 20px;
     }
 
     .authorName {
         font-size: 16px;
         line-height: 19.81px;
+        width: 103%;
+        margin-bottom: 4px;
+
     }
 
     .authorTitle {
         font-size: 10px;
         line-height: 12.1px;
+        width: 90%;
     }
 
-    .textWrapperStyle3,
     .textWrapperStyle4 {
         max-height: 210px;
     }
 
+    .reviewImageStyle1 {
+        width: 60px;
+        height: 44px;
+    }
+
+    .reviewImageStyle2 {
+        width: 85px;
+        height: 40px;
+    }
+
+    .reviewImageStyle3 {
+        width: 60px;
+        height: 44px;
+    }
+
+    .reviewImageStyle4 {
+        width: 48px;
+        height: 56px;
+    }
 }

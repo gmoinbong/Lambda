@@ -55,23 +55,29 @@ export const HomeTestimonialBlock: FC = () => {
                         <p className={`${styles.text} ${styles[testimonials[current].textClassName]} ${isLoaded ? styles.fade : ''}`}>
                             {testimonials[current].text}
                             <br />
-                            <img src={'/assets/double-quotes.svg'} alt="double quotes" className={`${styles.quotes} ${styles.quotesAdaptive} ${isLoaded ? styles.fade : ''}`} onLoad={handleImageLoad} />
+                            <img src={'/assets/double-quotes.svg'} alt="double quotes" className={`${styles.quotes}  ${isLoaded ? styles.fade : ''}`} onLoad={handleImageLoad} />
                         </p>
                     </div>
                     <div className={styles.author}>
                         <div className={styles.authorContainer}>
                             <div className={styles.reviewWrapper}>
-                                <img src={testimonials[current].imageReview} alt="Review comment" className={`${styles.reviewComment}  ${isLoaded ? styles.fade : ''}`} onLoad={handleImageLoad} />
+                                <img
+                                    src={testimonials[current].imageReview}
+                                    alt="Review comment"
+                                    className={`${styles.reviewComment} ${styles[testimonials[current].imageReviewClassName]} ${isLoaded ? styles.fade : ''}`}
+                                    onLoad={handleImageLoad} />
                                 <div className={styles.authorWrapper}>
-                                    <p className={`${styles.authorName}  ${isLoaded ? styles.fade : ''}`}>{testimonials[current].author}</p>
-                                    <p className={`${styles.authorTitle}  ${isLoaded ? styles.fade : ''}`}>{testimonials[current].title}</p>
+                                    <p className={`${styles.authorName} ${isLoaded ? styles.fade : ''}`}>{testimonials[current].author}</p>
+                                    <p className={`${styles.authorTitle} ${isLoaded ? styles.fade : ''}`}>{testimonials[current].title}</p>
                                 </div>
                             </div>
+
                             <div className={styles.arrowContainer}>
                                 <img src={'/assets/arrow-left.svg'} alt="Previous" className={styles.arrow} onClick={handlePrev} />
                                 <img src={'/assets/arrow-right.svg'} alt="Next" className={styles.arrow} onClick={handleNext} />
                             </div>
                         </div>
+                        <img src={'/assets/double-quotes.svg'} alt="double quotes" className={`${styles.quotesAdaptive} ${isLoaded ? styles.fade : ''}`} onLoad={handleImageLoad} />
                     </div>
                 </div>
                 <div className={styles.dots}>

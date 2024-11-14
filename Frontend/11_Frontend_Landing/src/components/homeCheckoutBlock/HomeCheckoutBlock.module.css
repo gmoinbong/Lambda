@@ -166,11 +166,14 @@
     .playButton {
         width: 188px !important;
         height: 48px !important;
-        ;
+        font-family: Gilroy;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17.33px;
     }
 
     .dotsBg1 {
-        top: 72%;
+        top: 68%;
         left: 81%;
     }
 

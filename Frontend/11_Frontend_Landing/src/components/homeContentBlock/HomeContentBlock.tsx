@@ -32,7 +32,7 @@ export const HomeContentBlock: FC<Props> = () => {
                 <div className={styles.textTitle}>
                     <img className={styles.stars} src={'/assets/background/stars.png'} alt='stars' />
                     <h1>
-                        Collecting payments {isTablet ? <br /> : null} <span> is easy</span>, right?
+                        Collecting payments {isTablet ? <br /> : null} <span className={styles.highlight}> is easy</span>, right?
                     </h1>
                 </div>
                 {isTablet ? <p className={styles.textDescription}>Manage all your supply chain transactions in one dashboard.{!isMobile ? <br /> : null}  Get paid faster, reconcile quicker, grow bigger.</p>
