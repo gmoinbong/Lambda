@@ -154,7 +154,7 @@
 
 .lineAndText svg {
     position: absolute;
-    bottom: 61%;
+    bottom: 62.5%;
 }
 
 @media(max-width: 1440px) {
@@ -195,7 +195,7 @@
     }
 
     .lineAndText svg {
-        bottom: 60.3%;
+        bottom: 60%;
     }
 
     .greyBg {
