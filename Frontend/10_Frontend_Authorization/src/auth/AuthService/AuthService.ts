@@ -1,5 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
 import queryString from 'query-string';
+import axios, { AxiosResponse } from 'axios';
+import apiClient from '../../api/apiClient';
 
 const API_URL = '/api';
 
@@ -52,7 +53,7 @@ export const signUp = async (email: string, password: string): Promise<AuthRespo
 
   try {
     const url = `${API_URL}/sign_up`;
-    const response: AxiosResponse<{ message: string; status: string; access_token?: string; refresh_token?: string; }> = await axios.post(url, {
+    const response: AxiosResponse<{ message: string; status: string; access_token?: string; refresh_token?: string; }> = await apiClient.post(url, {
       email,
       password
     });
@@ -71,7 +72,6 @@ export const signUp = async (email: string, password: string): Promise<AuthRespo
     localStorage.setItem('userEmail', email);
 
     await signIn(email, password);
-
 
     return {
       access_token: access_token || '',
@@ -101,7 +101,7 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
   try {
     const queryParams = queryString.stringify({ email, password });
     const url = `${API_URL}/login?${queryParams}`;
-    const response: AxiosResponse<APIResponseSuccess<AuthResponse>> = await axios.post(url);
+    const response: AxiosResponse<APIResponseSuccess<AuthResponse>> = await apiClient.post(url);
 
     const statusCode = response.data.statusCode || response.data.status_code || response.status;
     const status = response.data.body?.status || response.data.status;
@@ -115,15 +115,12 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
     localStorage.setItem('refreshToken', response.data.body.refresh_token);
     localStorage.setItem('userEmail', email);
 
-    window.location.href = '/me';
 
     return response.data.body;
   } catch (error: any) {
-    // Проверка на наличие ошибки сервера
     if (error.response && error.response.status >= 500) {
       throw new Error('Server error, please try again later');
     }
-    // Вывод сообщения "Email or password is incorrect" для всех остальных ошибок
     throw new Error('Email or password is incorrect');
   }
 };
@@ -149,7 +146,7 @@ export const getAccount = async (): Promise<AccountData> => {
 
     const url = `${API_URL}/me?email=${encodeURIComponent(email)}`;
 
-    const response: AxiosResponse<APIResponseSuccess<AccountData>> = await axios.get(url, {
+    const response: AxiosResponse<APIResponseSuccess<AccountData>> = await apiClient.get(url, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -181,25 +178,24 @@ export const getAccount = async (): Promise<AccountData> => {
   }
 };
 
-export const refreshToken = async (): Promise<void> => {
+export const refreshToken = async (): Promise<string | null> => {
   try {
     const refreshToken = localStorage.getItem('refreshToken');
     if (!refreshToken) throw new Error('No refresh token available');
 
     const url = `${API_URL}/refresh`;
-    const response: AxiosResponse<APIResponseSuccess<{ access_token: string }>> = await axios.post(url, null, {
+    const response: AxiosResponse<APIResponseSuccess<{ access_token: string }>> = await apiClient.post(url, null, {
       headers: {
         Authorization: `Bearer ${refreshToken}`,
       },
     });
+    const accessToken = response.data.body.access_token
 
-    const statusCode = response.data.statusCode || response.data.status_code || response.status;
-
-    if (statusCode !== 200 || (response.data.body as any).status === 'error') {
-      throw new Error('Failed to refresh token');
+    if (accessToken) {
+      localStorage.setItem('accessToken', response.data.body.access_token);
+      return accessToken;
     }
-
-    localStorage.setItem('accessToken', response.data.body.access_token);
+    return null;
   } catch (error: any) {
     throw new Error('Failed to refresh token');
   }

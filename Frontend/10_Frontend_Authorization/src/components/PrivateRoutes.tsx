@@ -7,9 +7,6 @@ const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
     setInterval(async () => { refreshToken() }, 60000)
 
   }, [])
-  useEffect(() => {
-    refreshToken()
-  }, [])
 
   return isAuthenticated() ? children : <Navigate to="/login" replace />;
 };
