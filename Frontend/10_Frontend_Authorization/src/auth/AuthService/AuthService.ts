@@ -1,5 +1,5 @@
 import queryString from 'query-string';
-import axios, { AxiosResponse } from 'axios';
+import  { AxiosResponse } from 'axios';
 import apiClient from '../../api/apiClient';
 
 const API_URL = '/api';
